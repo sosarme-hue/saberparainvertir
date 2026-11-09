@@ -32,7 +32,7 @@ a.card:hover{border-color:var(--green);background:var(--green-soft)}
 .item .sub{font-size:.88rem;color:var(--muted)}
 .item .val{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
 .item .val small{display:block;font-weight:400;color:var(--muted);font-size:.8rem}
-.item a.go{grid-column:1/-1;font-size:.9rem;font-weight:700}
+.item .go{grid-column:1/-1;font-size:.9rem;font-weight:700}
 .pill{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--muted);margin-right:6px}
 .empty{background:var(--soft);border-radius:12px;padding:18px;color:var(--muted)}
 .more{margin-top:14px}
@@ -71,7 +71,7 @@ a.card:hover{border-color:var(--green);background:var(--green-soft)}
 <div class="top"><div class="in">
   <p class="crumbs"><a href="../index.html">Inicio</a> › Subastas</p>
   <h1>Subastas: cómo funcionan y cómo participar</h1>
-  <p class="lead">Subastas de inmuebles, garajes, vehículos y otros bienes organizadas por juzgados, notarios, Hacienda y la Seguridad Social. Aquí aprendes a evaluarlas y encuentras en un clic las que están abiertas hoy en los portales oficiales.</p>
+  <p class="lead">Subastas de inmuebles, garajes, vehículos y otros bienes organizadas por juzgados, notarios, Hacienda y la Seguridad Social. Aquí aprendes a evaluarlas, ves cada día las nuevas subastas anunciadas en el BOE y encuentras en un clic las que están abiertas en los portales oficiales.</p>
   <div class="meta"><span>Revisado: 9 nov 2026</span><span>Fuentes: Portal de Subastas del BOE y Seguridad Social</span></div>
 </div></div>
 
@@ -79,9 +79,24 @@ a.card:hover{border-color:var(--green);background:var(--green-soft)}
 
   <div class="warnbox"><strong>Antes de nada:</strong> una subasta no es una forma garantizada de comprar barato. Puede haber cargas, ocupantes, deudas e impuestos que no se ven en el precio de la puja. Lee la <a href="../guias/antes-de-tu-primera-puja.html">guía antes de tu primera puja</a> antes de depositar dinero.</div>
 
+  <section id="nuevas">
+    <p class="eyebrow">Cada día</p>
+    <h2>Nuevas subastas anunciadas en el BOE</h2>
+    <p class="lead2">Las subastas de Hacienda, Seguridad Social, Defensa, Patrimonio del Estado y otros organismos que se han anunciado en el Boletín Oficial del Estado en los últimos 30 días. Se actualiza cada mañana con los datos abiertos del BOE. Cada anuncio enlaza con su fuente oficial: compruébala siempre antes de decidir.</p>
+    <div class="filters">
+      <label>Provincia<select id="n-prov"><option value="">Todas</option></select></label>
+      <label>Organismo<select id="n-org"><option value="">Todos</option></select></label>
+      <label>Publicadas<select id="n-dias"><option value="1">Último BOE</option><option value="7" selected>Últimos 7 días</option><option value="30">Últimos 30 días</option></select></label>
+    </div>
+    <p class="stamp" id="n-stamp">Cargando…</p>
+    <div class="list" id="n-list"></div>
+    <div class="more" id="n-more" hidden><button type="button">Ver más</button></div>
+    <p class="note" style="margin-top:12px">Las subastas judiciales y notariales no se anuncian en el BOE de esta forma: búscalas con el buscador de abajo.</p>
+  </section>
+
   <section id="hoy">
     <p class="eyebrow">Buscador</p>
-    <h2>Ver las subastas abiertas hoy en el portal oficial</h2>
+    <h2>Buscar todas las subastas abiertas en el portal oficial</h2>
     <p class="lead2">Elige provincia y tipo de bien y te llevamos a la lista oficial del Portal de Subastas del BOE, con las subastas que están recibiendo pujas en este momento. Ahí están las judiciales, las notariales y las de Hacienda. Los datos los ves directamente en la fuente, siempre al día.</p>
     <form class="filters" id="go" action="https://subastas.boe.es/subastas_ava.php" method="get" target="_blank">
       <label>Provincia<select id="f-prov"><option value="">Toda España</option><option value="01">Araba/Álava</option><option value="02">Albacete</option><option value="03">Alicante/Alacant</option><option value="04">Almería</option><option value="33">Asturias</option><option value="05">Ávila</option><option value="06">Badajoz</option><option value="08">Barcelona</option><option value="48">Bizkaia</option><option value="09">Burgos</option><option value="10">Cáceres</option><option value="11">Cádiz</option><option value="39">Cantabria</option><option value="12">Castellón/Castelló</option><option value="51">Ceuta</option><option value="13">Ciudad Real</option><option value="14">Córdoba</option><option value="15">A Coruña</option><option value="16">Cuenca</option><option value="20">Gipuzkoa</option><option value="17">Girona</option><option value="18">Granada</option><option value="19">Guadalajara</option><option value="21">Huelva</option><option value="22">Huesca</option><option value="07">Illes Balears</option><option value="23">Jaén</option><option value="26">La Rioja</option><option value="35">Las Palmas</option><option value="24">León</option><option value="25">Lleida</option><option value="27">Lugo</option><option value="28">Madrid</option><option value="29">Málaga</option><option value="52">Melilla</option><option value="30">Murcia</option><option value="31">Navarra</option><option value="32">Ourense</option><option value="34">Palencia</option><option value="36">Pontevedra</option><option value="37">Salamanca</option><option value="38">Santa Cruz de Tenerife</option><option value="40">Segovia</option><option value="41">Sevilla</option><option value="42">Soria</option><option value="43">Tarragona</option><option value="44">Teruel</option><option value="45">Toledo</option><option value="46">Valencia/València</option><option value="47">Valladolid</option><option value="49">Zamora</option><option value="50">Zaragoza</option></select></label>
@@ -128,13 +143,42 @@ a.card:hover{border-color:var(--green);background:var(--green-soft)}
 
 <footer><div class="in">
   <p>Contenido educativo. No es asesoramiento de inversión personalizado. Las subastas tienen riesgos propios: lee siempre el edicto y la ficha oficial.</p>
-  <p>Las subastas se consultan directamente en los portales oficiales: Portal de Subastas de la Agencia Estatal BOE y sede electrónica de la Tesorería General de la Seguridad Social.</p>
+  <p>Lista diaria elaborada con los datos abiertos de la Agencia Estatal Boletín Oficial del Estado (fuente: BOE, www.boe.es); la información oficial es la publicada allí. Las subastas se consultan directamente en los portales oficiales: Portal de Subastas de la Agencia Estatal BOE y sede electrónica de la Tesorería General de la Seguridad Social.</p>
   <p class="legal-links"><a href="../legal/aviso-legal.html">Aviso legal</a> · <a href="../legal/privacidad.html">Privacidad</a> · <a href="../legal/cookies.html">Cookies</a></p>
 </div></footer>
 
 <script>
 (function(){
-  document.getElementById('go').addEventListener('submit',function(e){
+  var $=function(id){return document.getElementById(id)};
+  var all=[],last='',shown=0,PAGE=30;
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function fd(s){var p=s.split('-');return new Date(+p[0],p[1]-1,+p[2]).toLocaleDateString('es-ES',{day:'numeric',month:'long'})}
+  function fill(sel,key){var v={};all.forEach(function(x){if(x[key])v[x[key]]=1});Object.keys(v).sort(function(a,b){return a.localeCompare(b,'es')}).forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=k;sel.appendChild(o)})}
+  function filtered(){
+    var p=$('n-prov').value,o=$('n-org').value,d=+$('n-dias').value,lim='';
+    if(d===1)lim=last;else{var t=new Date();t.setDate(t.getDate()-d);lim=t.toISOString().slice(0,10)}
+    return all.filter(function(x){return (!p||x.provincia===p)&&(!o||x.organismo===o)&&x.fecha>=lim});
+  }
+  function render(reset){
+    var list=filtered();if(reset){$('n-list').innerHTML='';shown=0}
+    if(!list.length){$('n-list').innerHTML='<p class="empty">No hay anuncios con esos filtros.</p>';$('n-more').hidden=true;return}
+    var h='';
+    list.slice(shown,shown+PAGE).forEach(function(x){
+      h+='<article class="item"><div><h3>'+esc(x.titulo)+'</h3><p class="sub"><span class="pill">'+esc(x.organismo)+'</span>'+(x.correccion?'<span class="pill">Corrección o cambio</span>':'')+esc(x.provincia||x.zona)+(x.referencia?' · '+esc(x.referencia):'')+'</p></div>'
+        +'<div class="val"><small>BOE del '+fd(x.fecha)+'</small></div>'
+        +'<p class="go">'+(x.url_portal?'<a href="'+esc(x.url_portal)+'" rel="noopener nofollow">Ver la subasta en el portal oficial →</a> · ':'')+'<a href="'+esc(x.url_boe)+'" rel="noopener nofollow">Leer el anuncio en el BOE</a></p></article>';
+    });
+    $('n-list').insertAdjacentHTML('beforeend',h);shown+=PAGE;$('n-more').hidden=shown>=list.length;
+  }
+  fetch('datos/anuncios.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+    all=d.anuncios||[];last=all.length?all[0].fecha:'';
+    $('n-stamp').textContent=all.length+' anuncios en los últimos '+d.dias+' días · actualizado el '+new Date(d.actualizado).toLocaleString('es-ES',{dateStyle:'long',timeStyle:'short'})+' · Fuente: BOE, datos abiertos';
+    fill($('n-prov'),'provincia');fill($('n-org'),'organismo');render(true);
+  }).catch(function(){$('n-stamp').textContent='';$('n-list').innerHTML='<p class="empty">La lista se está preparando. Vuelve en unas horas.</p>'});
+  ['n-prov','n-org','n-dias'].forEach(function(id){$(id).addEventListener('input',function(){render(true)})});
+  $('n-more').querySelector('button').addEventListener('click',function(){render(false)});
+
+  $('go').addEventListener('submit',function(e){
     e.preventDefault();
     var p=document.getElementById('f-prov').value,t=document.getElementById('f-tipo').value,o=document.getElementById('f-ord').value;
     var q='campo%5B2%5D=SUBASTA.ESTADO.CODIGO&dato%5B2%5D=EJ';
