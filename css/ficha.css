@@ -103,6 +103,25 @@ footer .in{padding-block:30px;font-size:.88rem;color:var(--muted);display:grid;g
 .photo figcaption{font-size:.75rem;color:var(--muted);margin-top:6px;text-align:right}
 .photo figcaption a{color:inherit}
 
+
+.scam-s{display:none}
+/* Móvil más compacto */
+@media (max-width:760px){
+  body{font-size:16px;line-height:1.5}
+  .top .in{padding-block:26px 30px;gap:10px}
+  .layout{padding-block:24px 40px;gap:18px}
+  article section{padding-block:18px;gap:8px}
+  .summary{margin-bottom:24px;gap:8px}
+  .wrap{padding-block:26px 40px !important;gap:34px !important}
+  .photo{margin-top:18px}
+  footer .in{padding-block:22px}
+  .bar .in{flex-wrap:nowrap;padding-block:10px}
+  .logo{font-size:1.05rem;white-space:nowrap}
+  .scam{padding:5px 10px;font-size:.82rem;white-space:nowrap}
+  .scam-l{display:none}
+  .scam-s{display:inline}
+}
+
 @media print{
   .menu,.toc,.scam,.prog,.dl,.days input{display:none !important}
   .layout{grid-template-columns:1fr;padding-block:20px}
