@@ -212,6 +212,21 @@ footer ul{margin:0;padding-left:1.1em}
 .pdfs a{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;font-weight:700}
 .pdfs a:hover{border-color:var(--green)}
 @media (max-width:760px){.courses{grid-template-columns:1fr}}
+
+/* Portada: en el móvil, menú completo sin desplegable */
+@media (max-width:760px){
+  .menu .menu-top{display:none}
+  .menu ul{display:flex;flex-direction:row;flex-wrap:wrap;gap:5px 4px;padding-block:8px}
+  .menu a{display:inline-block;border-radius:999px;padding:5px 9px;font-size:.86rem}
+  .menu li:nth-child(1),.menu li:nth-child(2){display:none}
+  .bar .in{flex-wrap:nowrap;padding-block:12px}
+  .logo{font-size:1.1rem;white-space:nowrap}
+  .scam{padding:6px 11px;font-size:.85rem;white-space:nowrap}
+  .scam-l{display:none}
+  .menu .mx{display:none}
+}
+.scam-s{display:none}
+@media (max-width:760px){.scam-s{display:inline}}
 </style>
 </head>
 <body>
@@ -223,7 +238,7 @@ footer ul{margin:0;padding-left:1.1em}
       <svg width="40" height="40" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 17 Q19 12 31 19 V52 Q19 45 6 50 Z" style="fill:var(--ink)"/><path d="M33 19 Q45 12 58 17 V50 Q45 45 33 52 Z" style="fill:var(--ink)"/><polyline points="11,41 22,33 31,37 44,27 53,22" fill="none" style="stroke:var(--logo-ln,#8FE0B9)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span>Saber <b>para</b> invertir</span>
     </a>
-    <a class="scam" href="guias/seguridad-y-estafas.html">⚠ Seguridad y estafas</a>
+    <a class="scam" href="guias/seguridad-y-estafas.html" aria-label="Seguridad y estafas">⚠ <span class="scam-l">Seguridad y estafas</span><span class="scam-s">Estafas</span></a>
   </div>
 </header>
 <nav class="menu" aria-label="Secciones">
@@ -234,7 +249,7 @@ footer ul{margin:0;padding-left:1.1em}
     <li><a href="bancos/index.html">Bancos y ahorro</a></li>
     <li><a href="bolsa/index.html">Bolsa</a></li>
     <li><a href="fondos/index.html">Fondos y ETF</a></li>
-    <li><a href="renta-fija/index.html">Renta fija y Tesoro</a></li>
+    <li><a href="renta-fija/index.html">Renta fija<span class="mx"> y Tesoro</span></a></li>
     <li><a href="inmobiliaria/index.html">Inmobiliaria</a></li>
     <li><a href="cripto/index.html">Criptomonedas</a></li>
     <li><a href="subastas/index.html">Subastas</a></li>
@@ -242,7 +257,7 @@ footer ul{margin:0;padding-left:1.1em}
     <li><a href="impuestos/index.html">Impuestos</a></li>
     <li><a href="herramientas/index.html">Herramientas</a></li>
     <li><a href="mercados.html">Mercados</a></li>
-    <li><a href="curso/tu-primera-inversion-en-30-dias.html">Cursos y PDF</a></li>
+    <li><a href="curso/tu-primera-inversion-en-30-dias.html">Cursos<span class="mx"> y PDF</span></a></li>
   </ul>
 </nav>
 
