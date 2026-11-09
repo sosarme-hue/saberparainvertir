@@ -86,9 +86,11 @@ a.card:hover{border-color:var(--green);background:var(--green-soft)}
     <form class="filters" id="go" action="https://subastas.boe.es/subastas_ava.php" method="get" target="_blank">
       <label>Provincia<select id="f-prov"><option value="">Toda España</option><option value="01">Araba/Álava</option><option value="02">Albacete</option><option value="03">Alicante/Alacant</option><option value="04">Almería</option><option value="33">Asturias</option><option value="05">Ávila</option><option value="06">Badajoz</option><option value="08">Barcelona</option><option value="48">Bizkaia</option><option value="09">Burgos</option><option value="10">Cáceres</option><option value="11">Cádiz</option><option value="39">Cantabria</option><option value="12">Castellón/Castelló</option><option value="51">Ceuta</option><option value="13">Ciudad Real</option><option value="14">Córdoba</option><option value="15">A Coruña</option><option value="16">Cuenca</option><option value="20">Gipuzkoa</option><option value="17">Girona</option><option value="18">Granada</option><option value="19">Guadalajara</option><option value="21">Huelva</option><option value="22">Huesca</option><option value="07">Illes Balears</option><option value="23">Jaén</option><option value="26">La Rioja</option><option value="35">Las Palmas</option><option value="24">León</option><option value="25">Lleida</option><option value="27">Lugo</option><option value="28">Madrid</option><option value="29">Málaga</option><option value="52">Melilla</option><option value="30">Murcia</option><option value="31">Navarra</option><option value="32">Ourense</option><option value="34">Palencia</option><option value="36">Pontevedra</option><option value="37">Salamanca</option><option value="38">Santa Cruz de Tenerife</option><option value="40">Segovia</option><option value="41">Sevilla</option><option value="42">Soria</option><option value="43">Tarragona</option><option value="44">Teruel</option><option value="45">Toledo</option><option value="46">Valencia/València</option><option value="47">Valladolid</option><option value="49">Zamora</option><option value="50">Zaragoza</option></select></label>
       <label>Tipo de bien<select id="f-tipo"><option value="I">Inmuebles (viviendas, locales, garajes, solares)</option><option value="">Todos los bienes</option></select></label>
+      <label>Orden<select id="f-ord"><option value="n">Las más nuevas primero</option><option value="f">Las que terminan antes primero</option></select></label>
       <button class="gobtn" type="submit">Ver subastas abiertas →</button>
     </form>
     <p class="stamp">Se abre el Portal de Subastas del BOE en una pestaña nueva. Para pujar tendrás que registrarte allí con certificado digital o Cl@ve.</p>
+    <p class="stamp">¿Quieres que te avisen de las nuevas? Hacienda ofrece una <a href="https://sede.agenciatributaria.gob.es/Sede/subastas.html" rel="noopener">suscripción gratuita a avisos de nuevos bienes</a> en subasta.</p>
     <p class="stamp">Subastas de la Seguridad Social: se consultan en su <a href="https://sede.seg-social.gob.es/wps/portal/sede/sede/Ciudadanos/subastas" rel="noopener">sede electrónica, apartado Subastas</a>.</p>
   </section>
 
@@ -134,11 +136,11 @@ a.card:hover{border-color:var(--green);background:var(--green-soft)}
 (function(){
   document.getElementById('go').addEventListener('submit',function(e){
     e.preventDefault();
-    var p=document.getElementById('f-prov').value,t=document.getElementById('f-tipo').value;
+    var p=document.getElementById('f-prov').value,t=document.getElementById('f-tipo').value,o=document.getElementById('f-ord').value;
     var q='campo%5B2%5D=SUBASTA.ESTADO.CODIGO&dato%5B2%5D=EJ';
     if(t)q+='&campo%5B3%5D=BIEN.TIPO&dato%5B3%5D='+t;
     if(p)q+='&campo%5B8%5D=BIEN.COD_PROVINCIA&dato%5B8%5D='+p;
-    q+='&page_hits=40&sort_field%5B0%5D=SUBASTA.FECHA_FIN&sort_order%5B0%5D=asc&accion=Buscar';
+    q+='&page_hits=40&sort_field%5B0%5D='+(o==='n'?'SUBASTA.FECHA_INICIO&sort_order%5B0%5D=desc':'SUBASTA.FECHA_FIN&sort_order%5B0%5D=asc')+'&accion=Buscar';
     window.open('https://subastas.boe.es/subastas_ava.php?'+q,'_blank','noopener');
   });
 })();
