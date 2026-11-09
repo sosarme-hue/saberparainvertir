@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mercados · Saber para invertir</title>
+<meta name="description" content="Los principales índices de las bolsas mundiales, con unos minutos de retraso, y qué significa cada uno.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/ficha.css">
+<style>
+.wrap{padding-block:40px 60px;display:grid;gap:40px}
+.wrap > *{min-width:0}
+.tv{border:1px solid var(--line);border-radius:14px;overflow:hidden;min-height:120px;background:var(--bg)}
+.tv.big{min-height:560px}
+.tv .fallback{padding:18px;color:var(--muted);font-size:.92rem}
+.idx{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.idx div{border-top:3px solid var(--ink);padding-top:12px;min-width:0}
+.idx h3{font-size:1.05rem}
+.idx p{font-size:.93rem;color:var(--muted);margin-top:4px}
+.warnbox{background:var(--soft);border-radius:12px;padding:16px 18px;font-size:.95rem}
+h2{font-size:1.6rem}
+@media (max-width:860px){.idx{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.idx{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="in">
+  <a class="logo" href="index.html"><svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#0E2A47"/><path d="M8 24 L14 17 L19 21 L26 11" stroke="#8FE0B9" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Saber <b>para</b> invertir</span></a>
+  <a class="scam" href="guias/seguridad-y-estafas.html">⚠ Seguridad y estafas</a>
+</div></header>
+
+<div class="top"><div class="in">
+  <p class="crumbs"><a href="index.html">Inicio</a> › <a href="index.html#calculadoras">Herramientas</a> › Mercados</p>
+  <h1>Mercados</h1>
+  <p class="lead">Cómo van hoy las principales bolsas del mundo. Los datos llegan con unos minutos de retraso. Para invertir a largo plazo no hace falta mirarlos cada día.</p>
+</div></div>
+<figure class="photo"><img src="https://images.unsplash.com/photo-1645226880663-81561dcab0ae?auto=format&fit=crop&w=1600&h=600&q=75" alt="Persona consultando cotizaciones en el móvil ante un gráfico de bolsa" loading="lazy" style="--ph:#0c2659" width="1600" height="600"><figcaption>Foto: <a href="https://unsplash.com/@smigielski?utm_source=saber_para_invertir&utm_medium=referral">Adam Śmigielski</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
+
+<div class="in wrap">
+  <div class="tv" id="tv-tape"><p class="fallback">Cargando cotizaciones…</p></div>
+
+  <section>
+    <h2>Principales índices</h2>
+    <div class="tv big" id="tv-quotes" style="margin-top:16px"><p class="fallback">Cargando índices…</p></div>
+    <p class="note" style="margin-top:10px">Datos facilitados por TradingView, normalmente con unos 15 minutos de retraso. Algunos índices se muestran mediante instrumentos que los replican, por lo que el valor puede diferir ligeramente del oficial.</p>
+  </section>
+
+  <section>
+    <h2>Qué mide cada índice</h2>
+    <div class="idx" style="margin-top:16px">
+      <div><h3>IBEX 35</h3><p>Las 35 empresas con más negociación de la Bolsa española: bancos, energía, textil, infraestructuras.</p></div>
+      <div><h3>Euro Stoxx 50</h3><p>50 grandes empresas de la zona euro. Una forma de ver cómo va la bolsa europea en conjunto.</p></div>
+      <div><h3>S&amp;P 500</h3><p>500 grandes empresas de Estados Unidos. Es el índice más seguido del mundo.</p></div>
+      <div><h3>Nasdaq 100</h3><p>Las 100 mayores empresas no financieras del Nasdaq, con mucho peso de tecnología.</p></div>
+      <div><h3>DAX y Nikkei 225</h3><p>Las principales empresas de Alemania y de Japón.</p></div>
+      <div><h3>MSCI World</h3><p>Unas 1.400 empresas de 23 países desarrollados. Lo copian muchos <a href="fichas/fondo-indexado.html">fondos indexados</a>.</p></div>
+    </div>
+  </section>
+
+  <div class="warnbox"><strong>Para no equivocarte:</strong> que un índice baje un 2 % en un día es normal. Si inviertes a largo plazo, las subidas y bajadas diarias no deberían cambiar tus decisiones. Esta página es informativa y no es una recomendación de compra o venta.</div>
+</div>
+
+<footer><div class="in">
+  <p>Contenido educativo. No es asesoramiento de inversión personalizado.</p>
+  <p>Cotizaciones: <a href="https://es.tradingview.com" rel="noopener">TradingView</a>.</p>
+</div></footer>
+
+<script>
+(function(){
+  var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var theme = dark ? 'dark' : 'light';
+  var SYMBOLS = [
+    {proName:'BME:IBC', title:'IBEX 35'},
+    {proName:'TVC:SX5E', title:'Euro Stoxx 50'},
+    {proName:'FOREXCOM:SPXUSD', title:'S&P 500'},
+    {proName:'FOREXCOM:NSXUSD', title:'Nasdaq 100'},
+    {proName:'INDEX:DEU40', title:'DAX'},
+    {proName:'INDEX:NKY', title:'Nikkei 225'},
+    {proName:'XETR:EUNL', title:'MSCI World (ETF)'}
+  ];
+  function embed(id, file, cfg){
+    var box = document.getElementById(id);
+    var c = document.createElement('div'); c.className = 'tradingview-widget-container';
+    var w = document.createElement('div'); w.className = 'tradingview-widget-container__widget';
+    var s = document.createElement('script');
+    s.src = 'https://s3.tradingview.com/external-embedding/' + file; s.async = true;
+    s.text = JSON.stringify(cfg);
+    s.onerror = function(){ box.innerHTML = '<p class="fallback">No se han podido cargar las cotizaciones. Puedes consultarlas en <a href="https://es.tradingview.com/markets/indices/">TradingView</a>.</p>'; };
+    c.appendChild(w); c.appendChild(s);
+    box.innerHTML = ''; box.appendChild(c);
+  }
+  embed('tv-tape', 'embed-widget-ticker-tape.js', {
+    symbols: SYMBOLS, showSymbolLogo: true, isTransparent: true, displayMode: 'adaptive', colorTheme: theme, locale: 'es'
+  });
+  embed('tv-quotes', 'embed-widget-market-quotes.js', {
+    width: '100%', height: 550, isTransparent: true, showSymbolLogo: true, colorTheme: theme, locale: 'es',
+    symbolsGroups: [
+      {name:'Europa', symbols:[{name:'BME:IBC',displayName:'IBEX 35'},{name:'TVC:SX5E',displayName:'Euro Stoxx 50'},{name:'INDEX:DEU40',displayName:'DAX'}]},
+      {name:'América', symbols:[{name:'FOREXCOM:SPXUSD',displayName:'S&P 500'},{name:'FOREXCOM:NSXUSD',displayName:'Nasdaq 100'},{name:'FOREXCOM:DJI',displayName:'Dow Jones'}]},
+      {name:'Asia y mundo', symbols:[{name:'INDEX:NKY',displayName:'Nikkei 225'},{name:'XETR:EUNL',displayName:'MSCI World (ETF iShares)'}]}
+    ]
+  });
+})();
+</script>
+</body>
+</html>

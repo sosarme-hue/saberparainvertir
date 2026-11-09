@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Criptomonedas · Saber para invertir</title>
+<meta name="description" content="Criptomonedas explicadas sin jerga: qué son, cómo comprarlas, cómo guardarlas, sus riesgos, sus impuestos en España y cotizaciones gratis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<link rel="stylesheet" href="../css/ficha.css">
+<style>
+.wrap{padding-block:44px 64px;display:grid;gap:56px}
+.wrap > *{min-width:0}
+h2{font-size:clamp(1.5rem,3vw,2rem)}
+.lead2{color:var(--muted);margin-top:8px;max-width:44em}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.card{border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:6px;align-content:start;text-decoration:none;color:var(--ink);min-width:0}
+a.card:hover{border-color:var(--green);background:var(--green-soft)}
+.card h3{font-size:1.1rem}
+.card p{font-size:.93rem;color:var(--muted)}
+.card .tag{font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.card .tag.on{color:var(--green)}
+.basics{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px}
+.basics div{border-top:3px solid var(--ink);padding-top:12px;min-width:0}
+.basics p{color:var(--muted);font-size:.95rem;margin-top:6px}
+.tv{border:1px solid var(--line);border-radius:14px;overflow:hidden;min-height:120px;margin-top:18px;background:var(--bg)}
+.tv.big{min-height:480px}
+.tv .fallback{padding:18px;color:var(--muted);font-size:.92rem}
+.calcbox{border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:18px;margin-top:20px}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 20px}
+.field{display:grid;gap:4px;min-width:0}
+.field label{font-size:.88rem;color:var(--muted)}
+.field input{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+.scen{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.scen div{border-radius:12px;padding:12px;background:var(--soft);font-variant-numeric:tabular-nums;min-width:0}
+.scen div.down{background:var(--warn-soft)}
+.scen div.up{background:var(--green-soft)}
+.scen small{display:block;font-size:.8rem;color:var(--muted)}
+.scen strong{font-family:var(--display);font-size:1.25rem}
+.res{display:grid;gap:4px;background:var(--soft);border-radius:12px;padding:14px 16px;font-variant-numeric:tabular-nums}
+.res div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-block:5px}
+.res div:last-child{border:0;font-weight:700;color:var(--green)}
+.sup{font-size:.85rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.sup b{color:var(--ink)}
+.warnbox{background:var(--warn-soft);border-radius:14px;padding:18px 20px}
+.warnbox h2{color:var(--warn);font-size:1.4rem}
+.warnbox ul{margin:10px 0 0;padding-left:1.2em;display:grid;gap:4px}
+@media (max-width:860px){.grid3,.basics{grid-template-columns:1fr 1fr}.scen{grid-template-columns:repeat(3,1fr)}.fields{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.grid3,.basics,.fields{grid-template-columns:1fr}.scen{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="in">
+  <a class="logo" href="../index.html"><svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#0E2A47"/><path d="M8 24 L14 17 L19 21 L26 11" stroke="#8FE0B9" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Saber <b>para</b> invertir</span></a>
+  <a class="scam" href="#fraudes">⚠ Fraudes cripto</a>
+</div></header>
+
+<div class="top"><div class="in">
+  <p class="crumbs"><a href="../index.html">Inicio</a> › Criptomonedas</p>
+  <h1>Criptomonedas</h1>
+  <p class="lead">Qué son, cómo se compran, dónde se guardan y cuánto pagas a Hacienda, explicado sin jerga. Con cotizaciones gratis y calculadoras para ver qué podría pasar con tu dinero.</p>
+</div></div>
+<figure class="photo"><img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=1600&h=600&q=75" alt="Moneda física de bitcoin" loading="lazy" style="--ph:#0c2640" width="1600" height="600"><figcaption>Foto: <a href="https://unsplash.com/@silverhousehd?utm_source=saber_para_invertir&utm_medium=referral">André François McKenzie</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
+
+<div class="in wrap">
+
+  <section id="empieza">
+    <p class="eyebrow">Empieza aquí</p>
+    <h2>Tres ideas antes de comprar</h2>
+    <div class="basics">
+      <div><h3>Es un registro, no una moneda física</h3><p>Una criptomoneda es una anotación en una cadena de bloques: un registro público que mantienen miles de ordenadores. Tener cripto es tener la clave que permite moverla.</p></div>
+      <div><h3>Su precio depende de lo que otros paguen</h3><p>La mayoría no da intereses ni beneficios. El precio sube o baja según la demanda, y puede moverse un 10 % en un día.</p></div>
+      <div><h3>Quien tiene la clave, tiene el dinero</h3><p>Si la guarda una plataforma, dependes de ella. Si la guardas tú y la pierdes, nadie puede recuperarla.</p></div>
+    </div>
+  </section>
+
+  <section id="cotizaciones">
+    <p class="eyebrow">Cotizaciones</p>
+    <h2>Precios de las principales criptomonedas en euros</h2>
+    <p class="lead2">Datos de TradingView. El mercado cripto abre las 24 horas, todos los días.</p>
+    <div class="tv" id="tv-tape"><p class="fallback">Cargando cotizaciones…</p></div>
+    <div class="tv big" id="tv-quotes"><p class="fallback">Cargando cotizaciones…</p></div>
+  </section>
+
+  <section id="calculadoras">
+    <p class="eyebrow">Calculadoras</p>
+    <h2>¿Qué le puede pasar a tu dinero?</h2>
+    <div class="calcbox">
+      <div class="fields">
+        <div class="field"><label for="inv">Dinero que quieres invertir (€)</label><input id="inv" type="number" min="0" step="50" value="1000" inputmode="decimal"></div>
+        <div class="field"><label for="fee">Comisión de compra (%)</label><input id="fee" type="number" min="0" max="5" step="0.1" value="1" inputmode="decimal"></div>
+      </div>
+      <div class="scen" id="scen"></div>
+      <p class="sup"><b>Cómo leerlo.</b> Son escenarios, no previsiones. Bitcoin ha subido y bajado más que estos porcentajes en un solo año. Regla práctica: invierte solo lo que podrías perder del todo sin cambiar tu vida.</p>
+    </div>
+
+    <div class="calcbox">
+      <h3 style="font-size:1.2rem">¿Cuánto pagarás a Hacienda si vendes?</h3>
+      <div class="fields">
+        <div class="field"><label for="buy">Lo que pagaste, con comisiones (€)</label><input id="buy" type="number" min="0" step="50" value="2000" inputmode="decimal"></div>
+        <div class="field"><label for="sell">Lo que recibes al vender, con comisiones (€)</label><input id="sell" type="number" min="0" step="50" value="5000" inputmode="decimal"></div>
+        <div class="field"><label for="other">Otras ganancias del ahorro este año (€)</label><input id="other" type="number" min="0" step="100" value="0" inputmode="decimal"></div>
+      </div>
+      <div class="res" id="taxres"></div>
+      <p class="sup"><b>Supuestos y límites.</b> Base del ahorro del IRPF, territorio común: 19 % hasta 6.000 €, 21 % hasta 50.000 €, 23 % hasta 200.000 €, 27 % hasta 300.000 € y 30 % por encima. Cambiar una cripto por otra también cuenta como venta. Si hay pérdida, se puede compensar con otras ganancias. País Vasco y Navarra tienen normativa propia.</p>
+    </div>
+  </section>
+
+  <section id="guias">
+    <p class="eyebrow">Fichas y guías</p>
+    <h2>Todo lo que hay que saber</h2>
+    <div class="grid3">
+      <a class="card" href="../fichas/bitcoin.html"><span class="tag on">Ficha</span><h3>Bitcoin</h3><p>La primera criptomoneda: qué es, riesgos, costes e impuestos.</p></a>
+      <a class="card" href="../fichas/ethereum.html"><span class="tag on">Ficha</span><h3>Ethereum</h3><p>Contratos inteligentes, staking y comisiones de red.</p></a>
+      <a class="card" href="../fichas/stablecoins.html"><span class="tag on">Ficha</span><h3>Stablecoins</h3><p>Cripto que intentan valer un dólar o un euro, y por qué pueden fallar.</p></a>
+      <a class="card" href="../guias/altcoins-y-memecoins.html"><span class="tag on">Guía</span><h3>Otras altcoins y memecoins</h3><p>Por qué la mayoría pierde casi todo su valor.</p></a>
+      <a class="card" href="../guias/etp-de-cripto.html"><span class="tag on">Guía</span><h3>ETF y ETP de cripto</h3><p>Exposición a cripto desde un bróker, sin custodiar claves.</p></a>
+      <a class="card" href="../guias/plataformas-cripto-mica.html"><span class="tag on">Guía</span><h3>Plataformas y MiCA</h3><p>Cómo saber si una plataforma está autorizada en Europa.</p></a>
+      <a class="card" href="../guias/custodia-y-carteras.html"><span class="tag on">Guía</span><h3>Custodia y carteras</h3><p>Cartera caliente o fría, frase semilla y errores típicos.</p></a>
+      <a class="card" href="../guias/como-comprar-cripto.html"><span class="tag on">Guía</span><h3>Cómo comprar paso a paso</h3><p>Desde abrir la cuenta hasta guardar el justificante para Hacienda.</p></a>
+      <a class="card" href="../guias/impuestos-cripto.html"><span class="tag on">Guía</span><h3>Impuestos cripto</h3><p>Ventas, permutas, staking, pérdidas y modelo 721.</p></a>
+    </div>
+  </section>
+
+  <section id="fraudes" class="warnbox">
+    <h2>Fraudes cripto más habituales</h2>
+    <ul>
+      <li>Anuncios con famosos que «recomiendan» una plataforma: son falsos.</li>
+      <li>Un «asesor» que te contacta por WhatsApp o redes y te pide instalar una app o enviarle cripto.</li>
+      <li>Rentabilidades garantizadas del 1 % diario o similares.</li>
+      <li>Alguien que te pide tu frase semilla: nadie legítimo la pide nunca.</li>
+      <li>Plataformas que te dejan ingresar pero no retirar si no pagas antes una «comisión».</li>
+    </ul>
+    <p style="margin-top:10px">Antes de invertir, busca la entidad en la lista de advertencias de la <a href="https://www.cnmv.es">CNMV</a>.</p>
+  </section>
+</div>
+
+<footer><div class="in">
+  <p>Contenido educativo. No es asesoramiento de inversión personalizado. Las criptomonedas son productos de muy alto riesgo y puedes perder todo lo invertido.</p>
+  <p>Cotizaciones: <a href="https://es.tradingview.com">TradingView</a>. Fuentes: CNMV, Banco de España, Agencia Tributaria.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  function eur(v){return v.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €'}
+  function num(id){var v=parseFloat(String($(id).value).replace(',','.'));return isFinite(v)&&v>0?v:0}
+
+  function scen(){
+    var inv=num('inv'),fee=num('fee')/100,base=inv*(1-fee);
+    var cases=[[-80,'down'],[-50,'down'],[0,''],[50,'up'],[100,'up']];
+    $('scen').innerHTML=cases.map(function(c){
+      var label=c[0]===0?'Se queda igual':(c[0]>0?'Si sube un ':'Si cae un ')+Math.abs(c[0])+' %';
+      return '<div class="'+c[1]+'"><small>'+label+'</small><strong>'+eur(base*(1+c[0]/100))+'</strong></div>';
+    }).join('');
+  }
+  var BR=[[6000,.19],[50000,.21],[200000,.23],[300000,.27],[Infinity,.30]];
+  function tax(g){var t=0,p=0;for(var i=0;i<BR.length;i++){if(g>p)t+=(Math.min(g,BR[i][0])-p)*BR[i][1];p=BR[i][0]}return t}
+  function taxcalc(){
+    var buy=num('buy'),sell=num('sell'),other=num('other'),g=sell-buy;
+    var rows;
+    if(g<=0){
+      rows=[['Resultado',eur(g)],['Impuesto por esta venta','0,00 €'],['Pérdida que puedes compensar',eur(-g)]];
+    }else{
+      var extra=tax(other+g)-tax(other);
+      rows=[['Ganancia',eur(g)],['Tipo medio sobre esta ganancia',(extra/g*100).toLocaleString('es-ES',{maximumFractionDigits:1})+' %'],['Impuesto estimado',eur(extra)],['Te queda después de impuestos',eur(sell-extra)]];
+    }
+    $('taxres').innerHTML=rows.map(function(r){return '<div><span>'+r[0]+'</span><span>'+r[1]+'</span></div>'}).join('');
+  }
+  ['inv','fee'].forEach(function(id){$(id).addEventListener('input',scen)});
+  ['buy','sell','other'].forEach(function(id){$(id).addEventListener('input',taxcalc)});
+  scen();taxcalc();
+
+  var theme=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+  function embed(id,file,cfg){
+    var box=$(id),c=document.createElement('div'),w=document.createElement('div'),s=document.createElement('script');
+    c.className='tradingview-widget-container';w.className='tradingview-widget-container__widget';
+    s.src='https://s3.tradingview.com/external-embedding/'+file;s.async=true;s.text=JSON.stringify(cfg);
+    s.onerror=function(){box.innerHTML='<p class="fallback">No se han podido cargar las cotizaciones. Puedes verlas en <a href="https://es.tradingview.com/markets/cryptocurrencies/">TradingView</a>.</p>'};
+    c.appendChild(w);c.appendChild(s);box.innerHTML='';box.appendChild(c);
+  }
+  var C=[['BITSTAMP:BTCEUR','Bitcoin'],['BITSTAMP:ETHEUR','Ethereum'],['KRAKEN:SOLEUR','Solana'],['BITSTAMP:XRPEUR','XRP'],['KRAKEN:ADAEUR','Cardano'],['KRAKEN:USDCEUR','USDC']];
+  embed('tv-tape','embed-widget-ticker-tape.js',{symbols:C.map(function(x){return{proName:x[0],title:x[1]}}),showSymbolLogo:true,isTransparent:true,displayMode:'adaptive',colorTheme:theme,locale:'es'});
+  embed('tv-quotes','embed-widget-market-quotes.js',{width:'100%',height:470,isTransparent:true,showSymbolLogo:true,colorTheme:theme,locale:'es',
+    symbolsGroups:[{name:'Criptomonedas en euros',symbols:C.map(function(x){return{name:x[0],displayName:x[1]}})}]});
+})();
+</script>
+</body>
+</html>

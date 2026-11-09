@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Saber para invertir</title>
+<meta name="description" content="Entiende tu dinero. Conoce tus opciones. Decide con criterio. Educación financiera en castellano, con productos e impuestos de España.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: portada limpia en una columna de 1120px; bloques en el orden 1–8 del planteamiento, bandas a todo ancho solo en héroe e impuestos. */
+:root{
+  --bg:#FFFFFF; --soft:#F2F5F9; --navy:#0E2A47; --ink:#0E2A47; --muted:#526276; --line:#DCE3EC;
+  --green:#14875A; --green-soft:#E3F3EB; --on-navy:#FFFFFF; --warn:#B23A2B; --warn-soft:#FBEAE7;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B1624; --soft:#111F31; --navy:#16304F; --ink:#E8EEF6; --muted:#9FB0C4; --line:#24364D;
+  --green:#45C690; --green-soft:#12342A; --on-navy:#FFFFFF; --warn:#F28B7A; --warn-soft:#3A1E1B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1624; --soft:#111F31; --navy:#16304F; --ink:#E8EEF6; --muted:#9FB0C4; --line:#24364D;
+  --green:#45C690; --green-soft:#12342A; --on-navy:#FFFFFF; --warn:#F28B7A; --warn-soft:#3A1E1B; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+.in{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0;font-weight:800}
+h2{font-size:clamp(1.8rem,3.6vw,2.6rem);letter-spacing:-.015em}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--green);font-weight:700}
+.tabnum{font-variant-numeric:tabular-nums}
+
+/* Cabecera */
+.bar{border-bottom:1px solid var(--line);background:var(--bg)}
+.bar .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:1.25rem;text-decoration:none}
+.logo b{color:var(--green)}
+.scam{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;font-weight:700;color:var(--warn);background:var(--warn-soft);padding:7px 14px;border-radius:999px;text-decoration:none}
+.menu{border-bottom:1px solid var(--line)}
+.menu ul{list-style:none;margin:0;padding:0;display:flex;gap:4px 22px;overflow-x:auto;white-space:nowrap;padding-block:10px;font-size:.93rem;scrollbar-width:thin}
+.menu a{text-decoration:none;color:var(--muted)}
+.menu a:hover{color:var(--ink)}
+
+/* 1. Héroe */
+.hero{background:var(--navy);color:var(--on-navy)}
+.hero .in{padding-block:64px 70px;display:grid;gap:26px}
+.hero h1{font-size:clamp(2.4rem,6.4vw,4.6rem);letter-spacing:-.025em;max-width:13em}
+.hero h1 span{display:block}
+.hero h1 span:nth-child(2){color:#8FE0B9}
+.hero .lead{font-size:1.15rem;opacity:.85;max-width:40em}
+.search{position:relative;max-width:720px}
+.search label{display:block;font-family:var(--display);font-weight:600;font-size:1.25rem;margin-bottom:10px}
+.search input{width:100%;font:inherit;font-size:1.1rem;padding:16px 20px;border-radius:14px;border:0;background:#FFFFFF;color:#0E2A47}
+.results{list-style:none;margin:8px 0 0;padding:6px;background:var(--bg);color:var(--ink);border-radius:12px;box-shadow:0 20px 40px -20px rgba(0,0,0,.5);display:grid;gap:2px}
+.results a{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:8px;text-decoration:none}
+.results a:hover,.results a:focus-visible{background:var(--soft)}
+.results small{color:var(--muted);white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;font-size:.9rem}
+.chips button{font:inherit;background:transparent;color:var(--on-navy);border:1px solid rgba(255,255,255,.35);padding:6px 12px;border-radius:999px;cursor:pointer}
+.chips button:hover{border-color:#8FE0B9}
+
+section.blk{padding-block:72px}
+section.blk + section.blk{border-top:1px solid var(--line)}
+.head{display:grid;gap:10px;max-width:48em;margin-bottom:34px}
+.head p{color:var(--muted);font-size:1.05rem}
+
+/* 2. Necesidades */
+.needs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.need{display:grid;grid-template-rows:1fr auto;gap:14px;padding:20px;border:1px solid var(--line);border-radius:14px;text-decoration:none;min-width:0;background:var(--bg)}
+.need:hover{border-color:var(--green);background:var(--green-soft)}
+.need strong{font-family:var(--display);font-size:1.15rem;font-weight:600;line-height:1.25}
+.need span{font-size:.88rem;color:var(--muted)}
+.need span b{color:var(--green)}
+
+/* 3. Opciones */
+.opts{display:grid;grid-template-columns:repeat(4,1fr);gap:30px 34px}
+.opt{min-width:0;padding-top:16px;border-top:3px solid var(--ink);display:grid;gap:8px;align-content:start}
+.opt p{color:var(--muted);font-size:.97rem}
+.meter{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:.82rem;margin-top:6px}
+.meter dt{color:var(--muted)}
+.meter dd{margin:0;font-weight:700}
+.links{font-size:.92rem;font-weight:700}
+.links a{color:var(--green)}
+.ficha{margin-top:46px;background:var(--soft);border-radius:18px;padding:28px;display:grid;grid-template-columns:1fr 1.4fr;gap:30px}
+.ficha > *{min-width:0}
+.ficha ol{margin:12px 0 0;padding-left:1.3em;columns:2;column-gap:24px;font-size:.95rem}
+.ficha ol li{break-inside:avoid;margin-bottom:4px}
+.qa{display:grid;gap:12px}
+.qa div{background:var(--bg);border-radius:10px;padding:12px 16px;border:1px solid var(--line)}
+.qa dt{font-weight:700}
+.qa dd{margin:2px 0 0;color:var(--muted);font-size:.95rem}
+
+/* 4. Comparaciones */
+.cmp-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{font:inherit;font-weight:700;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--navy);color:var(--on-navy);border-color:var(--navy)}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.95rem}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+thead th{background:var(--soft);font-family:var(--display);font-size:1.05rem}
+tbody th{color:var(--muted);font-weight:700;width:20%;font-size:.88rem;text-transform:uppercase;letter-spacing:.06em}
+
+/* 5. Calculadoras */
+.calcs{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:start}
+.calcs > *{min-width:0}
+.clist{display:grid;gap:6px}
+.clist .tab{text-align:left;border-radius:10px}
+.clist .soon{font-size:.85rem;color:var(--muted);padding:8px 16px}
+.panel{border:1px solid var(--line);border-radius:18px;padding:26px;display:grid;gap:20px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px 22px}
+.field label{display:flex;justify-content:space-between;gap:8px;font-size:.9rem;color:var(--muted)}
+.field output{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--green)}
+.out{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.out div{background:var(--soft);border-radius:12px;padding:14px}
+.out div.key{background:var(--green-soft)}
+.out small{display:block;font-size:.8rem;color:var(--muted)}
+.out strong{font-family:var(--display);font-size:1.5rem;font-variant-numeric:tabular-nums}
+.supuestos{font-size:.85rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
+.supuestos b{color:var(--ink)}
+
+/* 6. Impuestos */
+.tax{background:var(--navy);color:var(--on-navy)}
+.tax .head p{color:var(--on-navy);opacity:.8}
+.tax .eyebrow{color:#8FE0B9}
+.taxgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:34px}
+.taxgrid > *{min-width:0}
+.ops{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ops a{display:block;padding:12px 14px;border:1px solid rgba(255,255,255,.2);border-radius:10px;text-decoration:none;font-weight:700;font-size:.97rem;height:100%}
+.ops a:hover{border-color:#8FE0B9}
+.example{background:var(--bg);color:var(--ink);border-radius:16px;padding:24px;display:grid;gap:14px;align-content:start}
+.meta{display:flex;flex-wrap:wrap;gap:6px;font-size:.78rem}
+.meta span{background:var(--soft);padding:3px 9px;border-radius:999px;color:var(--muted)}
+.steps{display:grid;gap:6px;font-variant-numeric:tabular-nums}
+.steps div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-block:6px}
+.steps div.total{border:0;font-weight:700;color:var(--green);font-size:1.1rem}
+.example .fine{font-size:.82rem;color:var(--muted)}
+
+/* 7. Guías y glosario */
+.g7{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.g7 > *{min-width:0}
+.guides{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.guides a{display:flex;justify-content:space-between;gap:14px;text-decoration:none;padding:14px 0;border-bottom:1px solid var(--line);font-weight:700}
+.guides small{color:var(--muted);font-weight:400;white-space:nowrap}
+.gloss{margin:16px 0 0;display:grid;gap:0}
+.gloss div{padding-block:11px;border-bottom:1px solid var(--line)}
+.gloss dt{font-weight:700}
+.gloss dd{margin:2px 0 0;color:var(--muted);font-size:.95rem}
+
+/* 8. Novedades */
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.new{border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:10px;align-content:start;min-width:0}
+.new time{font-size:.82rem;color:var(--green);font-weight:700}
+.new p{color:var(--muted);font-size:.95rem}
+.sample{font-size:.82rem;color:var(--muted);margin-top:14px}
+
+/* Seguridad */
+.safe{background:var(--warn-soft)}
+.safe .in{padding-block:34px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.safe h2{font-size:1.5rem;color:var(--warn)}
+.safe p{max-width:46em;margin-top:6px}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;background:var(--ink);color:var(--bg)}
+
+footer{border-top:1px solid var(--line)}
+footer .in{padding-block:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;font-size:.9rem;color:var(--muted)}
+footer .in > *{min-width:0}
+footer h3{color:var(--ink);font-size:1rem;margin-bottom:8px}
+footer ul{margin:0;padding-left:1.1em}
+
+@media (max-width:900px){
+  .opts{grid-template-columns:1fr 1fr}
+  .ficha,.taxgrid,.g7,.calcs,footer .in{grid-template-columns:1fr}
+  .clist{grid-template-columns:repeat(2,1fr)}
+  .news{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .opts,.fields,.out,.ops{grid-template-columns:1fr}
+  .ficha ol{columns:1}
+  .hero .in{padding-block:44px 50px}
+  section.blk{padding-block:52px}
+}
+@media (prefers-reduced-motion:no-preference){.need,.tab,.ops a{transition:background .15s,border-color .15s}}
+
+.photo{margin:28px auto 0;max-width:1080px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.photo img{display:block;width:100%;max-width:100%;height:clamp(180px,32vw,360px);object-fit:cover;border-radius:16px;background:var(--ph,#ccd)}
+.photo figcaption{font-size:.75rem;color:var(--muted);margin-top:6px;text-align:right}
+.photo figcaption a{color:inherit}
+.courses{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
+.courses > *{min-width:0}
+.course{display:grid;gap:8px;padding:26px;border-radius:18px;background:var(--navy);color:var(--on-navy);text-decoration:none}
+.course strong{font-family:var(--display);font-size:1.7rem;line-height:1.15}
+.course .tagc{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:#8FE0B9;font-weight:700}
+.course span{opacity:.9}
+.pdfs{display:grid;gap:8px;align-content:start}
+.pdfs a{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;font-weight:700}
+.pdfs a:hover{border-color:var(--green)}
+@media (max-width:760px){.courses{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+
+<header class="bar">
+  <div class="in">
+    <a class="logo" href="#inicio">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="var(--navy)"/><path d="M8 24 L14 17 L19 21 L26 11" stroke="#8FE0B9" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Saber <b>para</b> invertir</span>
+    </a>
+    <a class="scam" href="guias/seguridad-y-estafas.html">⚠ Seguridad y estafas</a>
+  </div>
+</header>
+<nav class="menu" aria-label="Secciones">
+  <ul class="in">
+    <li><a href="#necesidad">Empieza aquí</a></li>
+    <li><a href="#opciones">Bancos y ahorro</a></li>
+    <li><a href="#opciones">Bolsa</a></li>
+    <li><a href="#opciones">Fondos y ETF</a></li>
+    <li><a href="#opciones">Renta fija y Tesoro</a></li>
+    <li><a href="inmobiliaria/index.html">Inmobiliaria</a></li>
+    <li><a href="cripto/index.html">Criptomonedas</a></li>
+    <li><a href="guias/antes-de-tu-primera-puja.html">Subastas</a></li>
+    <li><a href="jubilacion/index.html">Jubilación</a></li>
+    <li><a href="impuestos/index.html">Impuestos</a></li>
+    <li><a href="#calculadoras">Herramientas</a></li>
+    <li><a href="mercados.html">Mercados</a></li>
+    <li><a href="curso/tu-primera-inversion-en-30-dias.html">Cursos</a></li>
+  </ul>
+</nav>
+
+<!-- 1 -->
+<div class="hero" id="inicio">
+  <div class="in">
+    <h1><span>Entiende tu dinero.</span><span>Conoce tus opciones.</span><span>Decide con criterio.</span></h1>
+    <p class="lead">Educación financiera en castellano, sin conocimientos previos. Cada alternativa explicada con ejemplos en euros y con la misma atención a rentabilidad, riesgos, comisiones, disponibilidad e impuestos.</p>
+    <div class="search">
+      <label for="q">¿Qué quieres entender sobre tu dinero?</label>
+      <input id="q" type="search" placeholder="Por ejemplo: letras del Tesoro, depósito, vender un fondo…" autocomplete="off">
+      <ul class="results" id="res" hidden></ul>
+      <div class="chips" aria-label="Búsquedas frecuentes">
+        <button type="button">Fondo indexado</button><button type="button">Letras del Tesoro</button><button type="button">Impuestos al vender</button><button type="button">Plan de pensiones</button>
+      </div>
+    </div>
+  </div>
+</div>
+<figure class="photo"><img src="https://images.unsplash.com/photo-1758523419091-b48deb56d7b9?auto=format&fit=crop&w=1600&h=600&q=75" alt="Pareja leyendo un documento en la cocina de casa" loading="lazy" style="--ph:#8c7340" width="1600" height="600"><figcaption>Foto: <a href="https://unsplash.com/@silverkblack?utm_source=saber_para_invertir&utm_medium=referral">Vitaly Gariev</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
+
+<main>
+<!-- 2 -->
+<section class="blk" id="necesidad"><div class="in">
+  <div class="head">
+    <p class="eyebrow">Empieza según tu necesidad</p>
+    <h2>No hace falta saber el nombre del producto. Basta con saber qué te preocupa.</h2>
+  </div>
+  <div class="needs">
+    <a class="need" href="guias/fondo-de-emergencia.html"><strong>Tengo ahorros y no sé por dónde empezar</strong><span>Itinerario de <b>6 pasos</b> · colchón, deudas, objetivos</span></a>
+    <a class="need" href="#comparar"><strong>Quiero disponer de mi dinero cuando lo necesite</strong><span>Cuentas remuneradas, letras, fondos monetarios</span></a>
+    <a class="need" href="guias/leer-ficha-de-un-fondo.html"><strong>Quiero entender lo que me ofrece mi banco</strong><span>Cómo leer una oferta y sus comisiones</span></a>
+    <a class="need" href="#calculadoras"><strong>Estoy pensando en invertir a largo plazo</strong><span>Fondos indexados, ETF, diversificación</span></a>
+    <a class="need" href="inmobiliaria/index.html"><strong>Quiero comprar una vivienda para alquilar</strong><span>Gastos, rentabilidad neta y riesgos</span></a>
+    <a class="need" href="jubilacion/index.html"><strong>Quiero preparar mi jubilación</strong><span>Pensión pública, planes y otras vías</span></a>
+    <a class="need" href="guias/impuestos-vender-inversiones.html"><strong>He vendido una inversión: ¿qué impuestos debo revisar?</strong><span>Ganancias, pérdidas y declaración</span></a>
+  </div>
+</div></section>
+
+<!-- 3 -->
+<section class="blk" id="opciones"><div class="in">
+  <div class="head">
+    <p class="eyebrow">Explora las opciones</p>
+    <h2>Dónde puede estar tu dinero</h2>
+    <p>Cada producto tiene su ficha, siempre con los mismos apartados, para que puedas comparar sin perderte.</p>
+  </div>
+  <div class="opts">
+    <article class="opt"><h3>Bancos y ahorro</h3><p>Cuentas, depósitos, tarjetas, préstamos e hipotecas. Lo que cobran y lo que pagan.</p><dl class="meter"><dt>Riesgo</dt><dd>Muy bajo</dd><dt>Disponibilidad</dt><dd>Inmediata o a plazo</dd></dl><p class="links"><a href="fichas/deposito.html">Depósito a plazo</a> · <a href="fichas/cuenta-remunerada.html">Cuenta remunerada</a> · <a href="fichas/hipoteca.html">Hipoteca</a></p></article>
+    <article class="opt"><h3>Fondos y ETF</h3><p>Monetarios, renta fija, renta variable, mixtos, indexados y de gestión activa.</p><dl class="meter"><dt>Riesgo</dt><dd>De bajo a alto</dd><dt>Disponibilidad</dt><dd>2 a 5 días hábiles</dd></dl><p class="links"><a href="fichas/fondo-indexado.html">Fondo indexado</a> · <a href="fichas/etf.html">ETF</a> · <a href="fichas/fondo-monetario.html">Fondo monetario</a></p></article>
+    <article class="opt"><h3>Bolsa</h3><p>Acciones, dividendos, índices, intermediarios y cómo se da una orden de compra.</p><dl class="meter"><dt>Riesgo</dt><dd>Alto</dd><dt>Disponibilidad</dt><dd>Venta en sesión</dd></dl><p class="links"><a href="fichas/acciones.html">Acciones</a> · <a href="mercados.html">Mercados</a></p></article>
+    <article class="opt"><h3>Renta fija y Tesoro</h3><p>Letras, bonos y obligaciones del Estado, sus subastas, deuda de empresas y venta antes del vencimiento.</p><dl class="meter"><dt>Riesgo</dt><dd>Bajo a medio</dd><dt>Disponibilidad</dt><dd>Al vencimiento o en mercado</dd></dl><p class="links"><a href="fichas/letras-del-tesoro.html">Letras del Tesoro</a></p></article>
+    <article class="opt"><h3>Inmobiliaria</h3><p>Comprar para alquilar, gastos reales, financiación, SOCIMI y financiación participativa.</p><dl class="meter"><dt>Riesgo</dt><dd>Medio</dd><dt>Disponibilidad</dt><dd>Meses</dd></dl><p class="links"><a href="inmobiliaria/index.html">Sección y calculadora</a> · <a href="fichas/socimi.html">SOCIMI</a></p></article>
+    <article class="opt"><h3>Criptomonedas</h3><p>Bitcoin y otros criptoactivos, plataformas, custodia, volatilidad y fraudes frecuentes.</p><dl class="meter"><dt>Riesgo</dt><dd>Muy alto</dd><dt>Disponibilidad</dt><dd>Depende de la plataforma</dd></dl><p class="links"><a href="cripto/index.html">Sección cripto y cotizaciones</a></p></article>
+    <article class="opt"><h3>Subastas</h3><p>Inmuebles, terrenos, garajes y otros bienes: tipos de subasta, cómo participar y el coste real.</p><dl class="meter"><dt>Riesgo</dt><dd>Medio a alto</dd><dt>Disponibilidad</dt><dd>Meses</dd></dl><p class="links"><a href="guias/antes-de-tu-primera-puja.html">Antes de tu primera puja</a></p></article>
+    <article class="opt"><h3>Jubilación</h3><p>Pensión pública, planes de pensiones, otros productos de previsión y cómo disponer del ahorro.</p><dl class="meter"><dt>Riesgo</dt><dd>Según el producto</dd><dt>Disponibilidad</dt><dd>Al jubilarte, con excepciones</dd></dl><p class="links"><a href="jubilacion/index.html">Sección y calculadora</a> · <a href="fichas/plan-de-pensiones.html">Plan de pensiones</a></p></article>
+  </div>
+
+  <div class="ficha">
+    <div>
+      <p class="eyebrow">Así es cada ficha</p>
+      <h3 style="font-size:1.5rem;margin-top:6px">Diez preguntas, siempre en el mismo orden</h3>
+      <ol>
+        <li>Qué es</li><li>Cómo funciona</li><li>Ejemplo en euros</li><li>Qué puedes ganar y perder</li><li>Cuándo recuperas el dinero</li>
+        <li>Qué gastos tiene</li><li>Qué protección existe</li><li>Cómo tributa</li><li>Con qué se puede comparar</li><li>Qué revisar antes de contratar</li>
+      </ol>
+      <p style="margin-top:16px"><a class="btn" href="fichas/deposito.html">Ver la ficha completa del depósito</a></p>
+    </div>
+    <dl class="qa" aria-label="Ejemplo: ficha del depósito a plazo">
+      <div><dt>Ejemplo en euros · depósito a 12 meses</dt><dd>Pones 10.000 € al 2,50 % TAE. Al vencer cobras 250 € de intereses brutos.</dd></div>
+      <div><dt>¿La rentabilidad anunciada es anual?</dt><dd>La TAE siempre es anual. En un depósito a 6 meses al 2,50 % TAE cobrarías aproximadamente la mitad.</dd></div>
+      <div><dt>¿Cuánto recibiré después de impuestos?</dt><dd>El banco retiene el 19 %: 47,50 €. Recibes 202,50 €. En la declaración puede ajustarse según tus otros rendimientos.</dd></div>
+      <div><dt>¿Puedo retirarlo antes? ¿Qué protección tiene?</dt><dd>Depende del contrato: algunos no lo permiten y otros penalizan. El Fondo de Garantía de Depósitos cubre hasta 100.000 € por titular y entidad.</dd></div>
+    </dl>
+  </div>
+</div></section>
+
+<!-- 4 -->
+<section class="blk" id="comparar"><div class="in">
+  <div class="head">
+    <p class="eyebrow">Comparaciones claras</p>
+    <h2>Dos opciones, los mismos cinco criterios</h2>
+  </div>
+  <div class="cmp-tabs" role="tablist" aria-label="Comparaciones">
+    <button class="tab" role="tab" id="t-dep" aria-selected="true" data-cmp="dep">Depósito o letras</button>
+    <button class="tab" role="tab" id="t-etf" aria-selected="false" data-cmp="etf">Fondo o ETF</button>
+    <button class="tab" role="tab" id="t-viv" aria-selected="false" data-cmp="viv">Vivienda o inversión financiera</button>
+  </div>
+  <div class="tblwrap"><table id="cmp"></table></div>
+</div></section>
+
+<!-- 5 -->
+<section class="blk" id="calculadoras"><div class="in">
+  <div class="head">
+    <p class="eyebrow">Calculadoras</p>
+    <h2>Simula antes de decidir</h2>
+    <p>Simulaciones educativas. Cada una muestra sus supuestos y sus límites.</p>
+  </div>
+  <div class="calcs">
+    <div class="clist" role="tablist" aria-label="Calculadoras">
+      <button class="tab" role="tab" aria-selected="true" data-calc="ic">Interés compuesto</button>
+      <button class="tab" role="tab" aria-selected="false" data-calc="co">Coste de las comisiones</button>
+      <button class="tab" role="tab" aria-selected="false" data-calc="de">Depósito neto</button>
+      <button class="tab" role="tab" aria-selected="false" data-calc="hi">Cuota de hipoteca</button>
+      <p class="soon"><a href="inmobiliaria/index.html#calculadora">Rentabilidad de un alquiler</a> · <a href="cripto/index.html#calculadoras">Calculadoras cripto</a> · <a href="jubilacion/index.html#calculadora">Cuánto te faltará al jubilarte</a></p>
+    </div>
+    <div class="panel" id="panel"></div>
+  </div>
+</div></section>
+
+<!-- 6 -->
+<section class="blk tax" id="impuestos"><div class="in">
+  <div class="head">
+    <p class="eyebrow">Impuestos explicados</p>
+    <h2>La rentabilidad que cuenta es la que te queda</h2>
+    <p>Organizado por lo que haces con tu dinero. Cada artículo indica ejercicio, fecha de revisión y territorio, y señala las diferencias entre comunidades.</p>
+  </div>
+  <div class="taxgrid">
+    <ul class="ops">
+      <li><a href="guias/impuestos-intereses.html">Cobrar intereses de cuentas, depósitos y deuda</a></li>
+      <li><a href="guias/impuestos-dividendos.html">Cobrar dividendos</a></li>
+      <li><a href="guias/impuestos-vender-inversiones.html">Vender acciones, fondos o ETF</a></li>
+      <li><a href="guias/traspaso-de-fondos.html">Traspasar fondos</a></li>
+      <li><a href="guias/impuestos-cripto.html">Comprar, vender o cambiar criptomonedas</a></li>
+      <li><a href="guias/impuestos-del-alquiler.html">Comprar, alquilar o vender un inmueble</a></li>
+      <li><a href="guias/rescatar-plan-de-pensiones.html">Aportar y rescatar productos de jubilación</a></li>
+      <li><a href="guias/herencias-y-donaciones.html">Recibir una herencia o una donación</a></li>
+      <li><a href="guias/inversiones-en-el-extranjero.html">Tener inversiones o bienes en el extranjero</a></li>
+    </ul>
+    <article class="example">
+      <div class="meta"><span>IRPF · ejercicio 2026</span><span>Territorio común</span><span>Revisado: 9 nov 2026</span></div>
+      <h3 style="font-size:1.35rem">Vendes un fondo con ganancia</h3>
+      <p>Compraste participaciones por 4.000 € y las vendes por 12.000 €. La ganancia va a la base del ahorro, que tributa por tramos.</p>
+      <div class="steps">
+        <div><span>Ganancia</span><span>8.000,00 €</span></div>
+        <div><span>Primeros 6.000 € al 19 %</span><span>1.140,00 €</span></div>
+        <div><span>Siguientes 2.000 € al 21 %</span><span>420,00 €</span></div>
+        <div class="total"><span>Impuesto estimado</span><span>1.560,00 €</span></div>
+      </div>
+      <p class="fine">Supuestos: sin otras ganancias ni pérdidas en el año y sin gastos de compraventa. Si en lugar de vender traspasas a otro fondo, no tributas todavía. País Vasco y Navarra tienen normativa propia.</p>
+    </article>
+  </div>
+</div></section>
+
+<!-- 7 -->
+<section class="blk" id="guias"><div class="in g7">
+  <div>
+    <p class="eyebrow">Guías para principiantes</p>
+    <h2>Por dónde empezar</h2>
+    <ul class="guides">
+      <li><a href="guias/primer-presupuesto.html">Haz tu primer presupuesto <small>8 min</small></a></li>
+      <li><a href="guias/fondo-de-emergencia.html">Cuánto dinero guardar para emergencias <small>6 min</small></a></li>
+      <li><a href="guias/inflacion-e-interes-compuesto.html">Qué son la inflación y el interés compuesto <small>7 min</small></a></li>
+      <li><a href="guias/leer-ficha-de-un-fondo.html">Cómo leer la ficha de un fondo <small>10 min</small></a></li>
+      <li><a href="guias/comprar-letras-paso-a-paso.html">Cómo comprar letras del Tesoro paso a paso <small>9 min</small></a></li>
+      <li><a href="guias/antes-de-tu-primera-puja.html">Antes de tu primera puja: qué revisar y cuánto podrías pagar <small>12 min</small></a></li>
+      <li><a href="guias/pension-publica.html">Cómo se calcula tu pensión de jubilación <small>12 min</small></a></li>
+    </ul>
+  </div>
+  <div>
+    <p class="eyebrow">Glosario</p>
+    <h2>Palabras que verás a menudo</h2>
+    <dl class="gloss">
+      <div><dt>TAE</dt><dd>Tasa Anual Equivalente. Lo que gana o cuesta un producto en un año, con comisiones incluidas, para poder comparar.</dd></div>
+      <div><dt>Base del ahorro</dt><dd>La parte del IRPF donde tributan intereses, dividendos y ganancias por vender inversiones.</dd></div>
+      <div><dt>Traspaso</dt><dd>Mover dinero de un fondo a otro sin pagar impuestos en ese momento.</dd></div>
+      <div><dt>TER</dt><dd>Gastos corrientes anuales de un fondo o ETF, expresados en porcentaje.</dd></div>
+      <div><dt>Diversificar</dt><dd>Repartir el dinero entre muchas empresas, sectores y países para no depender de uno.</dd></div>
+    </dl>
+  </div>
+</div></section>
+
+<!-- Cursos -->
+<section class="blk" id="cursos"><div class="in">
+  <div class="head">
+    <p class="eyebrow">Cursos y guías en PDF</p>
+    <h2>Aprende paso a paso y llévatelo</h2>
+  </div>
+  <div class="courses">
+    <a class="course" href="curso/tu-primera-inversion-en-30-dias.html"><span class="tagc">Curso gratuito · 30 días</span><strong>Tu primera inversión en 30 días</strong><span>Un paso al día para ordenar tus finanzas y hacer tu primera inversión con criterio.</span></a>
+    <div class="pdfs">
+      <a href="descargas/antes-de-tu-primera-puja.pdf">PDF · Antes de tu primera puja</a>
+      <a href="descargas/comprar-para-alquilar.pdf">PDF · Comprar una vivienda para alquilar</a>
+      <a href="descargas/seguridad-y-estafas.pdf">PDF · Seguridad y prevención de estafas</a>
+      <a href="descargas/tu-primera-inversion-en-30-dias.pdf">PDF · Tu primera inversión en 30 días</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- 8 -->
+<section class="blk" id="novedades"><div class="in">
+  <div class="head">
+    <p class="eyebrow">Novedades revisadas</p>
+    <h2>Lo que ha cambiado, con fecha</h2>
+  </div>
+  <div class="news">
+    <article class="new"><time datetime="2026-11-09">9 nov 2026</time><h3>Ficha actualizada: letras del Tesoro</h3><p>Revisamos el tipo medio de la última subasta y el ejemplo en euros.</p></article>
+    <article class="new"><time datetime="2026-11-09">9 nov 2026</time><h3>Nueva guía: cómo leer la ficha de un fondo</h3><p>El documento de datos fundamentales, apartado por apartado.</p></article>
+    <article class="new"><time datetime="2026-11-09">9 nov 2026</time><h3>Impuestos: tramos de la base del ahorro</h3><p>Tabla del ejercicio 2026 con ejemplos para cada tramo.</p></article>
+  </div>
+  <p class="sample">Entradas de muestra para enseñar el formato. En la web real solo aparecerán novedades verificadas.</p>
+</div></section>
+</main>
+
+<div class="safe" id="seguridad"><div class="in">
+  <div><h2>Seguridad y prevención de estafas</h2><p>Nadie puede garantizarte una rentabilidad alta sin riesgo. Antes de entregar dinero, comprueba en la CNMV si la entidad está autorizada y si figura en su lista de advertencias.</p></div>
+  <a class="btn" href="guias/seguridad-y-estafas.html">Cómo detectar un fraude</a>
+</div></div>
+
+<footer><div class="in">
+  <div>
+    <h3>Saber para invertir</h3>
+    <p>Enciclopedia práctica del dinero, con la inversión y los impuestos explicados juntos. Contenido educativo: explicamos conceptos, te ayudamos a encontrar información y ofrecemos simulaciones. No damos asesoramiento de inversión personalizado, que solo pueden prestar entidades autorizadas.</p>
+  </div>
+  <div>
+    <h3>Fuentes oficiales</h3>
+    <ul><li>CNMV</li><li>Banco de España</li><li>Tesoro Público</li><li>Agencia Tributaria</li></ul>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const eur=(v,d=0)=>v.toLocaleString('es-ES',{minimumFractionDigits:d,maximumFractionDigits:d})+' €';
+  const pct=v=>v.toLocaleString('es-ES',{minimumFractionDigits:1,maximumFractionDigits:2})+' %';
+
+  /* Buscador */
+  const IDX=[
+    ['Fondo indexado','Fondos y ETF','fichas/fondo-indexado.html'],['ETF','Fondos y ETF','fichas/etf.html'],['Fondo monetario','Fondos y ETF','fichas/fondo-monetario.html'],
+    ['Letras del Tesoro','Renta fija y Tesoro','fichas/letras-del-tesoro.html'],['Bonos y obligaciones del Estado','Renta fija y Tesoro','#opciones'],
+    ['Depósito a plazo','Bancos y ahorro','fichas/deposito.html'],['Cuenta remunerada','Bancos y ahorro','fichas/cuenta-remunerada.html'],['Hipoteca','Bancos y ahorro','fichas/hipoteca.html'],
+    ['Acciones y dividendos','Bolsa','fichas/acciones.html'],['Cómo dar una orden de compra','Bolsa','#opciones'],
+    ['Comprar vivienda para alquilar','Inmobiliaria','inmobiliaria/index.html'],['SOCIMI','Inmobiliaria','fichas/socimi.html'],['Crowdfunding inmobiliario','Inmobiliaria','fichas/crowdfunding-inmobiliario.html'],['Rentabilidad de un piso alquilado','Inmobiliaria','inmobiliaria/index.html#calculadora'],
+    ['Bitcoin','Criptomonedas','fichas/bitcoin.html'],['Ethereum','Criptomonedas','fichas/ethereum.html'],['Stablecoins','Criptomonedas','fichas/stablecoins.html'],['Cotizaciones de criptomonedas','Criptomonedas','cripto/index.html#cotizaciones'],['Subastas de inmuebles y garajes','Subastas','guias/antes-de-tu-primera-puja.html'],['Subasta judicial','Subastas','guias/antes-de-tu-primera-puja.html'],['Subastas del Tesoro','Renta fija y Tesoro','fichas/letras-del-tesoro.html'],['Plan de pensiones','Jubilación','fichas/plan-de-pensiones.html'],
+    ['Impuestos al vender un fondo','Impuestos','#impuestos'],['Impuestos de los intereses','Impuestos','#impuestos'],['Herencias y donaciones','Impuestos','#impuestos'],
+    ['Traspaso de fondos','Impuestos','#impuestos'],['Fondo de emergencia','Empieza aquí','guias/fondo-de-emergencia.html'],['Interés compuesto','Herramientas','#calculadoras'],
+    ['Inflación','Empieza aquí','guias/inflacion-e-interes-compuesto.html'],['Estafas financieras','Seguridad','guias/seguridad-y-estafas.html'],['TAE','Glosario','#guias'],['Presupuesto','Empieza aquí','guias/primer-presupuesto.html'],['Herencia','Impuestos','guias/herencias-y-donaciones.html'],['Modelo 720','Impuestos','guias/inversiones-en-el-extranjero.html'],['Bonos del Estado','Renta fija y Tesoro','guias/bonos-y-obligaciones.html'],['Bróker','Bolsa','guias/elegir-broker.html'],['Pensión pública','Jubilación','guias/pension-publica.html'],['Hipoteca inversa','Jubilación','guias/vivienda-en-la-jubilacion.html'],['Alquiler: impuestos','Impuestos','guias/impuestos-del-alquiler.html'],['Índices de bolsa: IBEX 35, S&P 500','Mercados','mercados.html']
+  ];
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const q=$('q'),res=$('res');
+  function search(){
+    const t=norm(q.value.trim());
+    if(!t){res.hidden=true;return}
+    const words=t.split(/\s+/);
+    const hits=IDX.filter(([a,b])=>words.every(w=>norm(a+' '+b).includes(w))).slice(0,6);
+    res.innerHTML=hits.length?hits.map(([a,b,h])=>`<li><a href="${h}">${a}<small>${b}</small></a></li>`).join(''):'<li><a href="#necesidad">Sin resultados todavía. Prueba por tu necesidad<small>Empieza aquí</small></a></li>';
+    res.hidden=false;
+  }
+  q.addEventListener('input',search);
+  document.querySelectorAll('.chips button').forEach(b=>b.addEventListener('click',()=>{q.value=b.textContent;search();q.focus()}));
+  res.addEventListener('click',()=>{res.hidden=true});
+
+  /* Comparaciones */
+  const CMP={
+    dep:{h:['Depósito a plazo','Letras del Tesoro'],r:[
+      ['Rentabilidad','Fija y conocida al contratar. Se cobra al vencer o periódicamente.','Fija si las mantienes hasta el vencimiento (3, 6, 9 o 12 meses). Compras por debajo de 1.000 € y cobras 1.000 €.'],
+      ['Riesgo','Muy bajo. Fondo de Garantía de Depósitos hasta 100.000 € por titular y entidad.','Muy bajo. El emisor es el Estado español.'],
+      ['Comisiones','Normalmente ninguna. Revisa si exigen otros productos vinculados.','Ninguna comprando directamente en el Tesoro Público. Algunos bancos cobran custodia.'],
+      ['Disponibilidad','Al vencimiento. Cancelar antes puede estar prohibido o penalizado.','Al vencimiento. Puedes venderlas antes en el mercado, al precio de ese día.'],
+      ['Impuestos','Rendimiento del capital mobiliario. Retención del 19 % al cobrar.','Rendimiento del capital mobiliario en la base del ahorro. Sin retención: se paga en la declaración.']]},
+    etf:{h:['Fondo de inversión','ETF'],r:[
+      ['Rentabilidad','La del mercado que sigue, menos comisiones. Valor liquidativo una vez al día.','La del índice que replica, menos comisiones. Cotiza durante toda la sesión.'],
+      ['Riesgo','Depende de lo que tenga dentro: de muy bajo (monetario) a alto (renta variable).','Igual que el fondo equivalente: depende del índice.'],
+      ['Comisiones','Gastos corrientes (TER). Indexados desde 0,1 %; gestión activa a menudo 1–2 %.','TER muy bajo, a menudo 0,1–0,3 %, más la comisión del bróker por cada compra o venta.'],
+      ['Disponibilidad','Reembolso en 2 a 5 días hábiles.','Venta inmediata en bolsa; el dinero llega en 2 días hábiles.'],
+      ['Impuestos','Puedes traspasar a otro fondo sin tributar. Pagas al reembolsar.','En España no admiten traspaso sin tributar: cada venta con ganancia tributa.']]},
+    viv:{h:['Vivienda para alquilar','Inversión financiera diversificada'],r:[
+      ['Rentabilidad','Alquiler menos gastos (IBI, comunidad, seguros, reparaciones, meses vacíos), más la posible revalorización.','Dividendos, intereses y revalorización de muchas empresas o bonos a la vez.'],
+      ['Riesgo','Concentrado en un inmueble: impagos, desperfectos, cambios normativos. La hipoteca amplifica.','Caídas temporales del mercado, que pueden ser fuertes. Muy repartido.'],
+      ['Comisiones','Compra cara: ITP entre el 6 y el 10 % según la comunidad, notaría, registro y gestoría.','Bajas en productos indexados. Sin gastos de entrada relevantes.'],
+      ['Disponibilidad','Vender lleva meses y no se puede vender una parte.','Puedes vender todo o una parte en pocos días.'],
+      ['Impuestos','Alquiler en la base general con posibles reducciones por vivienda habitual del inquilino. Venta en la base del ahorro.','Base del ahorro, del 19 % al 30 % por tramos. Traspasos de fondos sin tributar.']]}
+  };
+  function showCmp(k){
+    const c=CMP[k];
+    $('cmp').innerHTML=`<thead><tr><th scope="col"><span class="eyebrow" style="color:var(--muted)">Criterio</span></th><th scope="col">${c.h[0]}</th><th scope="col">${c.h[1]}</th></tr></thead><tbody>`+
+      c.r.map(r=>`<tr><th scope="row">${r[0]}</th><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')+'</tbody>';
+    document.querySelectorAll('[data-cmp]').forEach(b=>b.setAttribute('aria-selected',b.dataset.cmp===k));
+  }
+  document.querySelectorAll('[data-cmp]').forEach(b=>b.addEventListener('click',()=>showCmp(b.dataset.cmp)));
+  showCmp('dep');
+
+  /* Calculadoras */
+  const CALC={
+    ic:{f:[['a','Aportación mensual',25,1000,25,150,eur],['y','Años',1,40,1,20,v=>v+' años'],['r','Rentabilidad anual',0,8,0.5,5,pct],['i','Capital inicial',0,20000,500,1000,eur]],
+      run(v){const rm=v.r/100/12;let s=v.i;for(let k=0;k<v.y*12;k++)s=s*(1+rm)+v.a;const put=v.i+v.a*12*v.y;
+        return [['Valor final',eur(s),1],['Lo que aportas',eur(put)],['Lo que generan los intereses',eur(s-put)]]},
+      sup:'Rentabilidad constante cada año y aportación a final de mes. En la realidad hay años buenos y malos. <b>No incluye comisiones ni impuestos.</b>'},
+    co:{f:[['a','Aportación mensual',25,1000,25,200,eur],['y','Años',1,40,1,25,v=>v+' años'],['r','Rentabilidad anual bruta',0,8,0.5,6,pct],['c','Comisión anual del fondo caro',0.5,2.5,0.1,1.5,pct]],
+      run(v){const f=c=>{const rm=(v.r-c)/100/12;let s=0;for(let k=0;k<v.y*12;k++)s=s*(1+rm)+v.a;return s};const lo=f(0.2),hi=f(v.c);
+        return [['Fondo indexado (0,2 %)',eur(lo),1],['Fondo con '+pct(v.c),eur(hi)],['Te cuestan las comisiones',eur(lo-hi)]]},
+      sup:'Compara la misma inversión con dos comisiones anuales distintas, restadas de la rentabilidad. <b>No incluye impuestos.</b>'},
+    de:{f:[['k','Importe',1000,100000,1000,10000,eur],['t','TAE',0,5,0.05,2.5,pct],['m','Plazo en meses',1,36,1,12,v=>v+' meses']],
+      run(v){const b=v.k*(Math.pow(1+v.t/100,v.m/12)-1),ret=b*0.19;
+        return [['Recibes neto',eur(b-ret,2),1],['Intereses brutos',eur(b,2)],['Retención del 19 %',eur(ret,2)]]},
+      sup:'Interés calculado a partir de la TAE para el plazo elegido. La retención del 19 % es un adelanto: <b>en la declaración puedes pagar más si tus rendimientos del ahorro superan 6.000 €</b>. FGD hasta 100.000 € por titular y entidad.'},
+    hi:{f:[['p','Importe del préstamo',20000,500000,5000,150000,eur],['t','Tipo de interés anual',0,7,0.05,3,pct],['y','Plazo en años',5,40,1,25,v=>v+' años']],
+      run(v){const n=v.y*12,i=v.t/100/12,c=i?v.p*i/(1-Math.pow(1+i,-n)):v.p/n;
+        return [['Cuota mensual',eur(c,2),1],['Total de intereses',eur(c*n-v.p)],['Total a devolver',eur(c*n)]]},
+      sup:'Sistema francés, tipo fijo durante todo el plazo. <b>No incluye</b> tasación, seguros vinculados, impuestos de la compra ni comisiones de apertura. En hipotecas variables la cuota cambia con el euríbor.'}
+  };
+  let cur='ic';
+  function renderCalc(k){
+    cur=k;const c=CALC[k];
+    $('panel').innerHTML='<div class="fields">'+c.f.map(([id,l,mi,ma,st,val])=>`<div class="field"><label for="c-${id}">${l} <output id="o-${id}"></output></label><input id="c-${id}" type="range" min="${mi}" max="${ma}" step="${st}" value="${val}"></div>`).join('')+
+      '</div><div class="out" id="out"></div><p class="supuestos"><b>Supuestos y límites.</b> '+c.sup+'</p>';
+    c.f.forEach(([id])=>$('c-'+id).addEventListener('input',calc));
+    document.querySelectorAll('[data-calc]').forEach(b=>b.setAttribute('aria-selected',b.dataset.calc===k));
+    calc();
+  }
+  function calc(){
+    const c=CALC[cur],v={};
+    c.f.forEach(([id,,,,,,fmt])=>{v[id]=+$('c-'+id).value;$('o-'+id).textContent=fmt(v[id])});
+    $('out').innerHTML=c.run(v).map(([l,x,key])=>`<div${key?' class="key"':''}><small>${l}</small><strong>${x}</strong></div>`).join('');
+  }
+  document.querySelectorAll('[data-calc]').forEach(b=>b.addEventListener('click',()=>renderCalc(b.dataset.calc)));
+  renderCalc('ic');
+})();
+</script>
+
+</body>
+</html>

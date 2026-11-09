@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Impuestos · Saber para invertir</title>
+<meta name="description" content="Impuestos del ahorro y la inversión en España, organizados por lo que haces con tu dinero, con ejemplos en euros.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<link rel="stylesheet" href="../css/ficha.css">
+<style>
+.wrap{padding-block:44px 64px;display:grid;gap:56px}
+.wrap > *{min-width:0}
+h2{font-size:clamp(1.5rem,3vw,2rem)}
+.lead2{color:var(--muted);margin-top:8px;max-width:44em}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.card{border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:6px;align-content:start;text-decoration:none;color:var(--ink);min-width:0}
+a.card:hover{border-color:var(--green);background:var(--green-soft)}
+.card h3{font-size:1.1rem}
+.card p{font-size:.93rem;color:var(--muted)}
+.card .tag{font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.card .tag.on{color:var(--green)}
+.basics{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px}
+.basics div{border-top:3px solid var(--ink);padding-top:12px;min-width:0}
+.basics p{color:var(--muted);font-size:.95rem;margin-top:6px}
+.tv{border:1px solid var(--line);border-radius:14px;overflow:hidden;min-height:120px;margin-top:18px;background:var(--bg)}
+.tv.big{min-height:480px}
+.tv .fallback{padding:18px;color:var(--muted);font-size:.92rem}
+.calcbox{border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:18px;margin-top:20px}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 20px}
+.field{display:grid;gap:4px;min-width:0}
+.field label{font-size:.88rem;color:var(--muted)}
+.field input{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+.scen{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.scen div{border-radius:12px;padding:12px;background:var(--soft);font-variant-numeric:tabular-nums;min-width:0}
+.scen div.down{background:var(--warn-soft)}
+.scen div.up{background:var(--green-soft)}
+.scen small{display:block;font-size:.8rem;color:var(--muted)}
+.scen strong{font-family:var(--display);font-size:1.25rem}
+.res{display:grid;gap:4px;background:var(--soft);border-radius:12px;padding:14px 16px;font-variant-numeric:tabular-nums}
+.res div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-block:5px}
+.res div:last-child{border:0;font-weight:700;color:var(--green)}
+.sup{font-size:.85rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.sup b{color:var(--ink)}
+.warnbox{background:var(--warn-soft);border-radius:14px;padding:18px 20px}
+.warnbox h2{color:var(--warn);font-size:1.4rem}
+.warnbox ul{margin:10px 0 0;padding-left:1.2em;display:grid;gap:4px}
+@media (max-width:860px){.grid3,.basics{grid-template-columns:1fr 1fr}.scen{grid-template-columns:repeat(3,1fr)}.fields{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.grid3,.basics,.fields{grid-template-columns:1fr}.scen{grid-template-columns:1fr 1fr}}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.kpi div{background:var(--soft);border-radius:12px;padding:14px;min-width:0}
+.kpi div.key{background:var(--green-soft)}
+.kpi small{display:block;font-size:.8rem;color:var(--muted)}
+.kpi strong{font-family:var(--display);font-size:1.5rem;font-variant-numeric:tabular-nums}
+@media (max-width:520px){.kpi{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header class="bar"><div class="in">
+  <a class="logo" href="../index.html"><svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#0E2A47"/><path d="M8 24 L14 17 L19 21 L26 11" stroke="#8FE0B9" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Saber <b>para</b> invertir</span></a>
+  <a class="scam" href="../guias/seguridad-y-estafas.html">⚠ Seguridad y estafas</a>
+</div></header>
+<div class="top"><div class="in">
+  <p class="crumbs"><a href="../index.html">Inicio</a> › Impuestos</p>
+  <h1>Impuestos</h1>
+  <p class="lead">La rentabilidad que cuenta es la que te queda después de impuestos. Aquí están organizados por lo que haces con tu dinero. Cada guía indica el ejercicio, la fecha de revisión y el territorio.</p>
+</div></div>
+<figure class="photo"><img src="https://images.unsplash.com/photo-1709880945165-d2208c6ad2ec?auto=format&fit=crop&w=1600&h=600&q=75" alt="Calculadora junto a un portátil" loading="lazy" style="--ph:#c0c0c0" width="1600" height="600"><figcaption>Foto: <a href="https://unsplash.com/@jakubzerdzicki?utm_source=saber_para_invertir&utm_medium=referral">Jakub Żerdzicki</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
+<div class="in wrap">
+  <section id="empieza">
+    <p class="eyebrow">Empieza aquí</p>
+    <h2>Las dos partes del IRPF</h2>
+    <div class="basics">
+      <div><h3>Base general</h3><p>Sueldo, pensiones, alquileres y rescates de planes de pensiones. Tributa por la escala general, que llega hasta el 45 % o más según la comunidad.</p></div>
+      <div><h3>Base del ahorro</h3><p>Intereses, dividendos y ganancias al vender inversiones: 19 % hasta 6.000 €, 21 % hasta 50.000 €, 23 % hasta 200.000 €, 27 % hasta 300.000 € y 30 % por encima.</p></div>
+      <div><h3>Territorio</h3><p>Las guías usan las normas del territorio común. País Vasco y Navarra tienen normativa propia, y las comunidades fijan deducciones y el impuesto de sucesiones.</p></div>
+    </div>
+  </section>
+  <section id="operaciones">
+    <p class="eyebrow">Por operaciones</p>
+    <h2>¿Qué has hecho con tu dinero?</h2>
+    <div class="grid3"><a class="card" href="../guias/impuestos-intereses.html"><span class="tag on">Guía</span><h3>Cobrar intereses</h3><p>Cuentas, depósitos, letras y bonos.</p></a><a class="card" href="../guias/impuestos-dividendos.html"><span class="tag on">Guía</span><h3>Cobrar dividendos</h3><p>Españoles y extranjeros, doble imposición.</p></a><a class="card" href="../guias/impuestos-vender-inversiones.html"><span class="tag on">Guía</span><h3>Vender acciones, fondos o ETF</h3><p>Ganancias, FIFO y pérdidas.</p></a><a class="card" href="../guias/traspaso-de-fondos.html"><span class="tag on">Guía</span><h3>Traspasar fondos</h3><p>Cambiar de fondo sin tributar.</p></a><a class="card" href="../guias/impuestos-cripto.html"><span class="tag on">Guía</span><h3>Criptomonedas</h3><p>Ventas, permutas, staking y modelo 721.</p></a><a class="card" href="../guias/impuestos-del-alquiler.html"><span class="tag on">Guía</span><h3>Alquilar un inmueble</h3><p>Gastos deducibles y reducciones.</p></a><a class="card" href="../guias/vender-un-inmueble.html"><span class="tag on">Guía</span><h3>Vender un inmueble</h3><p>Ganancia, exenciones y plusvalía municipal.</p></a><a class="card" href="../guias/rescatar-plan-de-pensiones.html"><span class="tag on">Guía</span><h3>Rescatar productos de jubilación</h3><p>Capital, renta y reducción del 40 %.</p></a><a class="card" href="../guias/herencias-y-donaciones.html"><span class="tag on">Guía</span><h3>Herencias y donaciones</h3><p>Diferencias por comunidad autónoma.</p></a><a class="card" href="../guias/inversiones-en-el-extranjero.html"><span class="tag on">Guía</span><h3>Inversiones en el extranjero</h3><p>Modelos 720 y 721, doble imposición.</p></a></div>
+  </section>
+</div>
+<footer><div class="in">
+  <p>Contenido educativo. No sustituye el asesoramiento de un profesional fiscal.</p>
+  <p>Fuente: <a href="https://sede.agenciatributaria.gob.es">Agencia Tributaria</a>. Revisado: 9 nov 2026.</p>
+</div></footer>
+</body>
+</html>

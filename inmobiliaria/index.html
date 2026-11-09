@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Inversión inmobiliaria · Saber para invertir</title>
+<meta name="description" content="Invertir en inmuebles en España: comprar para alquilar, gastos reales, rentabilidad neta, financiación, riesgos, SOCIMI, crowdfunding y subastas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<link rel="stylesheet" href="../css/ficha.css">
+<style>
+.wrap{padding-block:44px 64px;display:grid;gap:56px}
+.wrap > *{min-width:0}
+h2{font-size:clamp(1.5rem,3vw,2rem)}
+.lead2{color:var(--muted);margin-top:8px;max-width:44em}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.card{border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:6px;align-content:start;text-decoration:none;color:var(--ink);min-width:0}
+a.card:hover{border-color:var(--green);background:var(--green-soft)}
+.card h3{font-size:1.1rem}
+.card p{font-size:.93rem;color:var(--muted)}
+.card .tag{font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.card .tag.on{color:var(--green)}
+.basics{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px}
+.basics div{border-top:3px solid var(--ink);padding-top:12px;min-width:0}
+.basics p{color:var(--muted);font-size:.95rem;margin-top:6px}
+.tv{border:1px solid var(--line);border-radius:14px;overflow:hidden;min-height:120px;margin-top:18px;background:var(--bg)}
+.tv.big{min-height:480px}
+.tv .fallback{padding:18px;color:var(--muted);font-size:.92rem}
+.calcbox{border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:18px;margin-top:20px}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 20px}
+.field{display:grid;gap:4px;min-width:0}
+.field label{font-size:.88rem;color:var(--muted)}
+.field input{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+.scen{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.scen div{border-radius:12px;padding:12px;background:var(--soft);font-variant-numeric:tabular-nums;min-width:0}
+.scen div.down{background:var(--warn-soft)}
+.scen div.up{background:var(--green-soft)}
+.scen small{display:block;font-size:.8rem;color:var(--muted)}
+.scen strong{font-family:var(--display);font-size:1.25rem}
+.res{display:grid;gap:4px;background:var(--soft);border-radius:12px;padding:14px 16px;font-variant-numeric:tabular-nums}
+.res div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-block:5px}
+.res div:last-child{border:0;font-weight:700;color:var(--green)}
+.sup{font-size:.85rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.sup b{color:var(--ink)}
+.warnbox{background:var(--warn-soft);border-radius:14px;padding:18px 20px}
+.warnbox h2{color:var(--warn);font-size:1.4rem}
+.warnbox ul{margin:10px 0 0;padding-left:1.2em;display:grid;gap:4px}
+@media (max-width:860px){.grid3,.basics{grid-template-columns:1fr 1fr}.scen{grid-template-columns:repeat(3,1fr)}.fields{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.grid3,.basics,.fields{grid-template-columns:1fr}.scen{grid-template-columns:1fr 1fr}}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.kpi div{background:var(--soft);border-radius:12px;padding:14px;min-width:0}
+.kpi div.key{background:var(--green-soft)}
+.kpi small{display:block;font-size:.8rem;color:var(--muted)}
+.kpi strong{font-family:var(--display);font-size:1.5rem;font-variant-numeric:tabular-nums}
+@media (max-width:520px){.kpi{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header class="bar"><div class="in">
+  <a class="logo" href="../index.html"><svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#0E2A47"/><path d="M8 24 L14 17 L19 21 L26 11" stroke="#8FE0B9" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Saber <b>para</b> invertir</span></a>
+  <a class="scam" href="../guias/seguridad-y-estafas.html">⚠ Seguridad y estafas</a>
+</div></header>
+
+<div class="top"><div class="in">
+  <p class="crumbs"><a href="../index.html">Inicio</a> › Inmobiliaria</p>
+  <h1>Inversión inmobiliaria</h1>
+  <p class="lead">Comprar para alquilar, invertir en empresas inmobiliarias o participar en proyectos. Con los gastos reales, la rentabilidad que queda y los riesgos, explicado con ejemplos en euros.</p>
+</div></div>
+<figure class="photo"><img src="https://images.unsplash.com/photo-1583377519891-1eea1c2e3947?auto=format&fit=crop&w=1600&h=600&q=75" alt="Fachada blanca de un edificio de viviendas con balcones" loading="lazy" style="--ph:#73c0c0" width="1600" height="600"><figcaption>Foto: <a href="https://unsplash.com/@lust?utm_source=saber_para_invertir&utm_medium=referral">léa b</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
+
+<div class="in wrap">
+  <section id="empieza">
+    <p class="eyebrow">Empieza aquí</p>
+    <h2>Tres ideas antes de comprar un piso para alquilar</h2>
+    <div class="basics">
+      <div><h3>El precio no es lo que pagas</h3><p>A la compra se suman impuestos (ITP del 6 al 10 % según la comunidad, o IVA si es nueva), notaría, registro, gestoría y casi siempre una reforma.</p></div>
+      <div><h3>El alquiler no es lo que ganas</h3><p>Hay que restar IBI, comunidad, seguro, reparaciones, meses vacíos e impagos. La rentabilidad neta suele quedar 1,5 a 3 puntos por debajo de la bruta.</p></div>
+      <div><h3>Es una inversión poco líquida y concentrada</h3><p>Vender lleva meses y todo tu dinero depende de un inmueble, un inquilino y una zona.</p></div>
+    </div>
+  </section>
+
+  <section id="calculadora">
+    <p class="eyebrow">Calculadora</p>
+    <h2>¿Cuánto rinde de verdad un piso alquilado?</h2>
+    <div class="calcbox">
+      <div class="fields">
+        <div class="field"><label for="price">Precio de compra (€)</label><input id="price" type="number" min="0" step="1000" value="150000" inputmode="decimal"></div>
+        <div class="field"><label for="itp">Impuesto de compra, ITP o IVA (%)</label><input id="itp" type="number" min="0" max="12" step="0.5" value="8" inputmode="decimal"></div>
+        <div class="field"><label for="otros">Notaría, registro y gestoría (€)</label><input id="otros" type="number" min="0" step="100" value="2000" inputmode="decimal"></div>
+        <div class="field"><label for="reforma">Reforma y muebles (€)</label><input id="reforma" type="number" min="0" step="500" value="10000" inputmode="decimal"></div>
+        <div class="field"><label for="rent">Alquiler mensual (€)</label><input id="rent" type="number" min="0" step="25" value="800" inputmode="decimal"></div>
+        <div class="field"><label for="gastos">Gastos anuales: IBI, comunidad, seguro, reparaciones (€)</label><input id="gastos" type="number" min="0" step="50" value="1800" inputmode="decimal"></div>
+        <div class="field"><label for="vacio">Meses sin alquilar al año</label><input id="vacio" type="number" min="0" max="12" step="0.5" value="1" inputmode="decimal"></div>
+      </div>
+      <div class="kpi" id="kpi"></div>
+      <div class="res" id="det"></div>
+      <p class="sup"><b>Supuestos y límites.</b> Compra sin hipoteca y antes de impuestos sobre el alquiler. No incluye la posible revalorización ni la amortización fiscal. Con hipoteca, la rentabilidad sobre tu dinero cambia y el riesgo aumenta.</p>
+    </div>
+  </section>
+
+  <section id="guias">
+    <p class="eyebrow">Fichas y guías</p>
+    <h2>Formas de invertir en inmuebles</h2>
+    <div class="grid3">
+      <a class="card" href="../guias/comprar-para-alquilar.html"><span class="tag on">Guía</span><h3>Comprar para alquilar</h3><p>Paso a paso: elegir zona, financiar, contrato, seguro de impago.</p></a>
+      <a class="card" href="../fichas/socimi.html"><span class="tag on">Ficha</span><h3>SOCIMI</h3><p>Empresas inmobiliarias que cotizan en bolsa y reparten dividendos.</p></a>
+      <a class="card" href="../fichas/crowdfunding-inmobiliario.html"><span class="tag on">Ficha</span><h3>Crowdfunding inmobiliario</h3><p>Pequeñas aportaciones a proyectos, con intereses y riesgo de retraso.</p></a>
+      <a class="card" href="../guias/antes-de-tu-primera-puja.html"><span class="tag on">Guía</span><h3>Subastas de inmuebles</h3><p>Qué revisar antes de pujar y cuánto podrías terminar pagando.</p></a>
+      <a class="card" href="../fichas/hipoteca.html"><span class="tag on">Ficha</span><h3>Hipoteca</h3><p>Fija, variable o mixta; gastos y amortización anticipada.</p></a>
+      <a class="card" href="../guias/riesgos-del-alquiler.html"><span class="tag on">Guía</span><h3>Riesgos del alquiler</h3><p>Impagos, ocupación, zonas tensionadas y Ley de vivienda.</p></a>
+      <a class="card" href="../guias/impuestos-del-alquiler.html"><span class="tag on">Guía</span><h3>Impuestos del alquiler</h3><p>Gastos deducibles, amortización y reducciones de 2023.</p></a>
+      <a class="card" href="../guias/vender-un-inmueble.html"><span class="tag on">Guía</span><h3>Vender un inmueble</h3><p>Ganancia patrimonial, plusvalía municipal y exenciones.</p></a>
+      <a class="card" href="../guias/garajes-locales-trasteros.html"><span class="tag on">Guía</span><h3>Garajes, locales y trasteros</h3><p>Rentabilidades, demanda y gastos de inversiones pequeñas.</p></a>
+    </div>
+  </section>
+</div>
+
+<footer><div class="in">
+  <p>Contenido educativo. No es asesoramiento de inversión personalizado.</p>
+  <p>Fuentes: Agencia Tributaria, CNMV, Banco de España.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  function eur(v){return Math.round(v).toLocaleString('es-ES')+' €'}
+  function pct(v){return v.toLocaleString('es-ES',{minimumFractionDigits:1,maximumFractionDigits:1})+' %'}
+  function num(id){var v=parseFloat(String($(id).value).replace(',','.'));return isFinite(v)&&v>0?v:0}
+  function calc(){
+    var price=num('price'),inv=price*(1+num('itp')/100)+num('otros')+num('reforma');
+    var rent=num('rent'),vacio=Math.min(num('vacio'),12),ingresos=rent*(12-vacio),gastos=num('gastos');
+    var bruta=price?rent*12/price*100:0,neta=inv?(ingresos-gastos)/inv*100:0,benef=ingresos-gastos;
+    $('kpi').innerHTML='<div><small>Rentabilidad bruta (la que anuncian)</small><strong>'+pct(bruta)+'</strong></div>'+
+      '<div class="key"><small>Rentabilidad neta real</small><strong>'+pct(neta)+'</strong></div>'+
+      '<div><small>Te queda al año</small><strong>'+eur(benef)+'</strong></div>';
+    $('det').innerHTML=[['Dinero total que pones',eur(inv)],['Alquiler cobrado en el año',eur(ingresos)],['Gastos del año','−'+eur(gastos)],['Beneficio antes de impuestos',eur(benef)]]
+      .map(function(r){return '<div><span>'+r[0]+'</span><span>'+r[1]+'</span></div>'}).join('');
+  }
+  ['price','itp','otros','reforma','rent','gastos','vacio'].forEach(function(id){$(id).addEventListener('input',calc)});
+  calc();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Jubilación · Saber para invertir</title>
+<meta name="description" content="Preparar la jubilación en España: cuánto cobrarás de pensión, cuánto te faltará y cómo ahorrar la diferencia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<link rel="stylesheet" href="../css/ficha.css">
+<style>
+.wrap{padding-block:44px 64px;display:grid;gap:56px}
+.wrap > *{min-width:0}
+h2{font-size:clamp(1.5rem,3vw,2rem)}
+.lead2{color:var(--muted);margin-top:8px;max-width:44em}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.card{border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:6px;align-content:start;text-decoration:none;color:var(--ink);min-width:0}
+a.card:hover{border-color:var(--green);background:var(--green-soft)}
+.card h3{font-size:1.1rem}
+.card p{font-size:.93rem;color:var(--muted)}
+.card .tag{font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.card .tag.on{color:var(--green)}
+.basics{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px}
+.basics div{border-top:3px solid var(--ink);padding-top:12px;min-width:0}
+.basics p{color:var(--muted);font-size:.95rem;margin-top:6px}
+.tv{border:1px solid var(--line);border-radius:14px;overflow:hidden;min-height:120px;margin-top:18px;background:var(--bg)}
+.tv.big{min-height:480px}
+.tv .fallback{padding:18px;color:var(--muted);font-size:.92rem}
+.calcbox{border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:18px;margin-top:20px}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 20px}
+.field{display:grid;gap:4px;min-width:0}
+.field label{font-size:.88rem;color:var(--muted)}
+.field input{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+.scen{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.scen div{border-radius:12px;padding:12px;background:var(--soft);font-variant-numeric:tabular-nums;min-width:0}
+.scen div.down{background:var(--warn-soft)}
+.scen div.up{background:var(--green-soft)}
+.scen small{display:block;font-size:.8rem;color:var(--muted)}
+.scen strong{font-family:var(--display);font-size:1.25rem}
+.res{display:grid;gap:4px;background:var(--soft);border-radius:12px;padding:14px 16px;font-variant-numeric:tabular-nums}
+.res div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-block:5px}
+.res div:last-child{border:0;font-weight:700;color:var(--green)}
+.sup{font-size:.85rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.sup b{color:var(--ink)}
+.warnbox{background:var(--warn-soft);border-radius:14px;padding:18px 20px}
+.warnbox h2{color:var(--warn);font-size:1.4rem}
+.warnbox ul{margin:10px 0 0;padding-left:1.2em;display:grid;gap:4px}
+@media (max-width:860px){.grid3,.basics{grid-template-columns:1fr 1fr}.scen{grid-template-columns:repeat(3,1fr)}.fields{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.grid3,.basics,.fields{grid-template-columns:1fr}.scen{grid-template-columns:1fr 1fr}}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.kpi div{background:var(--soft);border-radius:12px;padding:14px;min-width:0}
+.kpi div.key{background:var(--green-soft)}
+.kpi small{display:block;font-size:.8rem;color:var(--muted)}
+.kpi strong{font-family:var(--display);font-size:1.5rem;font-variant-numeric:tabular-nums}
+@media (max-width:520px){.kpi{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header class="bar"><div class="in">
+  <a class="logo" href="../index.html"><svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#0E2A47"/><path d="M8 24 L14 17 L19 21 L26 11" stroke="#8FE0B9" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Saber <b>para</b> invertir</span></a>
+  <a class="scam" href="../guias/seguridad-y-estafas.html">⚠ Seguridad y estafas</a>
+</div></header>
+
+<div class="top"><div class="in">
+  <p class="crumbs"><a href="../index.html">Inicio</a> › Jubilación</p>
+  <h1>Jubilación</h1>
+  <p class="lead">Cuánto cobrarás de pensión pública, cuánto te faltará para vivir como quieres y qué opciones tienes para ahorrar la diferencia, con sus impuestos.</p>
+</div></div>
+<figure class="photo"><img src="https://images.unsplash.com/photo-1625690987114-86f5af994b49?auto=format&fit=crop&w=1600&h=600&q=75" alt="Pareja mayor paseando del brazo por un camino" loading="lazy" style="--ph:#594026" width="1600" height="600"><figcaption>Foto: <a href="https://unsplash.com/@capture_it?utm_source=saber_para_invertir&utm_medium=referral">Hector Reyes</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
+
+<div class="in wrap">
+  <section id="empieza">
+    <p class="eyebrow">Empieza aquí</p>
+    <h2>Tres ideas para preparar tu jubilación</h2>
+    <div class="basics">
+      <div><h3>La pensión pública es la base</h3><p>Depende de los años cotizados y de lo que cotizaste. Hacen falta al menos 15 años para cobrarla y unos 37 para el 100 %. La edad ordinaria es de 67 años, o 65 con carreras largas.</p></div>
+      <div><h3>Lo que importa es la diferencia</h3><p>La pensión suele ser menor que tu último sueldo. Calcula cuánto te faltará al mes y cuántos años quieres cubrir.</p></div>
+      <div><h3>El tiempo hace casi todo el trabajo</h3><p>Ahorrar 100 € al mes desde los 35 da mucho más que 200 € desde los 55, gracias al interés compuesto.</p></div>
+    </div>
+  </section>
+
+  <section id="calculadora">
+    <p class="eyebrow">Calculadora</p>
+    <h2>¿Cuánto te faltará y cuánto deberías ahorrar?</h2>
+    <div class="calcbox">
+      <div class="fields">
+        <div class="field"><label for="edad">Tu edad hoy</label><input id="edad" type="number" min="18" max="70" step="1" value="40" inputmode="numeric"></div>
+        <div class="field"><label for="jub">Edad a la que te jubilarás</label><input id="jub" type="number" min="55" max="75" step="1" value="67" inputmode="numeric"></div>
+        <div class="field"><label for="anos">Años de jubilación que quieres cubrir</label><input id="anos" type="number" min="1" max="40" step="1" value="20" inputmode="numeric"></div>
+        <div class="field"><label for="nec">Lo que necesitarás al mes (€ de hoy)</label><input id="nec" type="number" min="0" step="50" value="1800" inputmode="decimal"></div>
+        <div class="field"><label for="pen">Pensión pública estimada al mes (€ de hoy)</label><input id="pen" type="number" min="0" step="50" value="1300" inputmode="decimal"></div>
+        <div class="field"><label for="r">Rentabilidad anual por encima de la inflación (%)</label><input id="r" type="number" min="0" max="6" step="0.5" value="2" inputmode="decimal"></div>
+      </div>
+      <div class="kpi" id="kpi"></div>
+      <p class="sup"><b>Supuestos y límites.</b> Todo en euros de hoy: la rentabilidad es la que queda después de la inflación. Ahorro mensual constante hasta jubilarte y gasto del capital en los años indicados. No incluye impuestos ni comisiones. Para estimar tu pensión pública usa el simulador de <a href="https://portal.seg-social.gob.es">Tu Seguridad Social</a>.</p>
+    </div>
+  </section>
+
+  <section id="guias">
+    <p class="eyebrow">Fichas y guías</p>
+    <h2>Formas de prepararla</h2>
+    <div class="grid3">
+      <a class="card" href="../guias/pension-publica.html"><span class="tag on">Guía</span><h3>Cómo se calcula la pensión pública</h3><p>Años cotizados, base reguladora, edad de jubilación y complementos.</p></a>
+      <a class="card" href="../fichas/plan-de-pensiones.html"><span class="tag on">Ficha</span><h3>Plan de pensiones</h3><p>Desgrava hoy, tributa al cobrar. Límites, rescates y comisiones.</p></a>
+      <a class="card" href="../guias/planes-de-empleo.html"><span class="tag on">Guía</span><h3>Planes de empleo y simplificados</h3><p>Los que promueve tu empresa o tu asociación de autónomos.</p></a>
+      <a class="card" href="../guias/ppa-pias-sialp.html"><span class="tag on">Guía</span><h3>PPA, PIAS y SIALP</h3><p>Seguros y cuentas de ahorro con ventajas fiscales.</p></a>
+      <a class="card" href="../fichas/fondo-indexado.html"><span class="tag on">Ficha</span><h3>Fondos indexados para la jubilación</h3><p>Ahorro a largo plazo con costes bajos y sin bloquear el dinero.</p></a>
+      <a class="card" href="../guias/vivienda-en-la-jubilacion.html"><span class="tag on">Guía</span><h3>Tu vivienda en la jubilación</h3><p>Hipoteca inversa, venta con usufructo, renta vitalicia.</p></a>
+      <a class="card" href="../guias/rescatar-plan-de-pensiones.html"><span class="tag on">Guía</span><h3>Rescatar y tributar</h3><p>Capital, renta o mixto: cómo pagar menos impuestos al cobrar.</p></a>
+      <a class="card" href="../guias/jubilacion-anticipada-activa.html"><span class="tag on">Guía</span><h3>Jubilación anticipada, activa y flexible</h3><p>Coeficientes reductores y compatibilidad con trabajar.</p></a>
+      <a class="card" href="../guias/jubilacion-autonomos.html"><span class="tag on">Guía</span><h3>Autónomos</h3><p>Pensión de autónomo, cotización por ingresos reales y ahorro propio.</p></a>
+    </div>
+  </section>
+</div>
+
+<footer><div class="in">
+  <p>Contenido educativo. No es asesoramiento personalizado.</p>
+  <p>Fuentes: Seguridad Social, Dirección General de Seguros y Fondos de Pensiones, Agencia Tributaria.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  function eur(v){return Math.round(v).toLocaleString('es-ES')+' €'}
+  function num(id){var v=parseFloat(String($(id).value).replace(',','.'));return isFinite(v)&&v>0?v:0}
+  function calc(){
+    var edad=num('edad'),jub=num('jub'),anos=num('anos'),gap=Math.max(0,num('nec')-num('pen')),rm=num('r')/100/12;
+    var nPay=anos*12,nSave=Math.max(0,(jub-edad)*12);
+    var capital=rm?gap*(1-Math.pow(1+rm,-nPay))/rm:gap*nPay;
+    var ahorro=nSave?(rm?capital*rm/(Math.pow(1+rm,nSave)-1):capital/nSave):capital;
+    $('kpi').innerHTML='<div><small>Te faltará al mes</small><strong>'+eur(gap)+'</strong></div>'+
+      '<div><small>Dinero que necesitarás al jubilarte</small><strong>'+eur(capital)+'</strong></div>'+
+      '<div class="key"><small>'+(nSave?'Ahorro al mes desde hoy':'Necesitas ya ese capital')+'</small><strong>'+eur(nSave?ahorro:capital)+'</strong></div>';
+  }
+  ['edad','jub','anos','nec','pen','r'].forEach(function(id){$(id).addEventListener('input',calc)});
+  calc();
+})();
+</script>
+</body>
+</html>
