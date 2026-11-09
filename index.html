@@ -509,6 +509,7 @@ footer ul{margin:0;padding-left:1.1em}
     res.hidden=false;
   }
   q.addEventListener('input',search);
+  q.addEventListener('search',search);
   document.querySelectorAll('.chips button').forEach(b=>b.addEventListener('click',()=>{q.value=b.textContent;search();q.focus()}));
   res.addEventListener('click',()=>{res.hidden=true});
   q.addEventListener('keydown',e=>{if(e.key==='Escape'){res.hidden=true}});
