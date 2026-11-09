@@ -24,7 +24,7 @@
   --green:#45C690; --green-soft:#12342A; --on-navy:#FFFFFF; --warn:#F28B7A; --warn-soft:#3A1E1B; color-scheme:dark}
 
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
 .in{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0;font-weight:800}
 h2{font-size:clamp(1.8rem,3.6vw,2.6rem);letter-spacing:-.015em}
@@ -41,10 +41,12 @@ a{color:inherit}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:1.25rem;text-decoration:none}
 .logo b{color:var(--green)}
 .scam{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;font-weight:700;color:var(--warn);background:var(--warn-soft);padding:7px 14px;border-radius:999px;text-decoration:none}
-.menu{border-bottom:1px solid var(--line)}
-.menu ul{list-style:none;margin:0;padding:0;display:flex;gap:4px 22px;overflow-x:auto;white-space:nowrap;padding-block:10px;font-size:.93rem;scrollbar-width:thin}
-.menu a{text-decoration:none;color:var(--muted)}
-.menu a:hover{color:var(--ink)}
+.menu{border-bottom:1px solid var(--line);background:var(--bg)}
+.menu ul{list-style:none;margin:0 auto;padding-block:10px;display:flex;flex-wrap:wrap;gap:8px;font-size:.9rem}
+.menu a{display:inline-block;text-decoration:none;color:var(--ink);font-weight:700;border:1px solid var(--line);border-radius:999px;padding:6px 13px;background:var(--bg)}
+.menu a:hover{border-color:var(--green);color:var(--green)}
+.menu a[aria-current="page"]{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+@media (max-width:760px){.menu ul{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}.menu ul::-webkit-scrollbar{display:none}}
 
 /* 1. Héroe */
 .hero{background:var(--navy);color:var(--on-navy)}
@@ -187,8 +189,8 @@ footer ul{margin:0;padding-left:1.1em}
 }
 @media (prefers-reduced-motion:no-preference){.need,.tab,.ops a{transition:background .15s,border-color .15s}}
 
-.photo{margin:28px auto 0;max-width:1080px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.photo img{display:block;width:100%;max-width:100%;height:clamp(180px,32vw,360px);object-fit:cover;border-radius:16px;background:var(--ph,#ccd)}
+.photo{margin:28px auto 0;max-width:900px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.photo img{display:block;width:100%;max-width:100%;height:auto;border-radius:16px;background:var(--ph,#ccd)}
 .photo figcaption{font-size:.75rem;color:var(--muted);margin-top:6px;text-align:right}
 .photo figcaption a{color:inherit}
 .courses{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
@@ -217,19 +219,20 @@ footer ul{margin:0;padding-left:1.1em}
 </header>
 <nav class="menu" aria-label="Secciones">
   <ul class="in">
-    <li><a href="#necesidad">Empieza aquí</a></li>
-    <li><a href="#opciones">Bancos y ahorro</a></li>
-    <li><a href="#opciones">Bolsa</a></li>
-    <li><a href="#opciones">Fondos y ETF</a></li>
-    <li><a href="#opciones">Renta fija y Tesoro</a></li>
+    <li><a href="index.html" aria-current="page">Inicio</a></li>
+    <li><a href="index.html#necesidad">Empieza aquí</a></li>
+    <li><a href="fichas/deposito.html">Bancos y ahorro</a></li>
+    <li><a href="fichas/acciones.html">Bolsa</a></li>
+    <li><a href="fichas/fondo-indexado.html">Fondos y ETF</a></li>
+    <li><a href="fichas/letras-del-tesoro.html">Renta fija y Tesoro</a></li>
     <li><a href="inmobiliaria/index.html">Inmobiliaria</a></li>
     <li><a href="cripto/index.html">Criptomonedas</a></li>
     <li><a href="guias/antes-de-tu-primera-puja.html">Subastas</a></li>
     <li><a href="jubilacion/index.html">Jubilación</a></li>
     <li><a href="impuestos/index.html">Impuestos</a></li>
-    <li><a href="#calculadoras">Herramientas</a></li>
+    <li><a href="index.html#calculadoras">Calculadoras</a></li>
     <li><a href="mercados.html">Mercados</a></li>
-    <li><a href="curso/tu-primera-inversion-en-30-dias.html">Cursos</a></li>
+    <li><a href="curso/tu-primera-inversion-en-30-dias.html">Cursos y PDF</a></li>
   </ul>
 </nav>
 
@@ -248,7 +251,7 @@ footer ul{margin:0;padding-left:1.1em}
     </div>
   </div>
 </div>
-<figure class="photo"><img src="https://images.unsplash.com/photo-1758523419091-b48deb56d7b9?auto=format&fit=crop&w=1600&h=600&q=75" alt="Pareja leyendo un documento en la cocina de casa" loading="lazy" style="--ph:#8c7340" width="1600" height="600"><figcaption>Foto: <a href="https://unsplash.com/@silverkblack?utm_source=saber_para_invertir&utm_medium=referral">Vitaly Gariev</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
+<figure class="photo"><img src="https://images.unsplash.com/photo-1758523419091-b48deb56d7b9?auto=format&w=1600&q=75" alt="Pareja leyendo un documento en la cocina de casa" loading="lazy" style="--ph:#8c7340" width="1600"><figcaption>Foto: <a href="https://unsplash.com/@silverkblack?utm_source=saber_para_invertir&utm_medium=referral">Vitaly Gariev</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
 
 <main>
 <!-- 2 -->

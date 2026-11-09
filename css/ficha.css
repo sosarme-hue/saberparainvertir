@@ -29,6 +29,13 @@ a{color:var(--green)}
 .logo b{color:var(--green)}
 .scam{font-size:.88rem;font-weight:700;color:var(--warn);background:var(--warn-soft);padding:6px 13px;border-radius:999px;text-decoration:none}
 
+.menu{border-bottom:1px solid var(--line);background:var(--bg)}
+.menu ul{list-style:none;margin:0 auto;padding-block:10px;display:flex;flex-wrap:wrap;gap:8px;font-size:.9rem}
+.menu a{display:inline-block;text-decoration:none;color:var(--ink);font-weight:700;border:1px solid var(--line);border-radius:999px;padding:6px 13px;background:var(--bg)}
+.menu a:hover{border-color:var(--green);color:var(--green)}
+.menu a[aria-current="page"]{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+@media (max-width:760px){.menu ul{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}.menu ul::-webkit-scrollbar{display:none}}
+
 .top{background:var(--navy);color:var(--on-navy)}
 .top .in{padding-block:40px 46px;display:grid;gap:14px}
 .crumbs{font-size:.88rem;opacity:.8}
@@ -83,13 +90,13 @@ footer .in{padding-block:30px;font-size:.88rem;color:var(--muted);display:grid;g
 }
 @media (max-width:520px){.two,.summary{grid-template-columns:1fr}}
 
-.photo{margin:28px auto 0;max-width:1080px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.photo img{display:block;width:100%;max-width:100%;height:clamp(180px,32vw,360px);object-fit:cover;border-radius:16px;background:var(--ph,#ccd)}
+.photo{margin:28px auto 0;max-width:900px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.photo img{display:block;width:100%;max-width:100%;height:auto;border-radius:16px;background:var(--ph,#ccd)}
 .photo figcaption{font-size:.75rem;color:var(--muted);margin-top:6px;text-align:right}
 .photo figcaption a{color:inherit}
 
 @media print{
-  .toc,.scam,.prog,.dl,.days input{display:none !important}
+  .menu,.toc,.scam,.prog,.dl,.days input{display:none !important}
   .layout{grid-template-columns:1fr;padding-block:20px}
   .top{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .photo{display:none}
