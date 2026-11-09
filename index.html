@@ -71,6 +71,7 @@ a{color:inherit}
 .results a{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:8px;text-decoration:none}
 .results a:hover,.results a:focus-visible{background:var(--soft)}
 .results small{color:var(--muted);white-space:nowrap}
+.results[hidden]{display:none}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;font-size:.9rem}
 .chips button{font:inherit;background:transparent;color:var(--on-navy);border:1px solid rgba(255,255,255,.35);padding:6px 12px;border-radius:999px;cursor:pointer}
 .chips button:hover{border-color:#8FE0B9}
@@ -501,7 +502,7 @@ footer ul{margin:0;padding-left:1.1em}
   const q=$('q'),res=$('res');
   function search(){
     const t=norm(q.value.trim());
-    if(!t){res.hidden=true;return}
+    if(t.length<3){res.hidden=true;res.innerHTML='';return}
     const words=t.split(/\s+/);
     const hits=IDX.filter(([a,b])=>words.every(w=>norm(a+' '+b).includes(w))).slice(0,6);
     res.innerHTML=hits.length?hits.map(([a,b,h])=>`<li><a href="${h}">${a}<small>${b}</small></a></li>`).join(''):'<li><a href="#necesidad">Sin resultados todavía. Prueba por tu necesidad<small>Empieza aquí</small></a></li>';
@@ -510,6 +511,8 @@ footer ul{margin:0;padding-left:1.1em}
   q.addEventListener('input',search);
   document.querySelectorAll('.chips button').forEach(b=>b.addEventListener('click',()=>{q.value=b.textContent;search();q.focus()}));
   res.addEventListener('click',()=>{res.hidden=true});
+  q.addEventListener('keydown',e=>{if(e.key==='Escape'){res.hidden=true}});
+  document.addEventListener('click',e=>{if(!res.hidden&&e.target!==q&&!res.contains(e.target)&&!e.target.closest('.chips'))res.hidden=true});
 
   /* Comparaciones */
   const CMP={
