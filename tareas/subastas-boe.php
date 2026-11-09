@@ -45,7 +45,8 @@ function organismo($dep, $t) {
   if (stripos($t, 'Economía y Hacienda') !== false || stripos($t, 'Patrimonio') !== false) return 'Patrimonio del Estado';
   if (stripos($t, 'FOGASA') !== false || stripos($t, 'Fondo de Garantía Salarial') !== false) return 'FOGASA';
   if (stripos($t, 'ADIF') !== false) return 'ADIF';
-  return mb_convert_case(mb_strtolower($dep), MB_CASE_TITLE);
+  $o = mb_convert_case(mb_strtolower($dep), MB_CASE_TITLE);
+  return preg_replace_callback('/ (De|Del|Y|La|El|Los|Las|Para|E) /u', fn($m) => ' '.mb_strtolower($m[1]).' ', preg_replace_callback('/ (De|Del|Y|La|El|Los|Las|Para|E) /u', fn($m) => ' '.mb_strtolower($m[1]).' ', $o));
 }
 
 $hoy = new DateTime('today');
@@ -88,6 +89,8 @@ for ($d = 0; $d < DIAS; $d++) {
 // Limpieza de caché antigua
 foreach (glob("$CACHE/*.json") as $c) if (basename($c, '.json') < (clone $hoy)->modify('-'.(DIAS+5).' days')->format('Ymd')) @unlink($c);
 
+function minus($o) { return preg_replace_callback('/ (De|Del|Y|La|El|Los|Las|Para|E) /u', fn($m) => ' '.mb_strtolower($m[1]).' ', preg_replace_callback('/ (De|Del|Y|La|El|Los|Las|Para|E) /u', fn($m) => ' '.mb_strtolower($m[1]).' ', $o)); }
+foreach ($todos as &$x) $x['organismo'] = minus($x['organismo']); unset($x);
 usort($todos, fn($x, $y) => strcmp($y['fecha'], $x['fecha']) ?: strcmp($y['boe'], $x['boe']));
 $json = ['actualizado' => date('c'), 'dias' => DIAS, 'fuente' => 'Agencia Estatal Boletín Oficial del Estado (datos abiertos)', 'anuncios' => $todos];
 $tmp = "$DEST.tmp";
