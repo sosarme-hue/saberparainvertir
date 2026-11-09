@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Subastas · Saber para invertir</title>
-<meta name="description" content="Subastas de bienes en España explicadas desde cero, con un directorio diario de las subastas publicadas en los portales oficiales del BOE y de la Seguridad Social.">
+<meta name="description" content="Subastas de bienes en España explicadas desde cero, con acceso directo a las subastas abiertas en los portales oficiales del BOE y de la Seguridad Social.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
@@ -37,6 +37,7 @@ a.card:hover{border-color:var(--green);background:var(--green-soft)}
 .empty{background:var(--soft);border-radius:12px;padding:18px;color:var(--muted)}
 .more{margin-top:14px}
 .more button{font:inherit;font-weight:700;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.gobtn{font:inherit;font-weight:700;padding:10px 18px;border-radius:999px;border:0;background:var(--green);color:#fff;cursor:pointer}
 .steps{margin:16px 0 0;padding-left:1.3em;display:grid;gap:8px;max-width:46em}
 @media (max-width:860px){.grid3{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.grid3{grid-template-columns:1fr}.item{grid-template-columns:1fr}.item .val{text-align:left}}
@@ -70,7 +71,7 @@ a.card:hover{border-color:var(--green);background:var(--green-soft)}
 <div class="top"><div class="in">
   <p class="crumbs"><a href="../index.html">Inicio</a> › Subastas</p>
   <h1>Subastas: cómo funcionan y cómo participar</h1>
-  <p class="lead">Subastas de inmuebles, garajes, vehículos y otros bienes organizadas por juzgados, notarios, Hacienda y la Seguridad Social. Aquí aprendes a evaluarlas y ves cada día las que se han publicado en los portales oficiales.</p>
+  <p class="lead">Subastas de inmuebles, garajes, vehículos y otros bienes organizadas por juzgados, notarios, Hacienda y la Seguridad Social. Aquí aprendes a evaluarlas y encuentras en un clic las que están abiertas hoy en los portales oficiales.</p>
   <div class="meta"><span>Revisado: 9 nov 2026</span><span>Fuentes: Portal de Subastas del BOE y Seguridad Social</span></div>
 </div></div>
 
@@ -79,18 +80,16 @@ a.card:hover{border-color:var(--green);background:var(--green-soft)}
   <div class="warnbox"><strong>Antes de nada:</strong> una subasta no es una forma garantizada de comprar barato. Puede haber cargas, ocupantes, deudas e impuestos que no se ven en el precio de la puja. Lee la <a href="../guias/antes-de-tu-primera-puja.html">guía antes de tu primera puja</a> antes de depositar dinero.</div>
 
   <section id="hoy">
-    <p class="eyebrow">Directorio diario</p>
-    <h2>Subastas abiertas en los portales oficiales</h2>
-    <p class="lead2">Una lista que se actualiza cada mañana con las subastas que están recibiendo pujas. Cada una enlaza con su ficha oficial, que es la que manda: comprueba allí siempre los datos, los plazos y las condiciones.</p>
-    <div class="filters">
-      <label>Provincia<select id="f-prov"><option value="">Todas</option></select></label>
-      <label>Organiza<select id="f-org"><option value="">Todos</option></select></label>
-      <label>Tipo de bien<select id="f-tipo"><option value="">Todos</option></select></label>
-      <label>Buscar<input id="f-q" type="search" placeholder="Localidad, calle, referencia…"></label>
-    </div>
-    <p class="stamp" id="stamp">Cargando…</p>
-    <div class="list" id="list"></div>
-    <div class="more" id="more" hidden><button type="button">Ver más</button></div>
+    <p class="eyebrow">Buscador</p>
+    <h2>Ver las subastas abiertas hoy en el portal oficial</h2>
+    <p class="lead2">Elige provincia y tipo de bien y te llevamos a la lista oficial del Portal de Subastas del BOE, con las subastas que están recibiendo pujas en este momento. Ahí están las judiciales, las notariales y las de Hacienda. Los datos los ves directamente en la fuente, siempre al día.</p>
+    <form class="filters" id="go" action="https://subastas.boe.es/subastas_ava.php" method="get" target="_blank">
+      <label>Provincia<select id="f-prov"><option value="">Toda España</option><option value="01">Araba/Álava</option><option value="02">Albacete</option><option value="03">Alicante/Alacant</option><option value="04">Almería</option><option value="33">Asturias</option><option value="05">Ávila</option><option value="06">Badajoz</option><option value="08">Barcelona</option><option value="48">Bizkaia</option><option value="09">Burgos</option><option value="10">Cáceres</option><option value="11">Cádiz</option><option value="39">Cantabria</option><option value="12">Castellón/Castelló</option><option value="51">Ceuta</option><option value="13">Ciudad Real</option><option value="14">Córdoba</option><option value="15">A Coruña</option><option value="16">Cuenca</option><option value="20">Gipuzkoa</option><option value="17">Girona</option><option value="18">Granada</option><option value="19">Guadalajara</option><option value="21">Huelva</option><option value="22">Huesca</option><option value="07">Illes Balears</option><option value="23">Jaén</option><option value="26">La Rioja</option><option value="35">Las Palmas</option><option value="24">León</option><option value="25">Lleida</option><option value="27">Lugo</option><option value="28">Madrid</option><option value="29">Málaga</option><option value="52">Melilla</option><option value="30">Murcia</option><option value="31">Navarra</option><option value="32">Ourense</option><option value="34">Palencia</option><option value="36">Pontevedra</option><option value="37">Salamanca</option><option value="38">Santa Cruz de Tenerife</option><option value="40">Segovia</option><option value="41">Sevilla</option><option value="42">Soria</option><option value="43">Tarragona</option><option value="44">Teruel</option><option value="45">Toledo</option><option value="46">Valencia/València</option><option value="47">Valladolid</option><option value="49">Zamora</option><option value="50">Zaragoza</option></select></label>
+      <label>Tipo de bien<select id="f-tipo"><option value="I">Inmuebles (viviendas, locales, garajes, solares)</option><option value="">Todos los bienes</option></select></label>
+      <button class="gobtn" type="submit">Ver subastas abiertas →</button>
+    </form>
+    <p class="stamp">Se abre el Portal de Subastas del BOE en una pestaña nueva. Para pujar tendrás que registrarte allí con certificado digital o Cl@ve.</p>
+    <p class="stamp">Subastas de la Seguridad Social: se consultan en su <a href="https://sede.seg-social.gob.es/wps/portal/sede/sede/Ciudadanos/subastas" rel="noopener">sede electrónica, apartado Subastas</a>.</p>
   </section>
 
   <section>
@@ -127,43 +126,21 @@ a.card:hover{border-color:var(--green);background:var(--green-soft)}
 
 <footer><div class="in">
   <p>Contenido educativo. No es asesoramiento de inversión personalizado. Las subastas tienen riesgos propios: lee siempre el edicto y la ficha oficial.</p>
-  <p>Datos del directorio: Agencia Estatal Boletín Oficial del Estado (Portal de Subastas) y Tesorería General de la Seguridad Social. Se muestran tal como se publican, con enlace a la fuente; la información oficial es la de esos portales.</p>
+  <p>Las subastas se consultan directamente en los portales oficiales: Portal de Subastas de la Agencia Estatal BOE y sede electrónica de la Tesorería General de la Seguridad Social.</p>
   <p class="legal-links"><a href="../legal/aviso-legal.html">Aviso legal</a> · <a href="../legal/privacidad.html">Privacidad</a> · <a href="../legal/cookies.html">Cookies</a></p>
 </div></footer>
 
 <script>
 (function(){
-  var $=function(id){return document.getElementById(id)};
-  var all=[], shown=0, PAGE=40;
-  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  function eur(n){return (typeof n==='number')?n.toLocaleString('es-ES',{style:'currency',currency:'EUR',maximumFractionDigits:0}):''}
-  function fecha(s){if(!s)return '';var d=new Date(s);return isNaN(d)?esc(s):d.toLocaleDateString('es-ES',{day:'numeric',month:'short',year:'numeric'})}
-  function fill(sel,key){var v={};all.forEach(function(x){if(x[key])v[x[key]]=1});Object.keys(v).sort(function(a,b){return a.localeCompare(b,'es')}).forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=k;sel.appendChild(o)})}
-  function filtered(){
-    var p=$('f-prov').value,o=$('f-org').value,t=$('f-tipo').value,q=$('f-q').value.trim().toLowerCase();
-    return all.filter(function(x){return (!p||x.provincia===p)&&(!o||x.organiza===o)&&(!t||x.tipo===t)&&(!q||(x.titulo+' '+x.localidad+' '+x.id).toLowerCase().indexOf(q)>-1)});
-  }
-  function render(reset){
-    var list=filtered(); if(reset){$('list').innerHTML='';shown=0}
-    if(!list.length){$('list').innerHTML='<p class="empty">No hay subastas con esos filtros.</p>';$('more').hidden=true;return}
-    var html='';
-    list.slice(shown,shown+PAGE).forEach(function(x){
-      html+='<article class="item"><div><h3>'+esc(x.titulo||x.tipo||'Subasta')+'</h3><p class="sub"><span class="pill">'+esc(x.organiza)+'</span>'+esc([x.localidad,x.provincia].filter(Boolean).join(', '))+(x.id?' · '+esc(x.id):'')+'</p></div>'
-        +'<div class="val">'+(x.valor?eur(x.valor)+'<small>valor de subasta</small>':'')+(x.fin?'<small>Termina: '+fecha(x.fin)+'</small>':'')+'</div>'
-        +'<a class="go" href="'+esc(x.url)+'" rel="noopener nofollow">Ver la ficha oficial →</a></article>';
-    });
-    $('list').insertAdjacentHTML('beforeend',html); shown+=PAGE; $('more').hidden=shown>=list.length;
-  }
-  fetch('datos/hoy.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
-    all=d.subastas||[];
-    $('stamp').textContent=all.length+' subastas abiertas · actualizado el '+new Date(d.actualizado).toLocaleString('es-ES',{dateStyle:'long',timeStyle:'short'});
-    fill($('f-prov'),'provincia');fill($('f-org'),'organiza');fill($('f-tipo'),'tipo');render(true);
-  }).catch(function(){
-    $('stamp').textContent='';
-    $('list').innerHTML='<p class="empty">El directorio diario se está poniendo en marcha. Mientras tanto, consulta directamente el <a href="https://subastas.boe.es/">Portal de Subastas del BOE</a> y la <a href="https://sede.seg-social.gob.es/">sede de la Seguridad Social</a>.</p>';
+  document.getElementById('go').addEventListener('submit',function(e){
+    e.preventDefault();
+    var p=document.getElementById('f-prov').value,t=document.getElementById('f-tipo').value;
+    var q='campo%5B2%5D=SUBASTA.ESTADO.CODIGO&dato%5B2%5D=EJ';
+    if(t)q+='&campo%5B3%5D=BIEN.TIPO&dato%5B3%5D='+t;
+    if(p)q+='&campo%5B8%5D=BIEN.COD_PROVINCIA&dato%5B8%5D='+p;
+    q+='&page_hits=40&sort_field%5B0%5D=SUBASTA.FECHA_FIN&sort_order%5B0%5D=asc&accion=Buscar';
+    window.open('https://subastas.boe.es/subastas_ava.php?'+q,'_blank','noopener');
   });
-  ['f-prov','f-org','f-tipo','f-q'].forEach(function(id){$(id).addEventListener('input',function(){render(true)})});
-  $('more').querySelector('button').addEventListener('click',function(){render(false)});
 })();
 </script>
 </body>
