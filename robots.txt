@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /tareas/
+
 Sitemap: https://saberparainvertir.com/sitemap.xml
