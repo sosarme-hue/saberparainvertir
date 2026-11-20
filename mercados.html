@@ -69,6 +69,14 @@ h2{font-size:1.6rem}
   </section>
 
   <section>
+    <h2>Tecnológicas del Nasdaq</h2>
+    <p>Anthropic (ANT) empezó a cotizar en el Nasdaq el 19 de noviembre de 2026. Aquí la tienes junto a otras grandes tecnológicas.</p>
+    <div class="tv" id="tv-stocks" style="margin-top:16px"><p class="fallback">Cargando acciones…</p></div>
+    <p class="note" style="margin-top:10px">Las acciones sueltas llegan con unos 15 minutos de retraso, porque el Nasdaq cobra a las webs por mostrar su tiempo real.</p>
+    <p style="margin-top:14px"><a href="https://es.investing.com/equities/anthropic" target="_blank" rel="noopener" style="display:inline-block;padding:10px 18px;border-radius:10px;background:var(--navy);color:var(--on-navy);font-weight:700;text-decoration:none">Ver Anthropic en tiempo real en Investing.com ↗</a></p>
+  </section>
+
+  <section>
     <h2>Qué mide cada índice</h2>
     <div class="idx" style="margin-top:16px">
       <div><h3>IBEX 35</h3><p>Las 35 empresas con más negociación de la Bolsa española: bancos, energía, textil, infraestructuras.</p></div>
@@ -127,6 +135,12 @@ h2{font-size:1.6rem}
       {name:'Europa', symbols:[{name:'PEPPERSTONE:ESP35',displayName:'IBEX 35'},{name:'PEPPERSTONE:GER40',displayName:'DAX'},{name:'PEPPERSTONE:EUSTX50',displayName:'Euro Stoxx 50'}]},
       {name:'Asia y mundo', symbols:[{name:'PEPPERSTONE:JPN225',displayName:'Nikkei 225'},{name:'XETR:EUNL',displayName:'MSCI World (ETF iShares, 15 min de retraso)'}]},
       {name:'Materias primas, divisas y cripto', symbols:[{name:'OANDA:XAUUSD',displayName:'Oro (onza en $)'},{name:'PEPPERSTONE:SPOTBRENT',displayName:'Petróleo Brent'},{name:'FX:EURUSD',displayName:'Euro / dólar'},{name:'BITSTAMP:BTCUSD',displayName:'Bitcoin'}]}
+    ]
+  });
+  embed('tv-stocks', 'embed-widget-market-quotes.js', {
+    width: '100%', height: 330, isTransparent: true, showSymbolLogo: true, colorTheme: theme, locale: 'es',
+    symbolsGroups: [
+      {name:'Tecnológicas', symbols:[{name:'NASDAQ:ANT',displayName:'Anthropic'},{name:'NASDAQ:NVDA',displayName:'Nvidia'},{name:'NASDAQ:AAPL',displayName:'Apple'},{name:'NASDAQ:MSFT',displayName:'Microsoft'},{name:'NASDAQ:GOOGL',displayName:'Alphabet (Google)'},{name:'NASDAQ:AMZN',displayName:'Amazon'}]}
     ]
   });
 })();
