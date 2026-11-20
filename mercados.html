@@ -55,7 +55,7 @@ h2{font-size:1.6rem}
 <div class="top"><div class="in">
   <p class="crumbs"><a href="index.html">Inicio</a> › <a href="index.html#calculadoras">Herramientas</a> › Mercados</p>
   <h1>Mercados</h1>
-  <p class="lead">Cómo van hoy las principales bolsas del mundo. Los datos llegan con unos minutos de retraso. Para invertir a largo plazo no hace falta mirarlos cada día.</p>
+  <p class="lead">Cómo van hoy las principales bolsas del mundo. Los índices, el oro, el petróleo, las divisas y el bitcoin se actualizan en tiempo real. Para invertir a largo plazo no hace falta mirarlos cada día.</p>
 </div></div>
 <figure class="photo"><img src="https://images.unsplash.com/photo-1645226880663-81561dcab0ae?auto=format&w=1600&q=75" alt="Persona consultando cotizaciones en el móvil ante un gráfico de bolsa" loading="lazy" style="--ph:#0c2659" width="1600"><figcaption>Foto: <a href="https://unsplash.com/@smigielski?utm_source=saber_para_invertir&utm_medium=referral">Adam Śmigielski</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
 
@@ -65,7 +65,7 @@ h2{font-size:1.6rem}
   <section>
     <h2>Principales índices</h2>
     <div class="tv big" id="tv-quotes" style="margin-top:16px"><p class="fallback">Cargando índices…</p></div>
-    <p class="note" style="margin-top:10px">Datos facilitados por TradingView, normalmente con unos 15 minutos de retraso. Algunos índices se muestran mediante instrumentos que los replican, por lo que el valor puede diferir ligeramente del oficial.</p>
+    <p class="note" style="margin-top:10px">Datos facilitados por TradingView, en tiempo real. Los índices se muestran mediante CFD de brókers que los replican segundo a segundo, por lo que el valor puede diferir unos puntos del oficial. El ETF del MSCI World cotiza en la bolsa alemana y llega con unos 15 minutos de retraso.</p>
   </section>
 
   <section>
@@ -95,13 +95,16 @@ h2{font-size:1.6rem}
   var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   var theme = dark ? 'dark' : 'light';
   var SYMBOLS = [
-    {proName:'BME:IBC', title:'IBEX 35'},
-    {proName:'TVC:SX5E', title:'Euro Stoxx 50'},
-    {proName:'FOREXCOM:SPXUSD', title:'S&P 500'},
     {proName:'FOREXCOM:NSXUSD', title:'Nasdaq 100'},
-    {proName:'INDEX:DEU40', title:'DAX'},
-    {proName:'INDEX:NKY', title:'Nikkei 225'},
-    {proName:'XETR:EUNL', title:'MSCI World (ETF)'}
+    {proName:'FOREXCOM:SPXUSD', title:'S&P 500'},
+    {proName:'PEPPERSTONE:ESP35', title:'IBEX 35'},
+    {proName:'PEPPERSTONE:GER40', title:'DAX'},
+    {proName:'PEPPERSTONE:EUSTX50', title:'Euro Stoxx 50'},
+    {proName:'PEPPERSTONE:JPN225', title:'Nikkei 225'},
+    {proName:'OANDA:XAUUSD', title:'Oro'},
+    {proName:'PEPPERSTONE:SPOTBRENT', title:'Petróleo Brent'},
+    {proName:'FX:EURUSD', title:'Euro / dólar'},
+    {proName:'BITSTAMP:BTCUSD', title:'Bitcoin'}
   ];
   function embed(id, file, cfg){
     var box = document.getElementById(id);
@@ -118,11 +121,12 @@ h2{font-size:1.6rem}
     symbols: SYMBOLS, showSymbolLogo: true, isTransparent: true, displayMode: 'adaptive', colorTheme: theme, locale: 'es'
   });
   embed('tv-quotes', 'embed-widget-market-quotes.js', {
-    width: '100%', height: 550, isTransparent: true, showSymbolLogo: true, colorTheme: theme, locale: 'es',
+    width: '100%', height: 760, isTransparent: true, showSymbolLogo: true, colorTheme: theme, locale: 'es',
     symbolsGroups: [
-      {name:'Europa', symbols:[{name:'BME:IBC',displayName:'IBEX 35'},{name:'TVC:SX5E',displayName:'Euro Stoxx 50'},{name:'INDEX:DEU40',displayName:'DAX'}]},
-      {name:'América', symbols:[{name:'FOREXCOM:SPXUSD',displayName:'S&P 500'},{name:'FOREXCOM:NSXUSD',displayName:'Nasdaq 100'},{name:'FOREXCOM:DJI',displayName:'Dow Jones'}]},
-      {name:'Asia y mundo', symbols:[{name:'INDEX:NKY',displayName:'Nikkei 225'},{name:'XETR:EUNL',displayName:'MSCI World (ETF iShares)'}]}
+      {name:'América', symbols:[{name:'FOREXCOM:NSXUSD',displayName:'Nasdaq 100'},{name:'FOREXCOM:SPXUSD',displayName:'S&P 500'},{name:'FOREXCOM:DJI',displayName:'Dow Jones'}]},
+      {name:'Europa', symbols:[{name:'PEPPERSTONE:ESP35',displayName:'IBEX 35'},{name:'PEPPERSTONE:GER40',displayName:'DAX'},{name:'PEPPERSTONE:EUSTX50',displayName:'Euro Stoxx 50'}]},
+      {name:'Asia y mundo', symbols:[{name:'PEPPERSTONE:JPN225',displayName:'Nikkei 225'},{name:'XETR:EUNL',displayName:'MSCI World (ETF iShares, 15 min de retraso)'}]},
+      {name:'Materias primas, divisas y cripto', symbols:[{name:'OANDA:XAUUSD',displayName:'Oro (onza en $)'},{name:'PEPPERSTONE:SPOTBRENT',displayName:'Petróleo Brent'},{name:'FX:EURUSD',displayName:'Euro / dólar'},{name:'BITSTAMP:BTCUSD',displayName:'Bitcoin'}]}
     ]
   });
 })();
