@@ -35,6 +35,24 @@ a{color:var(--green)}
 .menu a:hover{border-color:var(--green);color:var(--green)}
 .menu a[aria-current="page"]{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
 .menu-btn{display:none}
+.menu > ul > li.dd{position:relative}
+.menu summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 13px;background:var(--bg);user-select:none}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary::after{content:"";width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg)}
+.menu details[open] > summary::after{transform:translateY(1px) rotate(-135deg)}
+.menu summary:hover{border-color:var(--green);color:var(--green)}
+.menu .cur > details > summary{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
+.menu ul.sub{position:absolute;top:calc(100% + 6px);left:0;z-index:30;min-width:250px;display:grid;gap:2px;padding:6px;margin:0;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 40px -18px rgba(14,42,71,.45)}
+.menu > ul > li.dd:last-child ul.sub{left:auto;right:0}
+.menu ul.sub a{display:block;border:0;border-radius:8px;padding:8px 12px;font-weight:600;white-space:nowrap}
+.menu ul.sub a:hover{background:var(--soft)}
+.menu ul.sub a[aria-current="page"]{background:var(--green-soft);color:var(--ink)}
+@media (max-width:760px){
+  .menu > ul > li.dd{position:static}
+  .menu summary{display:flex;justify-content:space-between;border-radius:10px;padding:11px 14px;font-size:1rem}
+  .menu ul.sub{position:static;box-shadow:none;border:0;min-width:0;padding:4px 0 6px 10px;display:grid}
+  .menu ul.sub a{white-space:normal;padding:9px 12px;font-size:.98rem}
+}
 @media (max-width:760px){
   .menu-top{padding-block:8px}
   .menu-btn{display:flex;align-items:center;gap:8px;width:100%;font:inherit;font-weight:700;font-size:1rem;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:11px 14px;cursor:pointer;text-align:left}
