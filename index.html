@@ -56,7 +56,16 @@ a{color:inherit}
 .menu summary:hover{border-color:var(--green);color:var(--green)}
 .menu .cur > details > summary{background:var(--navy);border-color:var(--navy);color:var(--on-navy)}
 .menu ul.sub{position:absolute;top:calc(100% + 6px);left:0;z-index:30;min-width:250px;display:grid;gap:2px;padding:6px;margin:0;background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 40px -18px rgba(14,42,71,.45)}
-.menu > ul > li.dd:last-child ul.sub{left:auto;right:0}
+.menu > ul > li.dd:nth-last-child(2) ul.sub{left:auto;right:0}
+.menu li.live{margin-left:auto}
+.menu li.live a{display:inline-flex;align-items:center;gap:8px;border-color:var(--green);color:var(--green)}
+.menu li.live a:hover{background:var(--green-soft)}
+.menu li.live a[aria-current="page"]{background:var(--green);border-color:var(--green);color:#fff}
+.menu .pulse{width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 0 0 currentColor;animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(20,135,90,.55)}70%{box-shadow:0 0 0 7px rgba(20,135,90,0)}100%{box-shadow:0 0 0 0 rgba(20,135,90,0)}}
+@media (prefers-reduced-motion:reduce){.menu .pulse{animation:none}}
+@media (max-width:760px){.menu li.live{margin-left:0}.menu li.live a{display:flex}}
+@media (min-width:761px){.menu ul{gap:5px;font-size:.84rem}.menu summary,.menu > ul > li > a{padding:6px 10px}.menu summary{gap:6px}}
 .menu ul.sub a{display:block;border:0;border-radius:8px;padding:8px 12px;font-weight:600;white-space:nowrap}
 .menu ul.sub a:hover{background:var(--soft)}
 .menu ul.sub a[aria-current="page"]{background:var(--green-soft);color:var(--ink)}
@@ -265,10 +274,11 @@ footer ul{margin:0;padding-left:1.1em}
   <ul class="in" id="menu-list">
     <li class="dd"><details><summary>Empieza</summary><ul class="sub"><li><a href="empieza/index.html">Empieza aquí</a></li><li><a href="empieza/index.html#decisiones">Decisiones concretas</a></li><li><a href="curso/tu-primera-inversion-en-30-dias.html">Curso: aprende a decidir en 30 días</a></li><li><a href="index.html#cursos">Guías en PDF</a></li><li><a href="guias/seguridad-y-estafas.html">Seguridad y estafas</a></li><li><a href="blog/index.html">Blog</a></li></ul></details></li>
     <li class="dd"><details><summary>Ahorro y bancos</summary><ul class="sub"><li><a href="bancos/index.html">Cuentas, depósitos y préstamos</a></li><li><a href="fichas/cuenta-remunerada.html">Cuenta remunerada</a></li><li><a href="fichas/deposito.html">Depósito a plazo</a></li><li><a href="fichas/letras-del-tesoro.html">Letras del Tesoro</a></li><li><a href="guias/fondo-de-emergencia.html">Fondo de emergencia</a></li></ul></details></li>
-    <li class="dd"><details><summary>Inversión</summary><ul class="sub"><li><a href="guias/invertir-a-largo-plazo.html">Invertir a largo plazo: itinerario</a></li><li><a href="fondos/index.html">Fondos y ETF</a></li><li><a href="bolsa/index.html">Bolsa</a></li><li><a href="renta-fija/index.html">Renta fija y Tesoro</a></li><li><a href="cripto/index.html">Criptomonedas</a></li><li><a href="mercados.html">Mercados en directo</a></li></ul></details></li>
+    <li class="dd"><details><summary>Inversión</summary><ul class="sub"><li><a href="guias/invertir-a-largo-plazo.html">Invertir a largo plazo: itinerario</a></li><li><a href="fondos/index.html">Fondos y ETF</a></li><li><a href="bolsa/index.html">Bolsa</a></li><li><a href="renta-fija/index.html">Renta fija y Tesoro</a></li><li><a href="cripto/index.html">Criptomonedas</a></li></ul></details></li>
     <li class="dd"><details><summary>Vivienda y subastas</summary><ul class="sub"><li><a href="inmobiliaria/index.html">Inmobiliaria</a></li><li><a href="subastas/index.html">Subastas</a></li><li><a href="guias/antes-de-tu-primera-puja.html">Antes de tu primera puja</a></li></ul></details></li>
     <li class="dd"><details><summary>Jubilación e impuestos</summary><ul class="sub"><li><a href="jubilacion/index.html">Jubilación</a></li><li><a href="impuestos/index.html">Impuestos</a></li></ul></details></li>
-    <li class="dd"><details><summary>Herramientas</summary><ul class="sub"><li><a href="herramientas/index.html">Calculadoras</a></li><li><a href="herramientas/glosario.html">Glosario</a></li><li><a href="mercados.html">Mercados</a></li></ul></details></li>
+    <li class="dd"><details><summary>Herramientas</summary><ul class="sub"><li><a href="herramientas/index.html">Calculadoras</a></li><li><a href="herramientas/glosario.html">Glosario</a></li></ul></details></li>
+    <li class="live"><a href="mercados.html"><span class="pulse" aria-hidden="true"></span>Mercados en directo</a></li>
   </ul>
 </nav>
 
