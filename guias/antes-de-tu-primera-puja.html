@@ -20,6 +20,13 @@
 .calc .sub{font-weight:400;color:var(--muted);font-size:.9rem}
 .calc div.big{font-size:1.15rem;color:var(--green)}
 @media (max-width:520px){.types{grid-template-columns:1fr}}
+.rules{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:14px 0}
+.rules table{border-collapse:collapse;width:100%;min-width:620px;font-size:.92rem}
+.rules th,.rules td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+.rules tr:last-child th,.rules tr:last-child td{border-bottom:0}
+.rules thead th{background:var(--soft);font-weight:700}
+.rules tbody th{color:var(--muted);font-weight:700;width:16%}
+.rules .sub{display:block;margin-top:4px;color:var(--muted);font-size:.85rem}
 </style>
 </head>
 <body>
@@ -52,7 +59,7 @@
   <p class="crumbs"><a href="../index.html">Inicio</a> › <a href="../index.html#opciones">Subastas: cómo funcionan y cómo participar</a> › Guía</p>
   <h1>Antes de tu primera puja: qué revisar y cuánto podrías terminar pagando</h1>
   <p class="lead">Una subasta no es una forma garantizada de comprar barato. Es una compra con reglas propias, menos información y costes que no aparecen en el precio de la puja. Esta guía te enseña a evaluar una operación antes de entrar.</p>
-  <p class="meta"><span>Revisado: 9 nov 2026</span><span>Subastas de bienes en España</span><span>Fiscalidad: territorio común</span></p>
+  <p class="meta"><span>Revisado: 22 nov 2026</span><span>Subastas de bienes en España</span><span>Fiscalidad: territorio común</span></p>
 </div></div>
 <figure class="photo"><img src="https://images.unsplash.com/photo-1676181739859-08330dea8999?auto=format&w=1600&q=75" alt="Mazo de madera sobre una mesa" loading="lazy" style="--ph:#0c2626" width="1600"><figcaption>Foto: <a href="https://unsplash.com/@wesleyphotography?utm_source=saber_para_invertir&utm_medium=referral">Wesley Tingey</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
 
@@ -73,7 +80,7 @@
     <dl class="summary" aria-label="Resumen">
       <div><dt>Qué compras</dt><dd>El bien tal como está</dd></div>
       <div><dt>Visita</dt><dd>A menudo no es posible</dd></div>
-      <div><dt>Para pujar</dt><dd>Depósito, normalmente el 5 %</dd></div>
+      <div><dt>Para pujar</dt><dd>Depósito del 5 al 20 %, según el edicto</dd></div>
       <div><dt>Coste real</dt><dd>Puja + impuestos + cargas + obras</dd></div>
       <div><dt>Plazo</dt><dd>De semanas a muchos meses</dd></div>
     </dl>
@@ -132,13 +139,26 @@
       </ul>
     </section>
 
-    <section id="participar"><h2><span class="n">06</span>Cómo participar</h2>
+    <section id="participar"><h2><span class="n">06</span>Cómo participar: depósito, plazos y pago</h2>
+      <p>Las reglas <strong>no son iguales en todas las subastas</strong>. Cambian según quién la organiza, el tipo de bien y la fecha en que empezó el procedimiento. Lo que manda es el <strong>edicto o anuncio</strong> de cada subasta en el Portal: comprueba allí el depósito y los plazos antes de pujar.</p>
+      <div class="rules"><table>
+        <thead><tr><th scope="col"></th><th scope="col">Judicial de inmuebles</th><th scope="col">Notarial</th><th scope="col">Agencia Tributaria</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Depósito para pujar</th><td><strong>20 % del valor de subasta</strong>, con un mínimo de 1.000 €. El letrado de la Administración de Justicia puede subirlo o bajarlo. En bienes muebles, 10 %.<br><span class="sub">Procedimientos iniciados antes del 3 de abril de 2025: pueden seguir con el 5 % anterior.</span></td><td><strong>5 % del valor</strong> de los bienes. No lo paga quien pide la subasta.</td><td><strong>5 % del tipo</strong> si el lote incluye un inmueble; 10 % si son solo bienes muebles.</td></tr>
+          <tr><th scope="row">Duración y cierre</th><td>20 días naturales, <strong>sin prórroga</strong>. Las pujas son secretas. No cierra en fin de semana, festivo nacional, del 24 de diciembre al 6 de enero ni en agosto.</td><td>Al menos 20 días naturales. En lo no previsto, se aplica la Ley de Enjuiciamiento Civil.</td><td>20 días naturales. Si alguien puja en la última hora, el cierre se retrasa una hora, hasta un máximo de 24 horas.</td></tr>
+          <tr><th scope="row">Pago del resto</th><td>Si la puja llega al 70 % del valor: <strong>20 días</strong> desde el cierre. Por debajo del 70 %, el deudor tiene 10 días para presentar a alguien que mejore la oferta, y después decide el juzgado.</td><td><strong>10 días hábiles</strong>.</td><td>La Mesa adjudica en un máximo de 15 días naturales tras el cierre. Pagas en <strong>15 días</strong> desde que te lo notifican.</td></tr>
+          <tr><th scope="row">Si no ganas</th><td>El Portal devuelve el depósito al terminar, salvo que hayas pedido <strong>reservarlo</strong> por si el ganador no paga.</td><td>Te lo devuelven. Si pediste la reserva, cuando el ganador haya pagado.</td><td>Queda disponible al acabar las pujas, salvo reserva. Si tu puja era igual o menor que la mejor, se reserva automáticamente.</td></tr>
+          <tr><th scope="row">Si ganas y no pagas</th><td colspan="3">Pierdes el depósito y la subasta puede adjudicarse al siguiente postor que lo reservó.</td></tr>
+          <tr><th scope="row">Norma</th><td><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2000-323#a669">LEC, arts. 647, 649, 652, 669 y 670</a>, reformados por la <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2025-76">Ley Orgánica 1/2025</a></td><td><a href="https://www.boe.es/buscar/act.php?id=BOE-A-1862-4073#a75">Ley del Notariado, art. 75</a></td><td><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2005-14803#a1-2">Reglamento General de Recaudación, arts. 103 bis, 104 y 104 bis</a></td></tr>
+        </tbody>
+      </table></div>
       <ul>
-        <li><strong>Depósito:</strong> en subastas judiciales, notariales y de Hacienda suele ser el <strong>5 % del valor de subasta</strong>. Si no ganas, te lo devuelven.</li>
-        <li><strong>Pujas:</strong> en el Portal del BOE la subasta dura 20 días naturales. Las pujas de última hora pueden ampliar el cierre.</li>
-        <li><strong>Mínimos:</strong> en subastas judiciales de inmuebles, si la mejor puja no llega al 70 % del valor de subasta, la adjudicación no es automática y pueden intervenir el deudor o el acreedor.</li>
-        <li><strong>Si ganas y no pagas,</strong> pierdes el depósito.</li>
+        <li><strong>Otras administraciones</strong> (Seguridad Social, ayuntamientos, comunidades autónomas) tienen reglamentos propios. Por ejemplo, el de la Seguridad Social pide un <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2004-11836#a118">depósito del 25 %</a> en las ofertas en sobre cerrado.</li>
+        <li><strong>Subastas privadas:</strong> las reglas las pone cada organizador. Léelas entera antes de pagar nada.</li>
+        <li><strong>Mínimos:</strong> en las judiciales de inmuebles, si la mejor puja no llega al 70 % del valor de subasta, la adjudicación no es automática y pueden intervenir el deudor o el acreedor.</li>
+        <li><strong>Ten el dinero antes de pujar:</strong> el depósito se paga por adelantado y el plazo para el resto es corto para pedir una hipoteca.</li>
       </ul>
+      <p class="note">Revisado el 22 de noviembre de 2026 con los textos consolidados del BOE. Las cifras son las generales: el edicto de cada subasta puede fijar otras.</p>
     </section>
 
     <section id="coste"><h2><span class="n">07</span>Coste total</h2>
@@ -155,7 +175,7 @@
 
     <section id="despues"><h2><span class="n">08</span>Después de ganar</h2>
       <ul>
-        <li><strong>Pago del resto:</strong> en subastas judiciales de inmuebles, normalmente en 40 días.</li>
+        <li><strong>Pago del resto:</strong> en las judiciales de inmuebles, 20 días desde el cierre si la puja llega al 70 % (antes de la reforma de 2025 eran 40); en las notariales, 10 días hábiles; en Hacienda, 15 días desde la notificación. Mira el <a href="#participar">cuadro de reglas</a>.</li>
         <li><strong>Documento:</strong> el juzgado emite el decreto de adjudicación; en otras subastas, la certificación o escritura que corresponda.</li>
         <li><strong>Impuestos:</strong> presentas y pagas el ITP en tu comunidad en el plazo que fije (habitualmente un mes).</li>
         <li><strong>Inscripción</strong> en el Registro de la Propiedad a tu nombre, con cancelación de las cargas posteriores.</li>
@@ -166,8 +186,8 @@
     <section id="caso"><h2><span class="n">09</span>Caso práctico: un piso que parecía barato</h2>
       <p>Subasta judicial de un piso con <strong>valor de subasta de 120.000 €</strong>. Pisos parecidos se venden en la zona por unos 130.000 €. Ganas con una puja de 90.000 €.</p>
       <div class="calc">
-        <span class="cap">Supuestos: ITP del 8 % sobre el precio, ocupado por el antiguo propietario, sin cargas anteriores.</span>
-        <div><span>Depósito para pujar (5 % de 120.000 €) <span class="sub">· se descuenta del precio</span></span><span>6.000 €</span></div>
+        <span class="cap">Supuestos: subasta judicial iniciada después del 3 de abril de 2025, ITP del 8 % sobre el precio, ocupado por el antiguo propietario, sin cargas anteriores.</span>
+        <div><span>Depósito para pujar (20 % de 120.000 €) <span class="sub">· se descuenta del precio</span></span><span>24.000 €</span></div>
         <div><span>Precio de adjudicación</span><span>90.000 €</span></div>
         <div><span>ITP al 8 %</span><span>7.200 €</span></div>
         <div><span>Registro y gestoría</span><span>1.000 €</span></div>
@@ -177,7 +197,7 @@
         <div><span>Reforma</span><span>15.000 €</span></div>
         <div class="big"><span>Coste total</span><span>118.300 €</span></div>
       </div>
-      <p>Al final pagas <strong>118.300 €</strong>, un 31 % más que la puja, y has esperado meses sin poder usar el piso. Frente a los 130.000 € de mercado el ahorro es de unos 11.700 €, no de 40.000 €. Con una reforma mayor o una carga anterior no detectada, la operación podría salir más cara que comprar en el mercado.</p>
+      <p>Al final pagas <strong>118.300 €</strong>, un 31 % más que la puja, y has esperado meses sin poder usar el piso. Además, necesitabas 24.000 € disponibles solo para poder pujar y los 66.000 € restantes en 20 días. Frente a los 130.000 € de mercado el ahorro es de unos 11.700 €, no de 40.000 €. Con una reforma mayor o una carga anterior no detectada, la operación podría salir más cara que comprar en el mercado.</p>
       <p class="note">Ejemplo educativo con cifras supuestas. Los impuestos y los plazos dependen de la comunidad autónoma y del tipo de subasta. País Vasco y Navarra tienen normativa propia.</p>
     </section>
   </article>
@@ -185,7 +205,7 @@
 
 <footer><div class="in">
   <p>Contenido educativo. No es asesoramiento personalizado. Para una operación concreta, consulta con un abogado o un gestor.</p>
-  <p>Fuentes: <a href="https://subastas.boe.es">Portal de Subastas del BOE</a>, <a href="https://sede.agenciatributaria.gob.es">Agencia Tributaria</a>, Ley de Enjuiciamiento Civil.</p>
+  <p>Fuentes: <a href="https://subastas.boe.es">Portal de Subastas del BOE</a>; <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2000-323#a669">Ley de Enjuiciamiento Civil, arts. 647 a 670</a>; <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1862-4073#a75">Ley del Notariado, art. 75</a>; <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2005-14803#a1-2">Reglamento General de Recaudación, arts. 103 bis a 104 bis</a>; <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2004-11836#a118">Reglamento General de Recaudación de la Seguridad Social, art. 118</a>.</p>
   <p class="legal-links"><a href="../legal/aviso-legal.html">Aviso legal</a> · <a href="../legal/privacidad.html">Privacidad</a> · <a href="../legal/cookies.html">Cookies</a> · <a href="../legal/transparencia.html">Publicidad y transparencia</a></p>
   <p class="legal-links">© 2026 Alejandro Rosàs · Contenido bajo licencia <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" rel="license noopener" style="display:inline">CC BY-NC 4.0</a>, salvo indicación en contrario</p>
 </div></footer>

@@ -96,6 +96,11 @@ section.blk + section.blk{border-top:1px solid var(--line)}
 .meter{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:.82rem;margin-top:6px}
 .meter dt{color:var(--muted)}
 .meter dd{margin:0;font-weight:700}
+.meter dt.mh{grid-column:1/-1;color:var(--ink);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem}
+.opt .meter{grid-template-columns:1fr;gap:0}
+.opt .meter dt:not(.mh){margin-top:8px;font-size:.78rem}
+.opt .meter dt.mh{margin-top:4px}
+.opt .meter dd{font-weight:400;color:var(--ink);font-size:.88rem;line-height:1.4}
 .links{font-size:.92rem;font-weight:700}
 .links a{color:var(--green)}
 .ficha{margin-top:46px;background:var(--soft);border-radius:18px;padding:28px;display:grid;grid-template-columns:1fr 1.4fr;gap:30px}
@@ -324,14 +329,14 @@ footer ul{margin:0;padding-left:1.1em}
     <p>Cada producto tiene su ficha, siempre con los mismos apartados, para que puedas comparar sin perderte.</p>
   </div>
   <div class="opts">
-    <article class="opt"><h3>Bancos y ahorro</h3><p>Cuentas, depósitos, tarjetas, préstamos e hipotecas. Lo que cobran y lo que pagan.</p><dl class="meter"><dt>Riesgo</dt><dd>Muy bajo</dd><dt>Disponibilidad</dt><dd>Inmediata o a plazo</dd></dl><p class="links"><a href="bancos/index.html">Todo sobre bancos</a> · <a href="fichas/deposito.html">Depósito a plazo</a> · <a href="fichas/cuenta-remunerada.html">Cuenta remunerada</a> · <a href="fichas/hipoteca.html">Hipoteca</a></p></article>
-    <article class="opt"><h3>Fondos y ETF</h3><p>Monetarios, renta fija, renta variable, mixtos, indexados y de gestión activa.</p><dl class="meter"><dt>Riesgo</dt><dd>De bajo a alto</dd><dt>Disponibilidad</dt><dd>2 a 5 días hábiles</dd></dl><p class="links"><a href="fondos/index.html">Todo sobre fondos</a> · <a href="fichas/fondo-indexado.html">Fondo indexado</a> · <a href="fichas/etf.html">ETF</a> · <a href="fichas/fondo-monetario.html">Fondo monetario</a></p></article>
-    <article class="opt"><h3>Bolsa</h3><p>Acciones, dividendos, índices, intermediarios y cómo se da una orden de compra.</p><dl class="meter"><dt>Riesgo</dt><dd>Alto</dd><dt>Disponibilidad</dt><dd>Venta en sesión</dd></dl><p class="links"><a href="bolsa/index.html">Todo sobre bolsa</a> · <a href="fichas/acciones.html">Acciones</a> · <a href="mercados.html">Mercados</a></p></article>
-    <article class="opt"><h3>Renta fija y Tesoro</h3><p>Letras, bonos y obligaciones del Estado, sus subastas, deuda de empresas y venta antes del vencimiento.</p><dl class="meter"><dt>Riesgo</dt><dd>Bajo a medio</dd><dt>Disponibilidad</dt><dd>Al vencimiento o en mercado</dd></dl><p class="links"><a href="renta-fija/index.html">Todo sobre renta fija</a> · <a href="fichas/letras-del-tesoro.html">Letras del Tesoro</a></p></article>
-    <article class="opt"><h3>Inmobiliaria</h3><p>Comprar para alquilar, gastos reales, financiación, SOCIMI y financiación participativa.</p><dl class="meter"><dt>Riesgo</dt><dd>Medio</dd><dt>Disponibilidad</dt><dd>Meses</dd></dl><p class="links"><a href="inmobiliaria/index.html">Sección y calculadora</a> · <a href="fichas/socimi.html">SOCIMI</a></p></article>
-    <article class="opt"><h3>Criptomonedas</h3><p>Bitcoin y otros criptoactivos, plataformas, custodia, volatilidad y fraudes frecuentes.</p><dl class="meter"><dt>Riesgo</dt><dd>Muy alto</dd><dt>Disponibilidad</dt><dd>Depende de la plataforma</dd></dl><p class="links"><a href="cripto/index.html">Sección cripto y cotizaciones</a></p></article>
-    <article class="opt"><h3>Subastas</h3><p>Inmuebles, terrenos, garajes y otros bienes: tipos de subasta, cómo participar y el coste real.</p><dl class="meter"><dt>Riesgo</dt><dd>Medio a alto</dd><dt>Disponibilidad</dt><dd>Meses</dd></dl><p class="links"><a href="subastas/index.html">Subastas abiertas hoy</a> <a href="guias/antes-de-tu-primera-puja.html">Antes de tu primera puja</a></p></article>
-    <article class="opt"><h3>Jubilación</h3><p>Pensión pública, planes de pensiones, otros productos de previsión y cómo disponer del ahorro.</p><dl class="meter"><dt>Riesgo</dt><dd>Según el producto</dd><dt>Disponibilidad</dt><dd>Al jubilarte, con excepciones</dd></dl><p class="links"><a href="jubilacion/index.html">Sección y calculadora</a> · <a href="fichas/plan-de-pensiones.html">Plan de pensiones</a></p></article>
+    <article class="opt"><h3>Bancos y ahorro</h3><p>Cuentas, depósitos, tarjetas, préstamos e hipotecas. Lo que cobran y lo que pagan.</p><dl class="meter"><dt class="mh">Qué puede fallar</dt><dt>Depósito, cuenta</dt><dd>Casi nada hasta 100.000 € por titular y entidad (FGD). La inflación puede superar al interés.</dd><dt>Préstamo, hipoteca</dt><dd>El riesgo es tuyo: cuota que sube con el euríbor, intereses de demora, embargo si no pagas.</dd><dt>Disponibilidad</dt><dd>Inmediata en cuentas; a plazo en depósitos</dd></dl><p class="links"><a href="bancos/index.html">Todo sobre bancos</a> · <a href="fichas/deposito.html">Depósito a plazo</a> · <a href="fichas/cuenta-remunerada.html">Cuenta remunerada</a> · <a href="fichas/hipoteca.html">Hipoteca</a></p></article>
+    <article class="opt"><h3>Fondos y ETF</h3><p>Monetarios, renta fija, renta variable, mixtos, indexados y de gestión activa.</p><dl class="meter"><dt class="mh">Qué puede fallar</dt><dt>Monetario</dt><dd>Pérdidas pequeñas y poco frecuentes; rentabilidad que baja con los tipos.</dd><dt>Renta fija</dt><dd>Pierde valor si suben los tipos o falla un emisor.</dd><dt>Bolsa, indexado</dt><dd>Caídas del 30 al 50 % en una crisis; años para recuperarse.</dd><dt>Disponibilidad</dt><dd>2 a 5 días hábiles</dd></dl><p class="links"><a href="fondos/index.html">Todo sobre fondos</a> · <a href="fichas/fondo-indexado.html">Fondo indexado</a> · <a href="fichas/etf.html">ETF</a> · <a href="fichas/fondo-monetario.html">Fondo monetario</a></p></article>
+    <article class="opt"><h3>Bolsa</h3><p>Acciones, dividendos, índices, intermediarios y cómo se da una orden de compra.</p><dl class="meter"><dt class="mh">Qué puede fallar</dt><dt>Acciones</dt><dd>Caída del precio; con pocas empresas, puedes perderlo casi todo.</dd><dt>Extranjeras</dt><dd>Además, la variación del cambio de divisa.</dd><dt>Disponibilidad</dt><dd>Venta en sesión</dd></dl><p class="links"><a href="bolsa/index.html">Todo sobre bolsa</a> · <a href="fichas/acciones.html">Acciones</a> · <a href="mercados.html">Mercados</a></p></article>
+    <article class="opt"><h3>Renta fija y Tesoro</h3><p>Letras, bonos y obligaciones del Estado, sus subastas, deuda de empresas y venta antes del vencimiento.</p><dl class="meter"><dt class="mh">Qué puede fallar</dt><dt>Deuda del Estado</dt><dd>Impago muy improbable; si vendes antes, el precio puede ser menor. Inflación.</dd><dt>Bonos de empresa</dt><dd>Impago del emisor y pocos compradores si quieres vender.</dd><dt>Disponibilidad</dt><dd>Al vencimiento o en mercado</dd></dl><p class="links"><a href="renta-fija/index.html">Todo sobre renta fija</a> · <a href="fichas/letras-del-tesoro.html">Letras del Tesoro</a></p></article>
+    <article class="opt"><h3>Inmobiliaria</h3><p>Comprar para alquilar, gastos reales, financiación, SOCIMI y financiación participativa.</p><dl class="meter"><dt class="mh">Qué puede fallar</dt><dt>Vivienda para alquilar</dt><dd>Impagos, meses vacíos, reparaciones. La hipoteca amplifica las pérdidas.</dd><dt>SOCIMI, crowdfunding</dt><dd>Precio que cae en bolsa; en crowdfunding, pérdida total y sin salida antes de plazo.</dd><dt>Disponibilidad</dt><dd>Meses para vender un inmueble</dd></dl><p class="links"><a href="inmobiliaria/index.html">Sección y calculadora</a> · <a href="fichas/socimi.html">SOCIMI</a></p></article>
+    <article class="opt"><h3>Criptomonedas</h3><p>Bitcoin y otros criptoactivos, plataformas, custodia, volatilidad y fraudes frecuentes.</p><dl class="meter"><dt class="mh">Qué puede fallar</dt><dt>Criptoactivos</dt><dd>Caídas de más del 70 %, robo o quiebra de la plataforma, estafas.</dd><dt>Disponibilidad</dt><dd>Depende de la plataforma</dd></dl><p class="links"><a href="cripto/index.html">Sección cripto y cotizaciones</a></p></article>
+    <article class="opt"><h3>Subastas</h3><p>Inmuebles, terrenos, garajes y otros bienes: tipos de subasta, cómo participar y el coste real.</p><dl class="meter"><dt class="mh">Qué puede fallar</dt><dt>Inmueble subastado</dt><dd>Cargas que asumes, ocupación, reforma; perder el depósito si no pagas a tiempo.</dd><dt>Disponibilidad</dt><dd>Meses hasta tener las llaves</dd></dl><p class="links"><a href="subastas/index.html">Subastas abiertas hoy</a> · <a href="guias/antes-de-tu-primera-puja.html">Antes de tu primera puja</a></p></article>
+    <article class="opt"><h3>Jubilación</h3><p>Pensión pública, planes de pensiones, otros productos de previsión y cómo disponer del ahorro.</p><dl class="meter"><dt class="mh">Qué puede fallar</dt><dt>Plan de pensiones</dt><dd>Lo que pueda caer su cartera; dinero bloqueado hasta la jubilación, salvo excepciones.</dd><dt>Pensión pública</dt><dd>Cambios de la ley en el cálculo o la edad.</dd><dt>Disponibilidad</dt><dd>Al jubilarte, con excepciones</dd></dl><p class="links"><a href="jubilacion/index.html">Sección y calculadora</a> · <a href="fichas/plan-de-pensiones.html">Plan de pensiones</a></p></article>
   </div>
 
   <div class="ficha">
@@ -415,7 +420,7 @@ footer ul{margin:0;padding-left:1.1em}
         <div><span>Siguientes 2.000 € al 21 %</span><span>420,00 €</span></div>
         <div class="total"><span>Impuesto estimado</span><span>1.560,00 €</span></div>
       </div>
-      <p class="fine">Supuestos: sin otras ganancias ni pérdidas en el año y sin gastos de compraventa. Si en lugar de vender traspasas a otro fondo, no tributas todavía. País Vasco y Navarra tienen normativa propia.</p>
+      <p class="fine">Supuestos: sin otras ganancias ni pérdidas en el año y sin gastos de compraventa. Si en lugar de reembolsar traspasas a otro fondo, la tributación se aplaza hasta que reembolses. País Vasco y Navarra tienen normativa propia.</p>
     </article>
   </div>
 </div></section>
@@ -441,7 +446,7 @@ footer ul{margin:0;padding-left:1.1em}
     <dl class="gloss">
       <div><dt>TAE</dt><dd>Tasa Anual Equivalente. Lo que gana o cuesta un producto en un año, con comisiones incluidas, para poder comparar.</dd></div>
       <div><dt>Base del ahorro</dt><dd>La parte del IRPF donde tributan intereses, dividendos y ganancias por vender inversiones.</dd></div>
-      <div><dt>Traspaso</dt><dd>Mover dinero de un fondo a otro sin pagar impuestos en ese momento.</dd></div>
+      <div><dt>Traspaso</dt><dd>Mover dinero de un fondo de inversión a otro sin que pase por tu cuenta. La tributación se aplaza hasta que reembolses. No vale para ETF.</dd></div>
       <div><dt>TER</dt><dd>Gastos corrientes anuales de un fondo o ETF, expresados en porcentaje.</dd></div>
       <div><dt>Diversificar</dt><dd>Repartir el dinero entre muchas empresas, sectores y países para no depender de uno.</dd></div>
     </dl>
@@ -466,19 +471,7 @@ footer ul{margin:0;padding-left:1.1em}
   </div>
 </div></section>
 
-<!-- 8 -->
-<section class="blk" id="novedades"><div class="in">
-  <div class="head">
-    <p class="eyebrow">Novedades revisadas</p>
-    <h2>Lo que ha cambiado, con fecha</h2>
-  </div>
-  <div class="news">
-    <article class="new"><time datetime="2026-11-09">9 nov 2026</time><h3>Ficha actualizada: letras del Tesoro</h3><p>Revisamos el tipo medio de la última subasta y el ejemplo en euros.</p></article>
-    <article class="new"><time datetime="2026-11-09">9 nov 2026</time><h3>Nueva guía: cómo leer la ficha de un fondo</h3><p>El documento de datos fundamentales, apartado por apartado.</p></article>
-    <article class="new"><time datetime="2026-11-09">9 nov 2026</time><h3>Impuestos: tramos de la base del ahorro</h3><p>Tabla del ejercicio 2026 con ejemplos para cada tramo.</p></article>
-  </div>
-  <p class="sample">Entradas de muestra para enseñar el formato. En la web real solo aparecerán novedades verificadas.</p>
-</div></section>
+
 </main>
 
 <div class="safe" id="seguridad"><div class="in">
@@ -538,23 +531,23 @@ footer ul{margin:0;padding-left:1.1em}
   /* Comparaciones */
   const CMP={
     dep:{h:['Depósito a plazo','Letras del Tesoro'],r:[
-      ['Rentabilidad','Fija y conocida al contratar. Se cobra al vencer o periódicamente.','Fija si las mantienes hasta el vencimiento (3, 6, 9 o 12 meses). Compras por debajo de 1.000 € y cobras 1.000 €.'],
-      ['Riesgo','Muy bajo. Fondo de Garantía de Depósitos hasta 100.000 € por titular y entidad.','Muy bajo. El emisor es el Estado español.'],
-      ['Comisiones','Normalmente ninguna. Revisa si exigen otros productos vinculados.','Ninguna comprando directamente en el Tesoro Público. Algunos bancos cobran custodia.'],
+      ['Rentabilidad','Fija y conocida al contratar. Se cobra al vencer o periódicamente.','Fija si las mantienes hasta el vencimiento (3, 6, 9 o 12 meses). Compras por debajo de 1.000 € y cobras 1.000 €, menos la comisión del Banco de España si compras en el Tesoro.'],
+      ['Qué puede fallar','Casi nada: el Fondo de Garantía de Depósitos cubre hasta 100.000 € por titular y entidad. Cancelar antes puede costar intereses.','Impago muy improbable: el emisor es el Estado. Si vendes antes del vencimiento, el precio puede ser menor que el que pagaste.'],
+      ['Comisiones','Normalmente ninguna. Revisa si exigen otros productos vinculados.','En el Tesoro, comprar y mantener es gratis, pero el Banco de España cobra el 1,5 por mil (mínimo 0,90 €, máximo 200 €) cada vez que te transfiere dinero: en 10.000 € al vencer, 15 €. Los bancos pueden cobrar compra y custodia.'],
       ['Disponibilidad','Al vencimiento. Cancelar antes puede estar prohibido o penalizado.','Al vencimiento. Puedes venderlas antes en el mercado, al precio de ese día.'],
       ['Impuestos','Rendimiento del capital mobiliario. Retención del 19 % al cobrar.','Rendimiento del capital mobiliario en la base del ahorro. Sin retención: se paga en la declaración.']]},
     etf:{h:['Fondo de inversión','ETF'],r:[
       ['Rentabilidad','La del mercado que sigue, menos comisiones. Valor liquidativo una vez al día.','La del índice que replica, menos comisiones. Cotiza durante toda la sesión.'],
-      ['Riesgo','Depende de lo que tenga dentro: de muy bajo (monetario) a alto (renta variable).','Igual que el fondo equivalente: depende del índice.'],
+      ['Qué puede fallar','Depende de lo que tenga dentro: pequeñas pérdidas en un monetario, caídas fuertes en uno de bolsa.','Lo mismo, según el índice. Además, el precio en bolsa puede separarse un poco del valor real.'],
       ['Comisiones','Gastos corrientes (TER). Indexados desde 0,1 %; gestión activa a menudo 1–2 %.','TER muy bajo, a menudo 0,1–0,3 %, más la comisión del bróker por cada compra o venta.'],
       ['Disponibilidad','Reembolso en 2 a 5 días hábiles.','Venta inmediata en bolsa; el dinero llega en 2 días hábiles.'],
-      ['Impuestos','Puedes traspasar a otro fondo sin tributar. Pagas al reembolsar.','En España no admiten traspaso sin tributar: cada venta con ganancia tributa.']]},
+      ['Impuestos','Tributa la ganancia al reembolsar. Si pasas el dinero a otro fondo con un traspaso, sin que llegue a tu cuenta, la tributación se aplaza hasta el reembolso final.','Cada venta con ganancia tributa: la ley excluye a los ETF del régimen de traspasos.']]},
     viv:{h:['Vivienda para alquilar','Inversión financiera diversificada'],r:[
       ['Rentabilidad','Alquiler menos gastos (IBI, comunidad, seguros, reparaciones, meses vacíos), más la posible revalorización.','Dividendos, intereses y revalorización de muchas empresas o bonos a la vez.'],
-      ['Riesgo','Concentrado en un inmueble: impagos, desperfectos, cambios normativos. La hipoteca amplifica.','Caídas temporales del mercado, que pueden ser fuertes. Muy repartido.'],
+      ['Qué puede fallar','Concentrado en un inmueble: impagos, desperfectos, meses vacíos, cambios normativos. La hipoteca amplifica las pérdidas.','Caídas temporales del mercado, que pueden ser fuertes, pero repartidas entre muchas empresas.'],
       ['Comisiones','Compra cara: ITP entre el 6 y el 10 % según la comunidad, notaría, registro y gestoría.','Bajas en productos indexados. Sin gastos de entrada relevantes.'],
       ['Disponibilidad','Vender lleva meses y no se puede vender una parte.','Puedes vender todo o una parte en pocos días.'],
-      ['Impuestos','Alquiler en la base general con posibles reducciones por vivienda habitual del inquilino. Venta en la base del ahorro.','Base del ahorro, del 19 % al 30 % por tramos. Traspasos de fondos sin tributar.']]}
+      ['Impuestos','Alquiler en la base general con posibles reducciones por vivienda habitual del inquilino. Venta en la base del ahorro.','Base del ahorro, del 19 % al 30 % por tramos. En fondos (no ETF), el traspaso aplaza la tributación.']]}
   };
   function showCmp(k){
     const c=CMP[k];
