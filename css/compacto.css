@@ -1,0 +1,57 @@
+/* Ritmo más compacto en toda la web: menos aire entre líneas y secciones (22 nov 2026).
+   Se carga después de los estilos de cada página para que prevalezca. */
+body{line-height:1.5}
+/* Portada */
+section.blk{padding-block:44px}
+.hero .in{padding-block:30px 34px;gap:28px}
+.head{margin-bottom:22px;gap:8px}
+.opts{gap:22px 28px}
+.ficha{margin-top:30px;padding:22px;gap:22px}
+.taxgrid{gap:24px}
+.safe .in{padding-block:24px}
+footer .in{padding-block:26px}
+/* Páginas interiores */
+.top .in{padding-block:28px 32px;gap:10px}
+.layout{padding-block:30px 44px;gap:36px}
+.summary{margin-bottom:26px}
+article section{padding-block:18px;gap:9px}
+.wrap{padding-block:30px 44px;gap:36px}
+.basics{gap:18px}
+.need{padding:16px 18px;gap:8px}
+.needs{gap:12px}
+.photo{margin-top:18px}
+.top .lead{font-size:1.08rem}
+.toc ol{gap:2px}
+@media (max-width:900px){
+  section.blk{padding-block:34px}
+  .hero .in{padding-block:26px 28px}
+}
+@media (max-width:760px){
+  section.blk{padding-block:26px}
+  .hero .in{padding-block:20px 24px;gap:14px}
+  .head{margin-bottom:14px;gap:5px}
+  .opts{gap:14px}
+  .top .in{padding-block:18px 22px;gap:8px}
+  .layout{padding-block:16px 30px;gap:14px}
+  article section{padding-block:14px;gap:7px}
+  .wrap{padding-block:20px 30px !important;gap:26px !important}
+  footer .in{padding-block:22px;gap:16px}
+  body{font-size:16px;line-height:1.48}
+  h2{font-size:1.55rem}
+  .top h1{font-size:2rem}
+  .hero h1{font-size:1.85rem}
+  .needs{gap:10px}
+  .need{padding:14px 16px;gap:8px}
+  .need strong{font-size:1.05rem}
+  .opt{padding-top:12px;gap:6px}
+  .example,.ficha{padding:16px}
+  .course{padding:18px}
+  .guides a{padding:11px 0}
+  .g7,.cw,.taxgrid{gap:18px}
+  .ficha{margin-top:20px;gap:14px}
+  .top .lead{font-size:1rem}
+  .toc{font-size:.88rem}
+  .toc ol{margin-top:6px;gap:1px}
+  .card{padding-block:14px}
+  .grid3,.basics{margin-top:14px}
+}
