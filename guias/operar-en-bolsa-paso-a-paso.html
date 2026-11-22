@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Operar en bolsa paso a paso · Saber para invertir</title>
+<meta name="description" content="Órdenes limitadas y a mercado, validez, cancelaciones, ejecución parcial, divisa, impuestos de la operación y cómo funciona una OPV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<link rel="stylesheet" href="../css/ficha.css?v=20261122">
+</head>
+<body>
+<header class="bar"><div class="in">
+  <a class="logo" href="../index.html"><svg width="36" height="36" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 17 Q19 12 31 19 V52 Q19 45 6 50 Z" style="fill:var(--ink)"/><path d="M33 19 Q45 12 58 17 V50 Q45 45 33 52 Z" style="fill:var(--ink)"/><polyline points="11,41 22,33 31,37 44,27 53,22" fill="none" style="stroke:var(--logo-ln,#8FE0B9)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Saber <b>para</b> invertir</span></a>
+  <a class="scam" href="seguridad-y-estafas.html" aria-label="Seguridad y estafas">⚠ <span class="scam-l">Seguridad y estafas</span><span class="scam-s">Estafas</span></a>
+</div></header>
+<nav class="menu" aria-label="Secciones">
+  <div class="in menu-top"><button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-list" onclick="var n=this.closest('nav');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><span aria-hidden="true">☰</span> Menú · <span>Inversión</span></button></div>
+  <ul class="in" id="menu-list">
+    <li class="dd"><details><summary>Empieza</summary><ul class="sub"><li><a href="../empieza/index.html">Empieza aquí</a></li><li><a href="../empieza/index.html#decisiones">Decisiones concretas</a></li><li><a href="../curso/tu-primera-inversion-en-30-dias.html">Curso: aprende a decidir en 30 días</a></li><li><a href="../index.html#cursos">Guías en PDF</a></li><li><a href="../guias/seguridad-y-estafas.html">Seguridad y estafas</a></li><li><a href="../blog/index.html">Blog</a></li></ul></details></li>
+    <li class="dd"><details><summary>Ahorro y bancos</summary><ul class="sub"><li><a href="../bancos/index.html">Cuentas, depósitos y préstamos</a></li><li><a href="../fichas/cuenta-remunerada.html">Cuenta remunerada</a></li><li><a href="../fichas/deposito.html">Depósito a plazo</a></li><li><a href="../fichas/letras-del-tesoro.html">Letras del Tesoro</a></li><li><a href="../guias/fondo-de-emergencia.html">Fondo de emergencia</a></li></ul></details></li>
+    <li class="dd cur"><details><summary>Inversión</summary><ul class="sub"><li><a href="../guias/invertir-a-largo-plazo.html">Invertir a largo plazo: itinerario</a></li><li><a href="../fondos/index.html">Fondos y ETF</a></li><li><a href="../bolsa/index.html" aria-current="page">Bolsa</a></li><li><a href="../renta-fija/index.html">Renta fija y Tesoro</a></li><li><a href="../cripto/index.html">Criptomonedas</a></li><li><a href="../mercados.html">Mercados en directo</a></li></ul></details></li>
+    <li class="dd"><details><summary>Vivienda y subastas</summary><ul class="sub"><li><a href="../inmobiliaria/index.html">Inmobiliaria</a></li><li><a href="../subastas/index.html">Subastas</a></li><li><a href="../guias/antes-de-tu-primera-puja.html">Antes de tu primera puja</a></li></ul></details></li>
+    <li class="dd"><details><summary>Jubilación e impuestos</summary><ul class="sub"><li><a href="../jubilacion/index.html">Jubilación</a></li><li><a href="../impuestos/index.html">Impuestos</a></li></ul></details></li>
+    <li class="dd"><details><summary>Herramientas</summary><ul class="sub"><li><a href="../herramientas/index.html">Calculadoras</a></li><li><a href="../herramientas/glosario.html">Glosario</a></li><li><a href="../mercados.html">Mercados</a></li></ul></details></li>
+  </ul>
+</nav>
+<div class="top"><div class="in">
+  <p class="crumbs"><a href="../index.html">Inicio</a> › <a href="../bolsa/index.html">Inversión</a> › Guía</p>
+  <h1>Operar en bolsa paso a paso</h1>
+  <p class="lead">Qué pasa desde que pulsas «comprar» hasta que las acciones son tuyas, y qué opciones tienes en cada paso para no pagar más de la cuenta.</p>
+  <p class="meta"><span>Revisado: 22 nov 2026</span></p>
+</div></div>
+<div class="in layout">
+  <nav class="toc" aria-label="En esta página"><p class="eyebrow">En esta página</p><ol><li><a href="#antes">Antes de la primera orden</a></li><li><a href="#tipos">Tipos de orden</a></li><li><a href="#validez">Validez, modificación y cancelación</a></li><li><a href="#parcial">Ejecución parcial</a></li><li><a href="#divisa">Acciones en otra moneda</a></li><li><a href="#costes">Costes de la operación</a></li><li><a href="#opv">Cómo funciona una OPV</a></li></ol></nav>
+  <article><section id="antes"><h2>Antes de la primera orden</h2><ul><li>Abre una cuenta de valores (donde se anotan las acciones) asociada a una cuenta de efectivo, en un <a href="elegir-intermediario.html">intermediario autorizado</a>.</li><li>Te harán un test de conveniencia: sirve para avisarte si un producto es complejo para tu experiencia.</li><li>En la Bolsa española se negocia en continuo de 9:00 a 17:30, con subasta de apertura antes y de cierre después.</li></ul></section><section id="tipos"><h2>Tipos de orden</h2><ul><li><strong>A mercado:</strong> se ejecuta enseguida al mejor precio disponible. Rápida, pero en valores con poca negociación el precio puede sorprenderte.</li><li><strong>Limitada:</strong> fijas el precio máximo de compra o mínimo de venta. Solo se ejecuta a ese precio o mejor. Es la más recomendable para empezar.</li><li><strong>Stop:</strong> se activa al alcanzar un precio; sirve para limitar pérdidas, pero en una caída brusca puede ejecutarse bastante por debajo.</li></ul><p>Más detalle en <a href="tipos-de-ordenes.html">tipos de órdenes</a>.</p></section><section id="validez"><h2>Validez, modificación y cancelación</h2><ul><li>Una orden puede valer solo para el día, hasta una fecha o hasta que la canceles.</li><li>Mientras no se haya ejecutado, puedes modificarla o cancelarla sin coste en la mayoría de intermediarios.</li><li>Una orden ejecutada ya no se puede deshacer: tendrías que hacer la operación contraria.</li></ul></section><section id="parcial"><h2>Ejecución parcial</h2><p>Si pides 300 acciones con precio limitado y solo hay 100 disponibles a ese precio, se compran 100 y el resto queda pendiente. Pregunta a tu intermediario si cobra una comisión por cada ejecución parcial o una sola por la orden del día.</p></section><section id="divisa"><h2>Acciones en otra moneda</h2><p>Al comprar en dólares, el intermediario cambia tus euros. Unos aplican el cambio automáticamente con un margen; otros te dejan tener una cuenta en dólares. Pagas el cambio al comprar y al vender, y tu rentabilidad depende también de la evolución del dólar.</p></section><section id="costes"><h2>Costes de la operación</h2><ul><li>Comisión del intermediario y cánones de la bolsa.</li><li><strong>Impuesto sobre las Transacciones Financieras:</strong> 0,2 % al comprar acciones de empresas españolas cotizadas con capitalización superior a 1.000 millones de euros.</li><li>Las acciones quedan liquidadas (son tuyas y el dinero sale) a los dos días hábiles.</li></ul></section><section id="opv"><h2>Cómo funciona una OPV</h2><p>En una oferta pública de venta, una empresa sale a bolsa vendiendo acciones al público:</p><ul><li>Publica un <strong>folleto aprobado por la CNMV</strong>: léelo, especialmente los riesgos y el uso del dinero.</li><li>Hay un periodo para hacer peticiones, a menudo con un precio máximo; el precio final se fija al terminar.</li><li>Si la demanda supera la oferta, hay <strong>prorrateo</strong>: recibes menos acciones de las pedidas.</li><li>El primer día de cotización el precio puede subir o bajar mucho.</li></ul></section><p class="note">Contenido educativo con cifras ilustrativas. No es asesoramiento personalizado. Fiscalidad del territorio común; País Vasco y Navarra tienen normas propias.</p></article>
+</div>
+<footer><div class="in">
+  <p>Contenido educativo. No es asesoramiento personalizado.</p>
+  <p>Fuentes: <a href="https://www.cnmv.es">CNMV</a>, <a href="https://www.bolsasymercados.es">BME</a>, <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2020-12356">Ley 5/2020 del Impuesto sobre las Transacciones Financieras</a>.</p>
+  <p class="legal-links"><a href="../legal/quien-esta-detras.html">Quién está detrás</a> · <a href="../legal/aviso-legal.html">Aviso legal</a> · <a href="../legal/privacidad.html">Privacidad</a> · <a href="../legal/cookies.html">Cookies</a> · <a href="../legal/transparencia.html">Publicidad y transparencia</a></p>
+  <p class="legal-links">© 2026 Alejandro Rosàs · Contenido bajo licencia <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" rel="license noopener" style="display:inline">CC BY-NC 4.0</a>, salvo indicación en contrario</p>
+</div></footer>
+<script src="/js/menu.js" defer></script>
+<script src="/js/consent.js" defer></script>
+<script src="/js/afiliados.js" defer></script>
+</body>
+</html>
