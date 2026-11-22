@@ -93,7 +93,7 @@ a{color:inherit}
 .hero-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:16px;background:var(--ph,#ccd)}
 .hero-photo figcaption{font-size:.72rem;opacity:.7;margin-top:6px;text-align:right}
 .hero-photo figcaption a{color:inherit}
-@media (max-width:900px){.hero .in{grid-template-columns:1fr}.hero-photo .slot{aspect-ratio:16/9}}
+@media (max-width:900px){.hero .in{grid-template-columns:1fr}.hero-photo .slot{aspect-ratio:3/2}}
 .hero h1 span{display:block}
 .hero h1 span:nth-child(2){color:#8FE0B9}
 .hero .lead{font-size:1.05rem;opacity:.85;max-width:40em}
@@ -256,9 +256,9 @@ footer ul{margin:0;padding-left:1.1em}
 }
 /* Fotos que rotan, entrada del titular y aparición al hacer scroll (como enciclopedias.si) */
 .hero-photo{position:relative}
-.hero-photo .slot{position:relative;display:block;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--ph,#1d3a5c);color:#fff;text-decoration:none}
+.hero-photo .slot{position:relative;display:block;aspect-ratio:3/2;border-radius:16px;overflow:hidden;background:var(--ph,#1d3a5c);color:#fff;text-decoration:none}
 .hero-photo .layer{position:absolute;inset:0}
-.hero-photo .layer:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 42%,rgba(8,28,48,.88))}
+.hero-photo .layer:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(8,28,48,.85))}
 .hero-photo .layer img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;border-radius:0}
 .hero-photo .layer span{position:absolute;left:18px;right:16px;bottom:16px;z-index:1;font-weight:800;font-size:1.15rem;line-height:1.25}
 .hero-photo .layer small{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#8FE0B9;margin-bottom:4px}
@@ -281,7 +281,7 @@ footer ul{margin:0;padding-left:1.1em}
 html.rv-on .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 html.rv-on .rv.in{opacity:1;transform:none}
 }
-@keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.03)}}
 @keyframes cap{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @keyframes inup{from{opacity:0;transform:translateY(40px) scale(.96)}to{opacity:1;transform:none}}
 @keyframes inleft{from{opacity:0;transform:translateX(-45px)}to{opacity:1;transform:none}}
@@ -331,7 +331,7 @@ html.rv-on .rv.in{opacity:1;transform:none}
       </div>
     </div>
     </div>
-    <figure class="hero-photo"><a class="slot" href="empieza/index.html" style="--ph:#8c7340"><div class="layer"><img src="https://images.unsplash.com/photo-1758523419091-b48deb56d7b9?auto=format&fit=crop&w=900&h=675&q=75" alt="Pareja leyendo un documento en la cocina de casa" width="900" height="675" fetchpriority="high"><span><small>Empieza</small>Ordena tu dinero antes de invertir <i aria-hidden="true">→</i></span></div></a><button class="ctl" type="button" hidden aria-label="Pausar el carrusel de fotos"><span aria-hidden="true">❚❚</span></button><figcaption>Foto: <a href="https://unsplash.com/@silverkblack?utm_source=saber_para_invertir&utm_medium=referral">Vitaly Gariev</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
+    <figure class="hero-photo"><a class="slot" href="empieza/index.html" style="--ph:#8c7340"><div class="layer"><img src="https://images.unsplash.com/photo-1758523419091-b48deb56d7b9?auto=format&w=900&q=75" alt="Pareja leyendo un documento en la cocina de casa" width="900" height="600" fetchpriority="high"><span><small>Empieza</small>Ordena tu dinero antes de invertir <i aria-hidden="true">→</i></span></div></a><button class="ctl" type="button" hidden aria-label="Pausar el carrusel de fotos"><span aria-hidden="true">❚❚</span></button><figcaption>Foto: <a href="https://unsplash.com/@silverkblack?utm_source=saber_para_invertir&utm_medium=referral">Vitaly Gariev</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
   </div>
 </div>
 
@@ -599,14 +599,14 @@ html.rv-on .rv.in{opacity:1;transform:none}
  var slot=fig.querySelector('.slot'),cap=fig.querySelector('figcaption'),btn=fig.querySelector('.ctl');
  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
  var FX=['fx-up','fx-left','fx-zoom','fx-right'],k=0,n=0,paused=false,hover=false,busy=false;
- function src(p){return 'https://images.unsplash.com/'+p.id+'?auto=format&fit=crop&w=900&h=675&q=75'}
+ function src(p){return 'https://images.unsplash.com/'+p.id+'?auto=format&w=900&q=75'}
  function pre(j){var im=new Image();im.src=src(P[j%P.length])}
  function swap(){
   if(paused||hover||busy||document.hidden)return;
   var j=(k+1)%P.length,p=P[j],im=new Image();busy=true;
   im.onload=im.onerror=function(){
    var L=document.createElement('div');L.className='layer '+FX[n++%FX.length];
-   var img=document.createElement('img');img.src=src(p);img.alt=p.alt;img.width=900;img.height=675;
+   var img=document.createElement('img');img.src=src(p);img.alt=p.alt;img.width=900;img.height=600;
    var sp=document.createElement('span');sp.innerHTML='<small></small><i aria-hidden="true">→</i>';sp.firstChild.textContent=p.c;sp.insertBefore(document.createTextNode(p.t+' '),sp.lastChild);
    L.appendChild(img);L.appendChild(sp);slot.appendChild(L);slot.href=p.h;slot.style.setProperty('--ph',p.ph);
    cap.innerHTML='Foto: <a></a> en <a href="https://unsplash.com/'+UTM+'">Unsplash</a>';cap.firstElementChild.href=p.u+UTM;cap.firstElementChild.textContent=p.a;
