@@ -93,7 +93,7 @@ a{color:inherit}
 .hero-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:16px;background:var(--ph,#ccd)}
 .hero-photo figcaption{font-size:.72rem;opacity:.7;margin-top:6px;text-align:right}
 .hero-photo figcaption a{color:inherit}
-@media (max-width:900px){.hero .in{grid-template-columns:1fr}.hero-photo{display:none}}
+@media (max-width:900px){.hero .in{grid-template-columns:1fr}.hero-photo .slot{aspect-ratio:16/9}}
 .hero h1 span{display:block}
 .hero h1 span:nth-child(2){color:#8FE0B9}
 .hero .lead{font-size:1.05rem;opacity:.85;max-width:40em}
@@ -254,6 +254,39 @@ footer ul{margin:0;padding-left:1.1em}
   .safe .in{padding-block:24px}
   footer .in{padding-block:28px;gap:18px}
 }
+/* Fotos que rotan, entrada del titular y aparición al hacer scroll (como enciclopedias.si) */
+.hero-photo{position:relative}
+.hero-photo .slot{position:relative;display:block;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--ph,#1d3a5c);color:#fff;text-decoration:none}
+.hero-photo .layer{position:absolute;inset:0}
+.hero-photo .layer:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 42%,rgba(8,28,48,.88))}
+.hero-photo .layer img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;border-radius:0}
+.hero-photo .layer span{position:absolute;left:18px;right:16px;bottom:16px;z-index:1;font-weight:800;font-size:1.15rem;line-height:1.25}
+.hero-photo .layer small{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#8FE0B9;margin-bottom:4px}
+.hero-photo .slot:hover span i,.hero-photo .slot:focus-visible span i{margin-left:4px}
+.hero-photo .layer span i{font-style:normal;transition:margin .2s}
+.hero-photo .ctl{position:absolute;top:10px;right:10px;z-index:3;width:34px;height:34px;border-radius:50%;border:0;background:rgba(8,28,48,.6);color:#fff;font-size:.7rem;cursor:pointer;display:grid;place-items:center}
+.hero-photo .ctl[hidden]{display:none}
+.hero-photo .ctl:hover,.hero-photo .ctl:focus-visible{background:rgba(8,28,48,.85)}
+@media (prefers-reduced-motion:no-preference){
+.hero-photo .layer img{animation:kb 9s ease-out both}
+.hero-photo .layer span{animation:cap 1s .35s ease-out both}
+.hero-photo .fx-up{animation:inup 1.1s cubic-bezier(.2,.7,.2,1) both}
+.hero-photo .fx-left{animation:inleft 1.1s cubic-bezier(.2,.7,.2,1) both}
+.hero-photo .fx-right{animation:inright 1.1s cubic-bezier(.2,.7,.2,1) both}
+.hero-photo .fx-zoom{animation:inzoom 1.2s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 span{animation:inup .8s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 span:nth-child(2){animation-delay:.15s}
+.hero h1 span:nth-child(3){animation-delay:.3s}
+.hero .lead,.hero .search{animation:cap .9s .45s ease-out both}
+html.rv-on .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+html.rv-on .rv.in{opacity:1;transform:none}
+}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
+@keyframes cap{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes inup{from{opacity:0;transform:translateY(40px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes inleft{from{opacity:0;transform:translateX(-45px)}to{opacity:1;transform:none}}
+@keyframes inright{from{opacity:0;transform:translateX(45px)}to{opacity:1;transform:none}}
+@keyframes inzoom{from{opacity:0;transform:scale(1.18)}to{opacity:1;transform:none}}
 </style>
 <link rel="stylesheet" href="css/calculadoras.css?v=20261122">
 </head>
@@ -297,7 +330,7 @@ footer ul{margin:0;padding-left:1.1em}
       </div>
     </div>
     </div>
-    <figure class="hero-photo"><img src="https://images.unsplash.com/photo-1758523419091-b48deb56d7b9?auto=format&w=900&q=75" alt="Pareja leyendo un documento en la cocina de casa" loading="lazy" style="--ph:#8c7340" width="900" height="675"><figcaption>Foto: <a href="https://unsplash.com/@silverkblack?utm_source=saber_para_invertir&utm_medium=referral">Vitaly Gariev</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
+    <figure class="hero-photo"><a class="slot" href="empieza/index.html" style="--ph:#8c7340"><div class="layer"><img src="https://images.unsplash.com/photo-1758523419091-b48deb56d7b9?auto=format&fit=crop&w=900&h=675&q=75" alt="Pareja leyendo un documento en la cocina de casa" width="900" height="675" fetchpriority="high"><span><small>Empieza</small>Ordena tu dinero antes de invertir <i aria-hidden="true">→</i></span></div></a><button class="ctl" type="button" hidden aria-label="Pausar el carrusel de fotos"><span aria-hidden="true">❚❚</span></button><figcaption>Foto: <a href="https://unsplash.com/@silverkblack?utm_source=saber_para_invertir&utm_medium=referral">Vitaly Gariev</a> en <a href="https://unsplash.com/?utm_source=saber_para_invertir&utm_medium=referral">Unsplash</a></figcaption></figure>
   </div>
 </div>
 
@@ -557,5 +590,44 @@ footer ul{margin:0;padding-left:1.1em}
 <script src="/js/menu.js" defer></script>
 <script src="/js/consent.js" defer></script>
 <script src="/js/afiliados.js" defer></script>
+<script>
+/* Fotos que rotan en la portada, con pausa; aparición de bloques al hacer scroll. Respeta "reducir movimiento". */
+(function(){
+ var P=[{"id": "photo-1758523419091-b48deb56d7b9", "h": "empieza/index.html", "c": "Empieza", "t": "Ordena tu dinero antes de invertir", "alt": "Pareja leyendo un documento en la cocina de casa", "ph": "#8c7340", "a": "Vitaly Gariev", "u": "https://unsplash.com/@silverkblack"}, {"id": "photo-1579621970563-ebec7560ff3e", "h": "bancos/index.html", "c": "Ahorro y bancos", "t": "Cuentas, depósitos y Letras del Tesoro", "alt": "Pequeña planta que crece sobre un montón de monedas", "ph": "#8c8c8c", "a": "micheile henderson", "u": "https://unsplash.com/@micheile"}, {"id": "photo-1645226880663-81561dcab0ae", "h": "mercados.html", "c": "En directo", "t": "Cómo van hoy los mercados", "alt": "Persona consultando cotizaciones en el móvil ante un gráfico de bolsa", "ph": "#0c2659", "a": "Adam Śmigielski", "u": "https://unsplash.com/@smigielski"}, {"id": "photo-1723158597314-4760daf1aaae", "h": "bolsa/index.html", "c": "Inversión", "t": "La bolsa, explicada sin jerga", "alt": "Fachada de la Bolsa de Nueva York en Wall Street, en blanco y negro", "ph": "#262626", "a": "Bradley Andrews", "u": "https://unsplash.com/@bradleyandroos"}, {"id": "photo-1583377519891-1eea1c2e3947", "h": "inmobiliaria/index.html", "c": "Vivienda", "t": "Comprar, alquilar o invertir", "alt": "Fachada blanca de un edificio de viviendas con balcones", "ph": "#73c0c0", "a": "léa b", "u": "https://unsplash.com/@lust"}, {"id": "photo-1676181739859-08330dea8999", "h": "subastas/index.html", "c": "Subastas", "t": "Reglas, plazos y costes reales", "alt": "Mazo de madera sobre una mesa", "ph": "#0c2626", "a": "Wesley Tingey", "u": "https://unsplash.com/@wesleyphotography"}, {"id": "photo-1625690987114-86f5af994b49", "h": "jubilacion/index.html", "c": "Jubilación", "t": "Pensión pública, planes y retiradas", "alt": "Pareja mayor paseando del brazo por un camino", "ph": "#594026", "a": "Hector Reyes", "u": "https://unsplash.com/@capture_it"}, {"id": "photo-1709880945165-d2208c6ad2ec", "h": "herramientas/index.html", "c": "Calculadoras", "t": "Simula antes de decidir", "alt": "Calculadora junto a un portátil", "ph": "#c0c0c0", "a": "Jakub Żerdzicki", "u": "https://unsplash.com/@jakubzerdzicki"}, {"id": "photo-1601597111158-2fceff292cdc", "h": "guias/seguridad-y-estafas.html", "c": "Seguridad", "t": "Cómo detectar una estafa", "alt": "Mano marcando el PIN en el teclado metálico de un cajero automático", "ph": "#262626", "a": "Eduardo Soares", "u": "https://unsplash.com/@eduschadesoares"}],UTM='?utm_source=saber_para_invertir&utm_medium=referral';
+ var fig=document.querySelector('.hero-photo');if(!fig)return;
+ var slot=fig.querySelector('.slot'),cap=fig.querySelector('figcaption'),btn=fig.querySelector('.ctl');
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ var FX=['fx-up','fx-left','fx-zoom','fx-right'],k=0,n=0,paused=false,hover=false,busy=false;
+ function src(p){return 'https://images.unsplash.com/'+p.id+'?auto=format&fit=crop&w=900&h=675&q=75'}
+ function pre(j){var im=new Image();im.src=src(P[j%P.length])}
+ function swap(){
+  if(paused||hover||busy||document.hidden)return;
+  var j=(k+1)%P.length,p=P[j],im=new Image();busy=true;
+  im.onload=im.onerror=function(){
+   var L=document.createElement('div');L.className='layer '+FX[n++%FX.length];
+   var img=document.createElement('img');img.src=src(p);img.alt=p.alt;img.width=900;img.height=675;
+   var sp=document.createElement('span');sp.innerHTML='<small></small><i aria-hidden="true">→</i>';sp.firstChild.textContent=p.c;sp.insertBefore(document.createTextNode(p.t+' '),sp.lastChild);
+   L.appendChild(img);L.appendChild(sp);slot.appendChild(L);slot.href=p.h;slot.style.setProperty('--ph',p.ph);
+   cap.innerHTML='Foto: <a></a> en <a href="https://unsplash.com/'+UTM+'">Unsplash</a>';cap.firstElementChild.href=p.u+UTM;cap.firstElementChild.textContent=p.a;
+   k=j;pre(j+1);
+   setTimeout(function(){var ls=slot.querySelectorAll('.layer');for(var x=0;x<ls.length-1;x++)ls[x].remove();busy=false},1300);
+  };
+  im.src=src(p);
+ }
+ btn.hidden=false;
+ btn.addEventListener('click',function(){paused=!paused;btn.setAttribute('aria-label',paused?'Reanudar el carrusel de fotos':'Pausar el carrusel de fotos');btn.firstElementChild.textContent=paused?'▶':'❚❚'});
+ slot.addEventListener('mouseenter',function(){hover=true});slot.addEventListener('mouseleave',function(){hover=false});
+ slot.addEventListener('focus',function(){hover=true});slot.addEventListener('blur',function(){hover=false});
+ window.addEventListener('load',function(){pre(1);setTimeout(function(){swap();setInterval(swap,6500)},4500)});
+})();
+(function(){
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
+ var els=document.querySelectorAll('main .blk .head, .need, .opt, .guides > li, .course, .steps > *, .pdfs > *, .taxgrid > *, .safe, .cw, .example');
+ if(!els.length)return;
+ document.documentElement.classList.add('rv-on');
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.classList.remove('rv','in');t.style.transitionDelay=''},1300)}})},{rootMargin:'0px 0px -8% 0px'});
+ els.forEach(function(el){var sib=el.parentElement?Array.prototype.indexOf.call(el.parentElement.children,el):0;el.classList.add('rv');el.style.transitionDelay=(sib%6)*70+'ms';io.observe(el)});
+})();
+</script>
 </body>
 </html>
