@@ -157,3 +157,4 @@ footer .in{padding-block:30px;font-size:.88rem;color:var(--muted);display:grid;g
   article section,.days li{break-inside:avoid}
   a{color:inherit;text-decoration:none}
 }
+.meta a{color:inherit;text-decoration:underline;text-underline-offset:2px}
